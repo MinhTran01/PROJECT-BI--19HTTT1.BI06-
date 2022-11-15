@@ -20,7 +20,7 @@ go
 
 create table Cases_Report
 (  
-	id int identity(1,1) primary key, -- khóa tự tăng
+	id int identity(1,1) primary key,
 	outcome varchar(50),
 	age varchar(50),
 	gender varchar(50),
@@ -83,7 +83,6 @@ create table PHU_Group
 	PHU_Region varchar(100)
 )
 go
-
 
 -- Drop Table
 --drop table dbo.Cases_Report;
