@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{8CCFAEBB-58A1-49FB-9A74-B40FB9CF7766}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{9FFDBC8F-666E-45B8-B7B0-EC67CF462219}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -416,7 +416,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET Cases_Report"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -437,7 +437,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET Compile_COVID19_Case_Details"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -458,7 +458,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET Ongoing_Outbreaks_PHU"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -542,7 +542,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET Cases_Report"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -563,7 +563,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET Compile_COVID19_Case_Details"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -584,7 +584,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET Ongoing_Outbreaks_PHU"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -668,7 +668,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET Cases_Report"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -691,7 +691,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET Compile_COVID19_Case_Details"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -714,7 +714,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET Ongoing_Outbreaks_PHU"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3338,6 +3338,16 @@
                       lineageId="Package\SourceToStage PHU_Group\Excel Source.Outputs[Excel Source Output].Columns[PHU_region]"
                       name="PHU_region"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SourceToStage PHU_Group\Excel Source.Outputs[Excel Source Output].Columns[PHU_City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SourceToStage PHU_Group\Excel Source.Outputs[Excel Source Output].ExternalColumns[PHU_City]"
+                      length="255"
+                      lineageId="Package\SourceToStage PHU_Group\Excel Source.Outputs[Excel Source Output].Columns[PHU_City]"
+                      name="PHU_City"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3351,6 +3361,11 @@
                       dataType="wstr"
                       length="255"
                       name="PHU_region" />
+                    <externalMetadataColumn
+                      refId="Package\SourceToStage PHU_Group\Excel Source.Outputs[Excel Source Output].ExternalColumns[PHU_City]"
+                      dataType="wstr"
+                      length="255"
+                      name="PHU_City" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3364,6 +3379,12 @@
                       length="255"
                       lineageId="Package\SourceToStage PHU_Group\Excel Source.Outputs[Excel Source Error Output].Columns[PHU_Group]"
                       name="PHU_Group" />
+                    <outputColumn
+                      refId="Package\SourceToStage PHU_Group\Excel Source.Outputs[Excel Source Error Output].Columns[PHU_City]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SourceToStage PHU_Group\Excel Source.Outputs[Excel Source Error Output].Columns[PHU_City]"
+                      name="PHU_City" />
                     <outputColumn
                       refId="Package\SourceToStage PHU_Group\Excel Source.Outputs[Excel Source Error Output].Columns[PHU_region]"
                       dataType="wstr"
@@ -3473,6 +3494,13 @@
                       cachedName="PHU_region"
                       externalMetadataColumnId="Package\SourceToStage PHU_Group\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_Region]"
                       lineageId="Package\SourceToStage PHU_Group\Excel Source.Outputs[Excel Source Output].Columns[PHU_region]" />
+                    <inputColumn
+                      refId="Package\SourceToStage PHU_Group\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHU_City]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PHU_City"
+                      externalMetadataColumnId="Package\SourceToStage PHU_Group\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_City]"
+                      lineageId="Package\SourceToStage PHU_Group\Excel Source.Outputs[Excel Source Output].Columns[PHU_City]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3490,6 +3518,11 @@
                       dataType="wstr"
                       length="100"
                       name="PHU_Region" />
+                    <externalMetadataColumn
+                      refId="Package\SourceToStage PHU_Group\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_City]"
+                      dataType="wstr"
+                      length="100"
+                      name="PHU_City" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3962,7 +3995,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Cases_Report"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3978,7 +4011,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Compile_COVID19_Case_Details"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3994,7 +4027,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Ongoing_Outbreaks_PHU"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData

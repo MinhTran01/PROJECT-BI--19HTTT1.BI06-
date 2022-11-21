@@ -80,6 +80,7 @@ create table PHU_Group
 (
 	id int identity(1,1),
 	PHU_Group nvarchar(100),
+	PHU_City nvarchar(100),
 	PHU_Region nvarchar(100)
 )
 go

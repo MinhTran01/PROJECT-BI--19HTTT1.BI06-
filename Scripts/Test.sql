@@ -12,4 +12,8 @@ EXEC sp_MSForEachTable 'select * from ?';
 
 use BI06_STAGE;
 select * from Cases_Report
+select * from Compile_COVID19_Case_Details
+select * from Ongoing_Outbreaks_PHU
+select * from PHU
+select * from PHU_Group
 select * from Vaccines_By_Age_PHU
