@@ -1,42 +1,52 @@
 ﻿create database NDS
 go
+
 use NDS
 go
 
 -- Dropping tables : 
-IF EXISTS (SELECT * FROM GENDER) DROP TABLE GENDER
+IF OBJECT_ID(N'dbo.GENDER', N'U') IS NOT NULL  
+   DROP TABLE [dbo].[GENDER];  
 GO
 
-IF EXISTS (SELECT * FROM CASE_ACQUISITION) DROP TABLE GENDER
+IF OBJECT_ID(N'dbo.CASE_ACQUISITION', N'U') IS NOT NULL  
+   DROP TABLE [dbo].[CASE_ACQUISITION];
 GO
 
-IF EXISTS (SELECT * FROM PROVINCE) DROP TABLE GENDER
+IF OBJECT_ID(N'dbo.PROVINCE', N'U') IS NOT NULL  
+   DROP TABLE [dbo].[PROVINCE];
+
+IF OBJECT_ID(N'dbo.AGE_GROUP', N'U') IS NOT NULL  
+   DROP TABLE [dbo].[AGE_GROUP];
 GO
 
-IF EXISTS (SELECT * FROM AGE_GROUP) DROP TABLE GENDER
+IF OBJECT_ID(N'dbo.CASE_REPORT', N'U') IS NOT NULL  
+   DROP TABLE [dbo].[CASE_REPORT];
 GO
 
-IF EXISTS (SELECT * FROM CASE_REPORT) DROP TABLE GENDER
+IF OBJECT_ID(N'dbo.PHU', N'U') IS NOT NULL  
+   DROP TABLE [dbo].[PHU];
 GO
 
-IF EXISTS (SELECT * FROM PHU) DROP TABLE GENDER
+IF OBJECT_ID(N'dbo.VACCINE_BY_AGE', N'U') IS NOT NULL  
+   DROP TABLE [dbo].[VACCINE_BY_AGE];
 GO
 
-IF EXISTS (SELECT * FROM VACCINE_BY_AGE) DROP TABLE GENDER
+IF OBJECT_ID(N'dbo.PHU_GROUP', N'U') IS NOT NULL  
+   DROP TABLE [dbo].[PHU_GROUP];
 GO
 
-IF EXISTS (SELECT * FROM PHU_GROUP) DROP TABLE GENDER
+IF OBJECT_ID(N'dbo.CITY', N'U') IS NOT NULL  
+   DROP TABLE [dbo].[CITY];
 GO
 
-IF EXISTS (SELECT * FROM CITY) DROP TABLE GENDER
+IF OBJECT_ID(N'dbo.ONGOING_OUTBREAKS_PHU', N'U') IS NOT NULL  
+   DROP TABLE [dbo].[ONGOING_OUTBREAKS_PHU];
 GO
 
-IF EXISTS (SELECT * FROM ONGOING_OUTBREAKS_PHU) DROP TABLE GENDER
+IF OBJECT_ID(N'dbo.OUTBREAK_GROUP', N'U') IS NOT NULL  
+   DROP TABLE [dbo].[OUTBREAK_GROUP];
 GO
-
-IF EXISTS (SELECT * FROM OUTBREAK_GROUP) DROP TABLE GENDER
-GO
-
 
 -- Definition for tables: 
 create table GENDER
@@ -170,7 +180,7 @@ go
 alter table CASE_REPORT add 
     constraint FK_CASE_REPORT_PHU       			foreign key (PHU_id)        		references PHU (PHU_id),
     constraint FK_CASE_REPORT_AGE_GROUP     		foreign key (age_group_id)      	references AGE_GROUP (age_group_id),
-    constraint FK_CASE_REPORT_GENDER       			foreign key (gender_id)        		references GENDER (PHU_id),
+    constraint FK_CASE_REPORT_GENDER       			foreign key (gender_id)        		references GENDER (gender_id),
     constraint FK_CASE_REPORT_CASE_ACQUISITION      foreign key (case_acquisition_id)	references CASE_ACQUISITION (case_acquisition_id),
     constraint FK_CASE_REPORT_PROVINCE      		foreign key (province_id)        	references PROVINCE (province_id)
 
@@ -184,3 +194,15 @@ alter table VACCINE_BY_AGE add
 alter table ONGOING_OUTBREAKS_PHU add 
     constraint FK_ONGOING_OUTBREAKS_PHU_PHU       			foreign key (PHU_id)        		references PHU (PHU_id),
     constraint FK_ONGOING_OUTBREAKS_PHU_OUTBREAK_GROUP     	foreign key (outbreak_group_id)     references OUTBREAK_GROUP (outbreak_group_id)
+
+--select * from PHU;
+--select * from AGE_GROUP;
+--select * from CASE_ACQUISITION;
+--select * from CASE_REPORT;
+--select * from CITY;
+--select * from GENDER;
+--select * from ONGOING_OUTBREAKS_PHU;
+--select * from PHU_GROUP;
+--select * from VACCINE_BY_AGE;
+--select * from PROVINCE;
+--select * from OUTBREAK_GROUP;
