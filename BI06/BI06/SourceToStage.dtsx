@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="66"
-  DTS:VersionGUID="{9FFDBC8F-666E-45B8-B7B0-EC67CF462219}">
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{DB6DBD3A-E9CF-4CBD-86B6-1E6CB1C2CD93}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -409,399 +409,6 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Get CET Cases_Report"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{F28B4588-85DB-463C-8E61-BE8A36DA0B5E}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get CET Cases_Report"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select getdate()"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::CET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get CET Compile_COVID19_Case_Details"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{57df60bd-ae75-4241-bed0-bcd7d353305d}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get CET Compile_COVID19_Case_Details"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select getdate()"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::CET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get CET Ongoing_Outbreaks_PHU"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{e211d4e8-166f-46d0-b76f-909ae9101825}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get CET Ongoing_Outbreaks_PHU"
-      DTS:ThreadHint="2">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select getdate()"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::CET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get CET PHU"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{15e0a19d-24a1-41a0-b5c5-da531746ae1c}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get CET PHU"
-      DTS:ThreadHint="3">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select getdate()"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::CET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get CET PHU_Group"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{8f033c92-6495-43de-a27c-b196f6472c32}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get CET PHU_Group"
-      DTS:ThreadHint="4">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select getdate()"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::CET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get CET Vaccines_By_Age_PHU"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{ed60b01c-7378-479e-a8d9-e90e161b7556}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get CET Vaccines_By_Age_PHU"
-      DTS:ThreadHint="5">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select getdate()"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::CET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get LSET Cases_Report"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{FE5FFC43-2D7B-4DDA-9D44-2392FD2BB2E2}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get LSET Cases_Report"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select LSET from Data_Flow &#xA;where table_name = 'Cases_Report'"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="LSET"
-            SQLTask:DtsVariableName="User::LSET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get LSET Compile_COVID19_Case_Details"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{9126b0fb-8c0a-4c02-9161-5bc48fe10df5}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get LSET Compile_COVID19_Case_Details"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select LSET from Data_Flow &#xA;where table_name = 'Compile_COVID19_Case_Details'"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="LSET"
-            SQLTask:DtsVariableName="User::LSET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get LSET Ongoing_Outbreaks_PHU"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{5fcd7bcc-4012-4ba8-96ed-ff060e930845}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get LSET Ongoing_Outbreaks_PHU"
-      DTS:ThreadHint="2">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select LSET from Data_Flow &#xA;where table_name = 'Ongoing_Outbreaks_PHU'"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="LSET"
-            SQLTask:DtsVariableName="User::LSET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get LSET PHU"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{e6a3bee5-a711-4225-af54-8be13a42e8d2}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get LSET PHU"
-      DTS:ThreadHint="3">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select LSET from Data_Flow &#xA;where table_name = 'PHU'"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="LSET"
-            SQLTask:DtsVariableName="User::LSET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get LSET PHU_Group"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1c58e9d9-28bd-4731-98a3-6df46c9a8c80}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get LSET PHU_Group"
-      DTS:ThreadHint="4">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select LSET from Data_Flow &#xA;where table_name = 'PHU_Group'"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="LSET"
-            SQLTask:DtsVariableName="User::LSET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get LSET Vaccines_By_Age_PHU"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{7b2921b3-d520-4342-9b52-4cbbd3f68beb}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get LSET Vaccines_By_Age_PHU"
-      DTS:ThreadHint="5">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="select LSET from Data_Flow &#xA;where table_name = 'Vaccines_By_Age_PHU'"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="LSET"
-            SQLTask:DtsVariableName="User::LSET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Set LSET Cases_Report"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{f9693aa0-1074-4c53-9d3c-51cc5eb5272b}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Set LSET Cases_Report"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="update Data_Flow &#xA;set LSET = ? &#xA;where table_name='Cases_Report'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::CET"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="7"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Set LSET Compile_COVID19_Case_Details"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{7925cdf5-fa5c-42e5-9536-dbcb4f450790}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Set LSET Compile_COVID19_Case_Details"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="update Data_Flow &#xA;set LSET = ? &#xA;where table_name='Compile_COVID19_Case_Details'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::CET"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="7"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Set LSET Ongoing_Outbreaks_PHU"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{bc1c608a-541e-4023-b724-b9cedb9afa29}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Set LSET Ongoing_Outbreaks_PHU"
-      DTS:ThreadHint="2">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:SqlStatementSource="update Data_Flow &#xA;set LSET = ? &#xA;where table_name='Ongoing_Outbreaks_PHU'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::CET"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="7"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Set LSET PHU"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{22cef617-d7c9-43c6-820d-c513473df053}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Set LSET PHU"
-      DTS:ThreadHint="3">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="update Data_Flow &#xA;set LSET = ? &#xA;where table_name='PHU'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::CET"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="7"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Set LSET PHU_Group"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{cdaf1e6d-1434-4cb3-a17b-829eea6b66e0}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Set LSET PHU_Group"
-      DTS:ThreadHint="4">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="update Data_Flow &#xA;set LSET = ? &#xA;where table_name='PHU_Group'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::CET"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="7"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Set LSET Vaccines_By_Age_PHU"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{157e2350-9dc4-46e1-b09d-d806cb8fbdf9}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Set LSET Vaccines_By_Age_PHU"
-      DTS:ThreadHint="5">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{022997EF-159E-4FB6-BC08-D62E88BCFB92}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="update Data_Flow &#xA;set LSET = ? &#xA;where table_name='Vaccines_By_Age_PHU'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::CET"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="7"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\SourceToStage Cases_Report"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -815,95 +422,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\SourceToStage Cases_Report\Conditional Split"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\SourceToStage Cases_Report\Conditional Split.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\SourceToStage Cases_Report\Conditional Split.Inputs[Conditional Split Input].Columns[CaseReported Date]"
-                      cachedDataType="dbDate"
-                      cachedName="CaseReported Date"
-                      lineageId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[CaseReported Date]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\SourceToStage Cases_Report\Conditional Split.Outputs[CaseReportedDate after LSET]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="CaseReportedDate after LSET"
-                  synchronousInputId="Package\SourceToStage Cases_Report\Conditional Split.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">#{Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[CaseReported Date]} &gt; @[User::LSET]</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">[CaseReported Date] &gt; @[User::LSET]</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\SourceToStage Cases_Report\Conditional Split.Outputs[Conditional Split Default Output]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Conditional Split Default Output"
-                  synchronousInputId="Package\SourceToStage Cases_Report\Conditional Split.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\SourceToStage Cases_Report\Conditional Split.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\SourceToStage Cases_Report\Conditional Split.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\SourceToStage Cases_Report\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\SourceToStage Cases_Report\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\SourceToStage Cases_Report\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\SourceToStage Cases_Report\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\SourceToStage Cases_Report\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
@@ -1703,13 +1221,8 @@
           </components>
           <paths>
             <path
-              refId="Package\SourceToStage Cases_Report.Paths[CaseReportedDate after LSET]"
-              endId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="CaseReportedDate after LSET"
-              startId="Package\SourceToStage Cases_Report\Conditional Split.Outputs[CaseReportedDate after LSET]" />
-            <path
               refId="Package\SourceToStage Cases_Report.Paths[Flat File Source Output]"
-              endId="Package\SourceToStage Cases_Report\Conditional Split.Inputs[Conditional Split Input]"
+              endId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -1730,95 +1243,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Inputs[Conditional Split Input].Columns[date_reported]"
-                      cachedDataType="dbDate"
-                      cachedName="date_reported"
-                      lineageId="Package\SourceToStage Compile_COVID19_Case_Details\Flat File Source.Outputs[Flat File Source Output].Columns[date_reported]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Outputs[date_reported after LSET]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="date_reported after LSET"
-                  synchronousInputId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">#{Package\SourceToStage Compile_COVID19_Case_Details\Flat File Source.Outputs[Flat File Source Output].Columns[date_reported]} &gt; @[User::LSET]</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">date_reported &gt; @[User::LSET]</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Outputs[Conditional Split Default Output]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Conditional Split Default Output"
-                  synchronousInputId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\SourceToStage Compile_COVID19_Case_Details\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
@@ -2346,13 +1770,8 @@
           </components>
           <paths>
             <path
-              refId="Package\SourceToStage Compile_COVID19_Case_Details.Paths[date_reported after LSET]"
-              endId="Package\SourceToStage Compile_COVID19_Case_Details\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="date_reported after LSET"
-              startId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Outputs[date_reported after LSET]" />
-            <path
               refId="Package\SourceToStage Compile_COVID19_Case_Details.Paths[Flat File Source Output]"
-              endId="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split.Inputs[Conditional Split Input]"
+              endId="Package\SourceToStage Compile_COVID19_Case_Details\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\SourceToStage Compile_COVID19_Case_Details\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -2373,95 +1792,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Inputs[Conditional Split Input].Columns[date]"
-                      cachedDataType="dbDate"
-                      cachedName="date"
-                      lineageId="Package\SourceToStage Ongoing_Outbreaks_PHU\Flat File Source.Outputs[Flat File Source Output].Columns[date]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Outputs[date after LSET]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="date after LSET"
-                  synchronousInputId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">#{Package\SourceToStage Ongoing_Outbreaks_PHU\Flat File Source.Outputs[Flat File Source Output].Columns[date]} &gt; @[User::LSET]</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">date &gt; @[User::LSET]</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Outputs[Conditional Split Default Output]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Conditional Split Default Output"
-                  synchronousInputId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\SourceToStage Ongoing_Outbreaks_PHU\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
@@ -2781,13 +2111,8 @@
           </components>
           <paths>
             <path
-              refId="Package\SourceToStage Ongoing_Outbreaks_PHU.Paths[date after LSET]"
-              endId="Package\SourceToStage Ongoing_Outbreaks_PHU\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="date after LSET"
-              startId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Outputs[date after LSET]" />
-            <path
               refId="Package\SourceToStage Ongoing_Outbreaks_PHU.Paths[Flat File Source Output]"
-              endId="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split.Inputs[Conditional Split Input]"
+              endId="Package\SourceToStage Ongoing_Outbreaks_PHU\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\SourceToStage Ongoing_Outbreaks_PHU\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -3601,7 +2926,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [vaccines_by_age_phu$] where Date &gt; ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [vaccines_by_age_phu$]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -3995,7 +3320,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Cases_Report"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4011,7 +3336,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Compile_COVID19_Case_Details"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4027,7 +3352,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Ongoing_Outbreaks_PHU"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4043,7 +3368,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate PHU"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4088,195 +3413,51 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{B7F290AE-8FD3-468F-89EE-D893731B0DC9}"
-      DTS:From="Package\Get CET Cases_Report"
+      DTS:DTSID="{4A463381-CB41-4121-B45B-9A926AAEB0C4}"
+      DTS:From="Package\Truncate Cases_Report"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Truncate Cases_Report" />
+      DTS:To="Package\SourceToStage Cases_Report" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{3B122984-5C3B-4E75-8917-6693ADBAEA9E}"
-      DTS:From="Package\Truncate Cases_Report"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Get LSET Cases_Report" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{3b862985-f2d4-4158-9e4a-127f91ec45f8}"
+      DTS:DTSID="{248220A8-1A43-4F22-A07F-DCD90D73E5E7}"
       DTS:From="Package\Truncate Compile_COVID19_Case_Details"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1 1"
-      DTS:To="Package\Get LSET Compile_COVID19_Case_Details" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{b9685ae0-792e-4baf-a17c-7b2a8de46bc0}"
-      DTS:From="Package\Truncate Ongoing_Outbreaks_PHU"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1 1 1"
-      DTS:To="Package\Get LSET Ongoing_Outbreaks_PHU" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1 2]"
-      DTS:CreationName=""
-      DTS:DTSID="{287f19e4-7f01-49b8-b1dd-0ba94197ad94}"
-      DTS:From="Package\Truncate Vaccines_By_Age_PHU"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1 2"
-      DTS:To="Package\Get LSET Vaccines_By_Age_PHU" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1 2 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{d9f45d6b-c9d5-48fc-9549-325671677e31}"
-      DTS:From="Package\Truncate PHU"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1 2 1"
-      DTS:To="Package\Get LSET PHU" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1 2 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{dad50c26-b4e5-412c-930a-dbfbd08f6215}"
-      DTS:From="Package\Truncate PHU_Group"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1 2 1 1"
-      DTS:To="Package\Get LSET PHU_Group" />
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SourceToStage Compile_COVID19_Case_Details" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{0C9E00CC-3E67-4B9D-AEEF-028F90393674}"
-      DTS:From="Package\SourceToStage Cases_Report"
+      DTS:DTSID="{E8F49248-3665-4478-95DA-73A6AD7B08FF}"
+      DTS:From="Package\Truncate Ongoing_Outbreaks_PHU"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Set LSET Cases_Report" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{5b7359e4-481b-4ad4-88f9-9f9973a2e2e3}"
-      DTS:From="Package\SourceToStage Compile_COVID19_Case_Details"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2 1"
-      DTS:To="Package\Set LSET Compile_COVID19_Case_Details" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{74af76fb-cc74-4c6b-8b96-8f0cb84aafa7}"
-      DTS:From="Package\SourceToStage Ongoing_Outbreaks_PHU"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2 1 1"
-      DTS:To="Package\Set LSET Ongoing_Outbreaks_PHU" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2 2]"
-      DTS:CreationName=""
-      DTS:DTSID="{ad1b45bf-c8a8-4294-b41e-6fc702224c3a}"
-      DTS:From="Package\SourceToStage Vaccines_By_Age_PHU"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2 2"
-      DTS:To="Package\Set LSET Vaccines_By_Age_PHU" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2 2 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{bf4bfc73-c72c-4a7d-a544-4129e523ed60}"
-      DTS:From="Package\SourceToStage PHU"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2 2 1"
-      DTS:To="Package\Set LSET PHU" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2 2 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{a9549309-10ed-49d7-b56e-c7587737e7a2}"
-      DTS:From="Package\SourceToStage PHU_Group"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2 2 1 1"
-      DTS:To="Package\Set LSET PHU_Group" />
+      DTS:To="Package\SourceToStage Ongoing_Outbreaks_PHU" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{DB30D8DD-FD05-4DB7-8704-33B6B6081331}"
-      DTS:From="Package\Get LSET Cases_Report"
+      DTS:DTSID="{A66E23B4-F06C-458C-998A-9123D5D3A81B}"
+      DTS:From="Package\Truncate Vaccines_By_Age_PHU"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\SourceToStage Cases_Report" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{8812282d-ff14-4442-9fff-fab645a9aadc}"
-      DTS:From="Package\Get LSET Compile_COVID19_Case_Details"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3 1"
-      DTS:To="Package\SourceToStage Compile_COVID19_Case_Details" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{a15f6431-42a7-4bc2-b8d2-e4c9ac111900}"
-      DTS:From="Package\Get LSET Ongoing_Outbreaks_PHU"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3 1 1"
-      DTS:To="Package\SourceToStage Ongoing_Outbreaks_PHU" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3 2]"
-      DTS:CreationName=""
-      DTS:DTSID="{a52350a2-05f9-4ac0-ac53-458573fc8a30}"
-      DTS:From="Package\Get LSET Vaccines_By_Age_PHU"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3 2"
       DTS:To="Package\SourceToStage Vaccines_By_Age_PHU" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3 2 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{d24a1a69-47b2-473b-9ebf-cbb463719d3a}"
-      DTS:From="Package\Get LSET PHU"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3 2 1"
-      DTS:To="Package\SourceToStage PHU" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3 2 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{34bb97da-76fc-4a08-86c9-bacc4c93cc5a}"
-      DTS:From="Package\Get LSET PHU_Group"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3 2 1 1"
-      DTS:To="Package\SourceToStage PHU_Group" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{3a693d71-a1f7-47bb-9224-136ea65a3468}"
-      DTS:From="Package\Get CET Compile_COVID19_Case_Details"
+      DTS:DTSID="{78407A13-C586-41D6-A9AC-8972B80ED2E6}"
+      DTS:From="Package\Truncate PHU"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Truncate Compile_COVID19_Case_Details" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 4 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{2e750484-8b6b-451a-89f6-084fbe6aa107}"
-      DTS:From="Package\Get CET Ongoing_Outbreaks_PHU"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 4 1"
-      DTS:To="Package\Truncate Ongoing_Outbreaks_PHU" />
+      DTS:To="Package\SourceToStage PHU" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{c0bdb12f-6bbe-4de7-a97c-ac29d329272f}"
-      DTS:From="Package\Get CET Vaccines_By_Age_PHU"
+      DTS:DTSID="{D2D28FE1-40CB-44B9-8857-FA820ECA08A7}"
+      DTS:From="Package\Truncate PHU_Group"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
-      DTS:To="Package\Truncate Vaccines_By_Age_PHU" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 5 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{18f4d270-c973-47ce-837d-c3c93d3c35e2}"
-      DTS:From="Package\Get CET PHU"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 5 1"
-      DTS:To="Package\Truncate PHU" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 5 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{e1739269-7bc8-4059-9744-3161b3e28a65}"
-      DTS:From="Package\Get CET PHU_Group"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 5 1 1"
-      DTS:To="Package\Truncate PHU_Group" />
+      DTS:To="Package\SourceToStage PHU_Group" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -4289,79 +3470,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="188,41.6"
-          Id="Package\Get CET Cases_Report"
-          TopLeft="200.555547586194,22.5166666787201" />
-        <NodeLayout
-          Size="277.6,41.6"
-          Id="Package\Get CET Compile_COVID19_Case_Details"
-          TopLeft="538.333311941889,25.1166651289993" />
-        <NodeLayout
-          Size="242.4,41.6"
-          Id="Package\Get CET Ongoing_Outbreaks_PHU"
-          TopLeft="907.933311941889,22.5166666787201" />
-        <NodeLayout
-          Size="143.2,41.6"
-          Id="Package\Get CET PHU"
-          TopLeft="587.125004644195,481.433337159422" />
-        <NodeLayout
-          Size="178.4,41.6"
-          Id="Package\Get CET PHU_Group"
-          TopLeft="917.333324856229,483.850003662507" />
-        <NodeLayout
-          Size="233.6,41.6"
-          Id="Package\Get CET Vaccines_By_Age_PHU"
-          TopLeft="212.33335287041,480.116670315398" />
-        <NodeLayout
-          Size="192.8,41.6"
-          Id="Package\Get LSET Cases_Report"
-          TopLeft="199.744436486121,192.183334647152" />
-        <NodeLayout
-          Size="283.2,41.6"
-          Id="Package\Get LSET Compile_COVID19_Case_Details"
-          TopLeft="537.522200841816,194.783333097431" />
-        <NodeLayout
-          Size="247.2,41.6"
-          Id="Package\Get LSET Ongoing_Outbreaks_PHU"
-          TopLeft="907.122200841816,192.183334647152" />
-        <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Get LSET PHU"
-          TopLeft="586.313893544122,651.100005127853" />
-        <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\Get LSET PHU_Group"
-          TopLeft="916.522213756156,653.516671630938" />
-        <NodeLayout
-          Size="238.4,41.6"
-          Id="Package\Get LSET Vaccines_By_Age_PHU"
-          TopLeft="211.522241770337,649.78333828383" />
-        <NodeLayout
-          Size="192,41.6"
-          Id="Package\Set LSET Cases_Report"
-          TopLeft="209.44443612187,380.450002856652" />
-        <NodeLayout
-          Size="281.6,41.6"
-          Id="Package\Set LSET Compile_COVID19_Case_Details"
-          TopLeft="547.222200477565,383.050001306932" />
-        <NodeLayout
-          Size="246.4,41.6"
-          Id="Package\Set LSET Ongoing_Outbreaks_PHU"
-          TopLeft="916.822200477565,380.450002856653" />
-        <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\Set LSET PHU"
-          TopLeft="596.01389317987,839.366673337352" />
-        <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Set LSET PHU_Group"
-          TopLeft="926.222213391904,841.783339840437" />
-        <NodeLayout
-          Size="237.6,41.6"
-          Id="Package\Set LSET Vaccines_By_Age_PHU"
-          TopLeft="221.222241406086,838.05000649333" />
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="220,41.6"
           Id="Package\SourceToStage Cases_Report"
@@ -4377,53 +3486,53 @@
         <NodeLayout
           Size="175.2,41.6"
           Id="Package\SourceToStage PHU"
-          TopLeft="577.958338341778,747.21111704941" />
+          TopLeft="597.40278201357,549.322226587841" />
         <NodeLayout
           Size="210.4,41.6"
           Id="Package\SourceToStage PHU_Group"
-          TopLeft="908.166658553812,749.627783552494" />
+          TopLeft="934.555546394101,570.516671017935" />
         <NodeLayout
           Size="265.6,41.6"
           Id="Package\SourceToStage Vaccines_By_Age_PHU"
-          TopLeft="203.166686567994,745.027783531834" />
+          TopLeft="175.388909894006,548.583337526189" />
         <NodeLayout
           Size="188.8,41.6"
           Id="Package\Truncate Cases_Report"
-          TopLeft="206.944436221212,107.161111795858" />
+          TopLeft="210.277769422091,160.894445556226" />
         <NodeLayout
           Size="278.4,41.6"
           Id="Package\Truncate Compile_COVID19_Case_Details"
-          TopLeft="544.722200576907,109.761110246137" />
+          TopLeft="545.555533877127,150.49444390319" />
         <NodeLayout
           Size="243.2,41.6"
           Id="Package\Truncate Ongoing_Outbreaks_PHU"
-          TopLeft="914.322200576907,107.161111795858" />
+          TopLeft="915.711089410607,150.494445473574" />
         <NodeLayout
           Size="144,41.6"
           Id="Package\Truncate PHU"
-          TopLeft="593.513893279213,566.07778227656" />
+          TopLeft="615.736114618404,404.300003213088" />
         <NodeLayout
           Size="178.4,41.6"
           Id="Package\Truncate PHU_Group"
-          TopLeft="923.722213491247,568.494448779645" />
+          TopLeft="954.277767832634,403.827780804325" />
         <NodeLayout
           Size="234.4,41.6"
           Id="Package\Truncate Vaccines_By_Age_PHU"
-          TopLeft="218.722241505428,564.761115432536" />
+          TopLeft="185.388909496642,408.76111419276" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="297.949991903703,64.1166666787201">
+          TopLeft="303.033325352934,202.494445556226">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.0444451171382"
+              EndConnector="0,84.9333343389305"
               Start="0,0"
-              End="0,35.5444451171382">
+              End="0,77.4333343389305">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5444451171382" />
+                    End="0,77.4333343389305" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4434,128 +3543,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="298.744436353667,148.761111795858">
+          TopLeft="684.3610897583,192.09444390319">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.4222228512938"
+              EndConnector="0,97.9333344422453"
               Start="0,0"
-              End="0,35.9222228512938">
+              End="0,90.4333344422453">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.9222228512938" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 1]"
-          TopLeft="681.522200709362,151.361110246137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.4222228512941"
-              Start="0,0"
-              End="0,35.9222228512941">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.9222228512941" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 1 1]"
-          TopLeft="1033.32220070936,148.761111795858">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.422222851294"
-              Start="0,0"
-              End="0,35.922222851294">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.922222851294" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 2]"
-          TopLeft="333.322241637882,606.361115432536">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.4222228512937"
-              Start="0,0"
-              End="0,35.9222228512937">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.9222228512937" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 2 1]"
-          TopLeft="663.113893411667,607.67778227656">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.4222228512932"
-              Start="0,0"
-              End="0,35.9222228512932">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.9222228512932" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 2 1 1]"
-          TopLeft="1010.5222136237,610.094448779645">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.422222851293"
-              Start="0,0"
-              End="0,35.922222851293">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.922222851293" />
+                    End="0,90.4333344422453" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4566,128 +3565,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="303.416658702824,329.027779895156">
+          TopLeft="1036.63886752504,192.094445473574">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.422222961496"
+              EndConnector="0,95.3333344215822"
               Start="0,0"
-              End="0,43.922222961496">
+              End="0,87.8333344215822">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.922222961496" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2 1]"
-          TopLeft="685.994423058519,331.627778345435">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.4222229614969"
-              Start="0,0"
-              End="0,43.9222229614969">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.9222229614969" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2 1 1]"
-          TopLeft="1037.99442305852,329.027779895156">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.422222961497"
-              Start="0,0"
-              End="0,43.922222961497">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.922222961497" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2 2]"
-          TopLeft="337.99446398704,786.627783531834">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.422222961496"
-              Start="0,0"
-              End="0,43.922222961496">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.922222961496" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2 2 1]"
-          TopLeft="667.586115760824,788.81111704941">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.5555562879417"
-              Start="0,0"
-              End="0,43.0555562879417">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.0555562879417" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2 2 1 1]"
-          TopLeft="1015.39443597286,791.227783552494">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.5555562879423"
-              Start="0,0"
-              End="0,43.0555562879423">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.0555562879423" />
+                    End="0,87.8333344215822" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4698,128 +3587,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="298.766658884949,233.783334647152">
+          TopLeft="305.388909695324,450.361114192759">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.644445248004"
+              EndConnector="0,98.2222233334298"
               Start="0,0"
-              End="0,46.144445248004">
+              End="0,90.7222233334298">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.144445248004" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3 1]"
-          TopLeft="681.544423240645,236.383333097431">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.6444452480034"
-              Start="0,0"
-              End="0,46.1444452480034">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.1444452480034" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3 1 1]"
-          TopLeft="1033.34442324064,233.783334647152">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.644445248004"
-              Start="0,0"
-              End="0,46.144445248004">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.144445248004" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3 2]"
-          TopLeft="333.344464169165,691.38333828383">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.6444452480042"
-              Start="0,0"
-              End="0,46.1444452480042">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.1444452480042" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3 2 1]"
-          TopLeft="663.13611594295,692.700005127853">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54.5111119215572"
-              Start="0,0"
-              End="0,47.0111119215572">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.0111119215572" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3 2 1 1]"
-          TopLeft="1010.74443615498,695.116671630938">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54.5111119215568"
-              Start="0,0"
-              End="0,47.0111119215568">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.0111119215568" />
+                    End="0,90.7222233334298" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4830,40 +3609,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="680.527756259398,66.7166651289993">
+          TopLeft="686.369448315987,445.900003213088">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.044445117138"
+              EndConnector="0,103.422223374753"
               Start="0,0"
-              End="0,35.544445117138">
+              End="0,95.9222233747529">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.544445117138" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4 1]"
-          TopLeft="1032.5277562594,64.1166666787201">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.044445117138"
-              Start="0,0"
-              End="0,35.544445117138">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.544445117138" />
+                    End="0,95.9222233747529" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4874,62 +3631,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="332.527797187919,521.716670315398">
+          TopLeft="1041.61665711337,445.427780804325">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.0444451171383"
+              EndConnector="0,125.088890213609"
               Start="0,0"
-              End="0,35.5444451171383">
+              End="0,117.588890213609">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5444451171383" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5 1]"
-          TopLeft="662.119448961704,523.033337159422">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.0444451171381"
-              Start="0,0"
-              End="0,35.5444451171381">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5444451171381" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5 1 1]"
-          TopLeft="1009.72776917374,525.450003662507">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.0444451171378"
-              Start="0,0"
-              End="0,35.5444451171378">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5444451171378" />
+                    End="0,117.588890213609" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4945,75 +3658,35 @@
     design-time-name="Package\SourceToStage Cases_Report">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage Cases_Report\OLE DB Destination"
-          TopLeft="360.666652295325,419.200003347397" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\SourceToStage Cases_Report\Conditional Split"
-          TopLeft="369.999985297522,227.933335144785" />
+          TopLeft="368.999985297521,241.533335268763" />
         <NodeLayout
           Size="151.2,41.6"
           Id="Package\SourceToStage Cases_Report\Flat File Source"
           TopLeft="379.9,54.3" />
         <EdgeLayout
           Id="Package\SourceToStage Cases_Report.Paths[Flat File Source Output]"
-          TopLeft="455.5,95.9">
+          TopLeft="455.049992648761,95.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8.70001470247826,132.033335144785"
+              EndConnector="0,145.633335268763"
               Start="0,0"
-              End="-8.70001470247826,124.533335144785">
+              End="0,138.133335268763">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62.0166675723923" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,62.0166675723923"
-                    Point2="0,66.0166675723923"
-                    Point3="-4,66.0166675723923" />
-                  <mssgle:LineSegment
-                    End="-4.70001470247826,66.0166675723923" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4.70001470247826,66.0166675723923"
-                    Point2="-8.70001470247826,66.0166675723923"
-                    Point3="-8.70001470247826,70.0166675723923" />
-                  <mssgle:LineSegment
-                    End="-8.70001470247826,124.533335144785" />
+                    End="0,138.133335268763" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SourceToStage Cases_Report.Paths[CaseReportedDate after LSET]"
-          TopLeft="446.533318796423,269.533335144785">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,149.666668202612"
-              Start="0,0"
-              End="0,142.166668202612">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,142.166668202612" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-66.17123046875,65.254232538806,132.3424609375,11.658203125"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5036,65 +3709,35 @@
     design-time-name="Package\SourceToStage Compile_COVID19_Case_Details">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage Compile_COVID19_Case_Details\OLE DB Destination"
-          TopLeft="357.499985794227,383.933336384561" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\SourceToStage Compile_COVID19_Case_Details\Conditional Split"
-          TopLeft="359.166652394667,213.200001694362" />
+          TopLeft="347.499985794227,234.933336384561" />
         <NodeLayout
           Size="151.2,41.6"
           Id="Package\SourceToStage Compile_COVID19_Case_Details\Flat File Source"
           TopLeft="358.73333330022,50.4333333264457" />
         <EdgeLayout
           Id="Package\SourceToStage Compile_COVID19_Case_Details.Paths[Flat File Source Output]"
-          TopLeft="435.149992847443,92.0333333264457">
+          TopLeft="433.716659547223,92.0333333264457">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,121.166668367916"
+              EndConnector="0,142.900003058115"
               Start="0,0"
-              End="0,113.666668367916">
+              End="0,135.400003058115">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,113.666668367916" />
+                    End="0,135.400003058115" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SourceToStage Compile_COVID19_Case_Details.Paths[date_reported after LSET]"
-          TopLeft="439.533319094447,254.800001694362">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,129.133334690199"
-              Start="0,0"
-              End="0,121.633334690199">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,121.633334690199" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-56.4983203125,54.9875657825995,112.996640625,11.658203125"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5117,77 +3760,35 @@
     design-time-name="Package\SourceToStage Ongoing_Outbreaks_PHU">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage Ongoing_Outbreaks_PHU\OLE DB Destination"
-          TopLeft="357.499985794227,383.933336384561" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\SourceToStage Ongoing_Outbreaks_PHU\Conditional Split"
-          TopLeft="369.999985297522,227.933335144785" />
+          TopLeft="342.499985794227,238.933336384561" />
         <NodeLayout
           Size="151.2,41.6"
           Id="Package\SourceToStage Ongoing_Outbreaks_PHU\Flat File Source"
           TopLeft="358.73333330022,50.4333333264457" />
         <EdgeLayout
           Id="Package\SourceToStage Ongoing_Outbreaks_PHU.Paths[Flat File Source Output]"
-          TopLeft="434.33333330022,92.0333333264457">
+          TopLeft="431.216659547223,92.0333333264457">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12.466651997302,135.900001818339"
+              EndConnector="0,146.900003058115"
               Start="0,0"
-              End="12.466651997302,128.400001818339">
+              End="0,139.400003058115">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.9500009091696" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,63.9500009091696"
-                    Point2="0,67.9500009091696"
-                    Point3="4,67.9500009091696" />
-                  <mssgle:LineSegment
-                    End="8.46665199730199,67.9500009091696" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.46665199730199,67.9500009091696"
-                    Point2="12.466651997302,67.9500009091696"
-                    Point3="12.466651997302,71.9500009091696" />
-                  <mssgle:LineSegment
-                    End="12.466651997302,128.400001818339" />
+                    End="0,139.400003058115" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SourceToStage Ongoing_Outbreaks_PHU.Paths[date after LSET]"
-          TopLeft="444.949985545874,269.533335144785">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,114.400001239776"
-              Start="0,0"
-              End="0,106.900001239776">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,106.900001239776" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-34.9933203125,48.551074838638,69.986640625,9.7978515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5271,13 +3872,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="140,41.6"
-          Id="Package\SourceToStage PHU_Group\Excel Source"
-          TopLeft="387,90" />
-        <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage PHU_Group\OLE DB Destination"
           TopLeft="366.428571428571,317.857142857143" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\SourceToStage PHU_Group\Excel Source"
+          TopLeft="387,90" />
         <EdgeLayout
           Id="Package\SourceToStage PHU_Group.Paths[Excel Source Output]"
           TopLeft="454.514285714286,131.6">
@@ -5332,25 +3933,25 @@
         <NodeLayout
           Size="140,41.6"
           Id="Package\SourceToStage Vaccines_By_Age_PHU\Excel Source"
-          TopLeft="389.999984502793,136.933334421582" />
+          TopLeft="387.999984502793,137.933334421582" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage Vaccines_By_Age_PHU\OLE DB Destination"
           TopLeft="374.16665179862,321.533335888651" />
         <EdgeLayout
           Id="Package\SourceToStage Vaccines_By_Age_PHU.Paths[Excel Source Output]"
-          TopLeft="459.883318150706,178.533334421582">
+          TopLeft="458.883318150706,179.533334421582">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,143.000001467069"
+              EndConnector="0,142.000001467069"
               Start="0,0"
-              End="0,135.500001467069">
+              End="0,134.500001467069">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,135.500001467069" />
+                    End="0,134.500001467069" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
