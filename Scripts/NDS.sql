@@ -195,6 +195,9 @@ alter table ONGOING_OUTBREAKS_PHU add
     constraint FK_ONGOING_OUTBREAKS_PHU_PHU       			foreign key (PHU_id)        		references PHU (PHU_id),
     constraint FK_ONGOING_OUTBREAKS_PHU_OUTBREAK_GROUP     	foreign key (outbreak_group_id)     references OUTBREAK_GROUP (outbreak_group_id)
 
+alter table CITY add 
+    constraint FK_CITY_PHU_GROUP       	foreign key (PHU_group_id)		references PHU_GROUP (PHU_group_id)
+
 --select * from PHU;
 --select * from AGE_GROUP;
 --select * from CASE_ACQUISITION;
