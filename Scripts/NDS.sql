@@ -67,15 +67,6 @@ create table CASE_ACQUISITION
 )
 go
 
-create table PROVINCE
-(
-	province_id int identity(1,1) not null primary key,
-	province_name varchar(100),
-	create_date datetime,
-	update_date datetime
-)
-go
-
 create table AGE_GROUP
 (
 	age_group_id int identity(1,1) not null primary key,
@@ -85,19 +76,31 @@ create table AGE_GROUP
 )
 go
 
-create table CASE_REPORT
+create table COMPILED_CASE_DETAILS
 (
-	case_report_id int identity(1,1) not null primary key,
-	case_report_nk int,
-	reported_date datetime,
+	compiled_case_details_id int identity(1,1) not null primary key,
+	compiled_case_details_nk int,
+	date_reported datetime,
 	PHU_id int,
 	age_group_id int,
 	gender_id int,
 	case_acquisition_id int,
-	province_id int,
 	case_status varchar(50),
+	create_date datetime,
+	update_date datetime
+)
+go
+
+create table CASE_REPORT
+(
+	case_report_id int identity(1,1) not null primary key,
+	case_reported_date datetime,
+	PHU_id int,
+	age_group_id int,
+	gender_id int,
+	case_acquisition_id int,
 	outcome varchar(50),
-	speimen_date datetime,
+	specimen_date datetime,
 	test_reported_date datetime,
 	accurate_episode_date datetime,
 	outbreak_related varchar(50),
@@ -177,13 +180,20 @@ create table OUTBREAK_GROUP
 )
 go
 
+
 -- Add foreign keys
 alter table CASE_REPORT add 
     constraint FK_CASE_REPORT_PHU       			foreign key (PHU_id)        		references PHU (PHU_id),
     constraint FK_CASE_REPORT_AGE_GROUP     		foreign key (age_group_id)      	references AGE_GROUP (age_group_id),
     constraint FK_CASE_REPORT_GENDER       			foreign key (gender_id)        		references GENDER (gender_id),
-    constraint FK_CASE_REPORT_CASE_ACQUISITION      foreign key (case_acquisition_id)	references CASE_ACQUISITION (case_acquisition_id),
-    constraint FK_CASE_REPORT_PROVINCE      		foreign key (province_id)        	references PROVINCE (province_id)
+    constraint FK_CASE_REPORT_CASE_ACQUISITION      foreign key (case_acquisition_id)	references CASE_ACQUISITION (case_acquisition_id)
+   
+alter table COMPILED_CASE_DETAILS add 
+    constraint FK_COMPILED_CASE_DETAILS_PHU       			foreign key (PHU_id)        		references PHU (PHU_id),
+    constraint FK_COMPILED_CASE_DETAILS_GROUP     		foreign key (age_group_id)      	references AGE_GROUP (age_group_id),
+    constraint FK_COMPILED_CASE_DETAILS_GENDER       			foreign key (gender_id)        		references GENDER (gender_id),
+    constraint FK_COMPILED_CASE_DETAILS_ACQUISITION      foreign key (case_acquisition_id)	references CASE_ACQUISITION (case_acquisition_id)
+   
 
 alter table PHU add 
     constraint FK_PHU_CITY       	foreign key (city_id)		references CITY (city_id)
@@ -202,13 +212,13 @@ alter table CITY add
 select * from PHU P join CITY c on (p.city_id = c.city_id);
 select * from AGE_GROUP;
 select * from CASE_ACQUISITION;
+select * from COMPILED_CASE_DETAILS;
 select * from CASE_REPORT;
 select * from CITY;
 select * from GENDER;
 select * from ONGOING_OUTBREAKS_PHU;
 select * from PHU_GROUP;
 select * from VACCINE_BY_AGE;
-select * from PROVINCE;
 select * from OUTBREAK_GROUP;
 
 insert into GENDER values
@@ -224,12 +234,6 @@ insert into CASE_ACQUISITION values
 ('MISSING INFORMATION', getdate(), getdate()),
 ('UNSPECIFIED EPI LINK', getdate(), getdate());
 
-insert into PROVINCE values
-('Alberta', getdate(), getdate()),
-('British Columbia', getdate(), getdate()),
-('Ontario', getdate(), getdate()),
-('Quebec', getdate(), getdate());
-
 insert into AGE_GROUP values
 ('5-11', getdate(), getdate()),
 ('12-17', getdate(), getdate()),
@@ -242,6 +246,7 @@ insert into AGE_GROUP values
 ('60-69', getdate(), getdate()),
 ('70-79', getdate(), getdate()),
 ('80+', getdate(), getdate()),
+('90+', getdate(), getdate()),
 ('Adults_18plus', getdate(), getdate()),
 ('Ontario_12plus', getdate(), getdate()),
 ('Ontario_5plus', getdate(), getdate()),
