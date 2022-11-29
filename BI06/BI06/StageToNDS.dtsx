@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{90AFE515-4AA9-4783-855D-CD24E1BEDF58}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{30F7C863-8558-4479-A009-18C58DBB009B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -47,7 +47,6 @@
       DTS:refId="Package\CITY"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{BCEE0C13-72CB-4BED-A6CF-7EB582ED4DAF}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -816,7 +815,6 @@ where [refTable].[PHU_group_name] = ?</property>
       DTS:refId="Package\PHU"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{5BC6E29B-3318-4B4E-B230-6CE690946713}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2089,7 +2087,6 @@ WHERE
       DTS:refId="Package\PHU_GROUP"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{42E37198-9F2A-4C5A-AFDE-3984C1C61D75}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -3037,7 +3034,7 @@ where [refTable].[PHU_group_name] = ?</property>
                       cachedDataType="i4"
                       cachedName="age_group_id_nds"
                       externalMetadataColumnId="Package\Vaccine by age\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
-                      lineageId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Outputs[Derived Column Output].Columns[age_group_id_nds]" />
+                      lineageId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Outputs[Derived Column Output].Columns[age_group_id_nds]" />
                     <inputColumn
                       refId="Package\Vaccine by age\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[create_date]"
                       cachedDataType="dbTimeStamp"
@@ -3357,15 +3354,15 @@ where [refTable].[PHU_group_name] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported)"
+              refId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported)"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Them cot age_group_id (value 15 tuong ung voi Not reported)"
+              name="Them cot age_group_id (value 16 tuong ung voi Not reported)"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Inputs[Derived Column Input]"
+                  refId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -3373,18 +3370,18 @@ where [refTable].[PHU_group_name] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Outputs[Derived Column Output]"
+                  refId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Outputs[Derived Column Output].Columns[age_group_id_nds]"
+                      refId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Outputs[Derived Column Output].Columns[age_group_id_nds]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Outputs[Derived Column Output].Columns[age_group_id_nds]"
+                      lineageId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Outputs[Derived Column Output].Columns[age_group_id_nds]"
                       name="age_group_id_nds"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3392,36 +3389,36 @@ where [refTable].[PHU_group_name] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">15</property>
+                          name="Expression">16</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">15</property>
+                          name="FriendlyExpression">16</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Outputs[Derived Column Error Output]"
+                  refId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -4778,7 +4775,7 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
                       refId="Package\Vaccine by age\Tim xem da ton tai hay chua 1.Inputs[Lookup Input].Columns[age_group_id_nds]"
                       cachedDataType="i4"
                       cachedName="age_group_id_nds"
-                      lineageId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Outputs[Derived Column Output].Columns[age_group_id_nds]">
+                      lineageId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Outputs[Derived Column Output].Columns[age_group_id_nds]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -4931,7 +4928,7 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
               refId="Package\Vaccine by age.Paths[Derived Column Output2]"
               endId="Package\Vaccine by age\Tim xem da ton tai hay chua 1.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Outputs[Derived Column Output]" />
+              startId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Outputs[Derived Column Output]" />
             <path
               refId="Package\Vaccine by age.Paths[Fuzzy Lookup Output]"
               endId="Package\Vaccine by age\Tim xem da ton tai hay chua.Inputs[Lookup Input]"
@@ -4954,7 +4951,7 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
               startId="Package\Vaccine by age\Tim xem da ton tai hay chua 1.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Vaccine by age.Paths[Missing]"
-              endId="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported).Inputs[Derived Column Input]"
+              endId="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported).Inputs[Derived Column Input]"
               name="Missing"
               startId="Package\Vaccine by age\Conditional Split.Outputs[Missing]" />
             <path
@@ -5015,10 +5012,6 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
           Id="Package\CITY"
           TopLeft="234.285718275576,146.058825577832" />
         <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Vaccine by age"
-          TopLeft="215.714289387878,279.117650973344" />
-        <NodeLayout
           Size="98.4,41.6"
           Id="Package\PHU"
           TopLeft="230.000003916877,211.82353238251" />
@@ -5026,6 +5019,10 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
           Size="138.4,41.6"
           Id="Package\PHU_GROUP"
           TopLeft="210.000003576279,72.6470598423774" />
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Vaccine by age"
+          TopLeft="215.714289387878,279.117650973344" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="281.942860925928,114.247059842377">
@@ -5287,338 +5284,6 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         <Name>OverwriteParamsSQLProp</Name>
         <Value
           type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Vaccine by age">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="133.6,41.6"
-          Id="Package\Vaccine by age\Tim PHU_id"
-          TopLeft="225.714289558177,130.658823936951" />
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Vaccine by age\OLE DB Source"
-          TopLeft="214.285717934978,55.058824301591" />
-        <NodeLayout
-          Size="215.2,41.6"
-          Id="Package\Vaccine by age\Tim age_group_id tuong ung"
-          TopLeft="193.571431867931,283.705886331809" />
-        <NodeLayout
-          Size="213.6,41.6"
-          Id="Package\Vaccine by age\Tim xem da ton tai hay chua"
-          TopLeft="202.142860585329,354.058828494953" />
-        <EdgeLayout
-          Id="Package\Vaccine by age.Paths[Fuzzy Lookup Output]"
-          TopLeft="305.05714622663,325.305886331809">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.7529421631439"
-              Start="0,0"
-              End="0,21.2529421631439">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.2529421631439" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,2.62647108157196,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Vaccine by age\OLE DB Destination"
-          TopLeft="222.142860925927,513.682359236582" />
-        <NodeLayout
-          Size="232,41.6"
-          Id="Package\Vaccine by age\Them NgayTao va NgayCapNhat"
-          TopLeft="187.857146056331,437.105886149489" />
-        <EdgeLayout
-          Id="Package\Vaccine by age.Paths[Lookup No Match Output]"
-          TopLeft="306.40000332083,395.658828494953">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.447057654536"
-              Start="0,0"
-              End="0,33.947057654536">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.947057654536" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,11.168841327268,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Vaccine by age.Paths[Derived Column Output]"
-          TopLeft="305.600003491129,478.705886149489">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.9764730870929"
-              Start="0,0"
-              End="0,27.4764730870929">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.4764730870929" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Vaccine by age\Conditional Split"
-          TopLeft="220.000003746578,194.611766829375" />
-        <EdgeLayout
-          Id="Package\Vaccine by age.Paths[OLE DB Source Output]"
-          TopLeft="290.800003746577,96.658824301591">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.9999996353598"
-              Start="0,0"
-              End="0,26.4999996353598">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.4999996353598" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Vaccine by age.Paths[Lookup Match Output]"
-          TopLeft="225.714289558177,151.458823936951">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-5.71428581159904,63.9529428924244"
-              Start="0,0"
-              End="-13.214285811599,63.9529428924244">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-24.214285811599,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-24.214285811599,0"
-                    Point2="-28.214285811599,0"
-                    Point3="-28.214285811599,4" />
-                  <mssgle:LineSegment
-                    End="-28.214285811599,59.9529428924244" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-28.214285811599,59.9529428924244"
-                    Point2="-28.214285811599,63.9529428924244"
-                    Point3="-24.214285811599,63.9529428924244" />
-                  <mssgle:LineSegment
-                    End="-13.214285811599,63.9529428924244" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-76.4056725303491,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Vaccine by age.Paths[Other]"
-          TopLeft="299.185717807254,236.211766829375">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.4941195024339"
-              Start="0,0"
-              End="0,39.9941195024339">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.9941195024339" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-21.90734375,11.997059751217,43.8146875,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="373.6,41.6"
-          Id="Package\Vaccine by age\Them cot age_group_id (value 15 tuong ung voi Not reported)"
-          TopLeft="447.142864757655,191.317648238542" />
-        <EdgeLayout
-          Id="Package\Vaccine by age.Paths[Missing]"
-          TopLeft="374.400003746578,213.764707533959">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="72.7428610110774,0"
-              Start="0,0"
-              End="65.2428610110774,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="65.2428610110774,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="7.29478988053871,5,50.65328125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="213.6,41.6"
-          Id="Package\Vaccine by age\Tim xem da ton tai hay chua 1"
-          TopLeft="522.142866034897,283.705886331809" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Vaccine by age\OLE DB Destination 1"
-          TopLeft="542.142866375495,443.329417073438" />
-        <NodeLayout
-          Size="232,41.6"
-          Id="Package\Vaccine by age\Them NgayTao va NgayCapNhat 1"
-          TopLeft="507.857151505899,366.752943986345" />
-        <EdgeLayout
-          Id="Package\Vaccine by age.Paths[Lookup No Match Output1]"
-          TopLeft="626.400008770398,325.305886331809">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.447057654536"
-              Start="0,0"
-              End="0,33.947057654536">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.947057654536" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,11.168841327268,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Vaccine by age.Paths[Derived Column Output1]"
-          TopLeft="625.600008940697,408.352943986345">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.9764730870929"
-              Start="0,0"
-              End="0,27.4764730870929">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.4764730870929" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Vaccine by age.Paths[Derived Column Output2]"
-          TopLeft="631.442865396276,232.917648238542">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.7882380932674"
-              Start="0,0"
-              End="0,43.2882380932674">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.2882380932674" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Vaccine by age\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Vaccine by age\Tim PHU_id">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6069,8 +5734,304 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Vaccine by age">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Vaccine by age\OLE DB Destination 1"
+          TopLeft="542.142866375495,443.329417073438" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\Vaccine by age\Them NgayTao va NgayCapNhat"
+          TopLeft="187.857146056331,437.105886149489" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Vaccine by age\OLE DB Destination"
+          TopLeft="222.142860925927,513.682359236582" />
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\Vaccine by age\Tim xem da ton tai hay chua"
+          TopLeft="202.142860585329,354.058828494953" />
+        <NodeLayout
+          Size="250.4,41.6"
+          Id="Package\Vaccine by age\Them NgayTao va NgayCapNhat 1"
+          TopLeft="507.857151505899,366.752943986345" />
+        <NodeLayout
+          Size="373.6,41.6"
+          Id="Package\Vaccine by age\Them cot age_group_id (value 16 tuong ung voi Not reported)"
+          TopLeft="447.142864757655,191.317648238542" />
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\Vaccine by age\Tim age_group_id tuong ung"
+          TopLeft="193.571431867931,283.705886331809" />
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\Vaccine by age\Tim PHU_id"
+          TopLeft="225.714289558177,130.658823936951" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Vaccine by age\Conditional Split"
+          TopLeft="220.000003746578,194.611766829375" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Vaccine by age\OLE DB Source"
+          TopLeft="214.285717934978,55.058824301591" />
+        <NodeLayout
+          Size="229.6,41.6"
+          Id="Package\Vaccine by age\Tim xem da ton tai hay chua 1"
+          TopLeft="522.142866034897,283.705886331809" />
+        <EdgeLayout
+          Id="Package\Vaccine by age.Paths[Missing]"
+          TopLeft="374.400003746578,213.764707533959">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72.742861011077,0"
+              Start="0,0"
+              End="65.242861011077,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="65.242861011077,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="7.29478988053848,5,50.65328125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age.Paths[Lookup No Match Output1]"
+          TopLeft="635.000008770398,325.305886331809">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.447057654536"
+              Start="0,0"
+              End="0,33.947057654536">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.947057654536" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,11.168841327268,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age.Paths[Lookup No Match Output]"
+          TopLeft="306.40000332083,395.658828494953">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.447057654536"
+              Start="0,0"
+              End="0,33.947057654536">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.947057654536" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,11.168841327268,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age.Paths[Lookup Match Output]"
+          TopLeft="225.714289558177,151.458823936951">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-5.71428581159904,63.9529428924244"
+              Start="0,0"
+              End="-13.214285811599,63.9529428924244">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-24.214285811599,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.214285811599,0"
+                    Point2="-28.214285811599,0"
+                    Point3="-28.214285811599,4" />
+                  <mssgle:LineSegment
+                    End="-28.214285811599,59.9529428924244" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.214285811599,59.9529428924244"
+                    Point2="-28.214285811599,63.9529428924244"
+                    Point3="-24.214285811599,63.9529428924244" />
+                  <mssgle:LineSegment
+                    End="-13.214285811599,63.9529428924244" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-76.4056725303491,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age.Paths[Fuzzy Lookup Output]"
+          TopLeft="305.05714622663,325.305886331809">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.7529421631439"
+              Start="0,0"
+              End="0,21.2529421631439">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2529421631439" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,2.62647108157196,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age.Paths[Derived Column Output2]"
+          TopLeft="635.442865396276,232.917648238542">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.788238093267"
+              Start="0,0"
+              End="0,43.288238093267">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.288238093267" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age.Paths[Derived Column Output1]"
+          TopLeft="634.600008940697,408.352943986345">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.976473087093"
+              Start="0,0"
+              End="0,27.476473087093">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.476473087093" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age.Paths[Derived Column Output]"
+          TopLeft="305.600003491129,478.705886149489">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.9764730870929"
+              Start="0,0"
+              End="0,27.4764730870929">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.4764730870929" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age.Paths[Other]"
+          TopLeft="299.185717807254,236.211766829375">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.4941195024339"
+              Start="0,0"
+              End="0,39.9941195024339">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.9941195024339" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.90734375,11.997059751217,43.8146875,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age.Paths[OLE DB Source Output]"
+          TopLeft="290.800003746577,96.658824301591">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.9999996353598"
+              Start="0,0"
+              End="0,26.4999996353598">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4999996353598" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Vaccine by age\Tim age_group_id tuong ung">
+    design-time-name="Package\Vaccine by age\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6088,7 +6049,7 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6098,7 +6059,7 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6106,7 +6067,43 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Vaccine by age\OLE DB Destination">
+    design-time-name="Package\Vaccine by age\Tim age_group_id tuong ung">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Vaccine by age\Tim PHU_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Vaccine by age\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

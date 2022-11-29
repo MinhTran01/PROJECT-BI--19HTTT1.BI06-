@@ -242,6 +242,7 @@ insert into AGE_GROUP values
 ('60-69', getdate(), getdate()),
 ('70-79', getdate(), getdate()),
 ('80+', getdate(), getdate()),
+('90+', getdate(), getdate()),
 ('Adults_18plus', getdate(), getdate()),
 ('Ontario_12plus', getdate(), getdate()),
 ('Ontario_5plus', getdate(), getdate()),
