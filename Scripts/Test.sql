@@ -30,3 +30,5 @@ alter table PHU
 truncate table city;
 alter table PHU add 
     constraint FK_PHU_CITY       	foreign key (city_id)		references CITY (city_id);
+
+truncate table [VACCINE_BY_AGE];

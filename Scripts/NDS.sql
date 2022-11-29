@@ -70,7 +70,7 @@ go
 create table AGE_GROUP
 (
 	age_group_id int identity(1,1) not null primary key,
-	age_group_name varchar(100),
+	age_group_name varchar(50),
 	create_date datetime,
 	update_date datetime
 )
