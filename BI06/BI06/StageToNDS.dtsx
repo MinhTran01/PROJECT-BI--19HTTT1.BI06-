@@ -1,0 +1,3336 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/28/2022 9:33:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-NKULHIL"
+  DTS:CreatorName="DESKTOP-NKULHIL\MiDu"
+  DTS:DTSID="{E599CB66-E7E8-44B2-AF9B-4045D07F402D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{CD468910-FA54-4421-B893-BF83BF3F711F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9E921EC2-840A-45D5-ACE1-E903B2A0E06F}"
+      DTS:ObjectName="NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{9E921EC2-840A-45D5-ACE1-E903B2A0E06F}DESKTOP-NKULHIL\SQLEXPRESS.BI06_NDS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4D352285-6BB8-480D-A658-FE002409A03E}"
+      DTS:ObjectName="STAGE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{4D352285-6BB8-480D-A658-FE002409A03E}DESKTOP-NKULHIL\SQLEXPRESS.BI06_STAGE;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CITY"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BCEE0C13-72CB-4BED-A6CF-7EB582ED4DAF}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CITY"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\CITY\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PHU_Group]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select id, Phu_Group, Phu_City
+From Phu_Group</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CITY\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[STAGE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_Group]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phu_Group]"
+                      length="100"
+                      lineageId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_Group]"
+                      name="Phu_Group"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phu_City]"
+                      length="100"
+                      lineageId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_City]"
+                      name="Phu_City"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phu_Group]"
+                      dataType="wstr"
+                      length="100"
+                      name="Phu_Group" />
+                    <externalMetadataColumn
+                      refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phu_City]"
+                      dataType="wstr"
+                      length="100"
+                      name="Phu_City" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phu_Group]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phu_Group]"
+                      name="Phu_Group" />
+                    <outputColumn
+                      refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phu_City]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phu_City]"
+                      name="Phu_City" />
+                    <outputColumn
+                      refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CITY\Them city moi vao"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Them city moi vao"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CITY]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CITY\Them city moi vao.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].Columns[create_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_date"
+                      externalMetadataColumnId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].ExternalColumns[create_date]"
+                      lineageId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[create_date]" />
+                    <inputColumn
+                      refId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].Columns[update_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="update_date"
+                      externalMetadataColumnId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].ExternalColumns[update_date]"
+                      lineageId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[update_date]" />
+                    <inputColumn
+                      refId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].Columns[Phu_City]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Phu_City"
+                      externalMetadataColumnId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].ExternalColumns[city_name]"
+                      lineageId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_City]" />
+                    <inputColumn
+                      refId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].Columns[PHU_group_id_nds]"
+                      cachedDataType="i4"
+                      cachedName="PHU_group_id_nds"
+                      externalMetadataColumnId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].ExternalColumns[PHU_group_id]"
+                      lineageId="Package\CITY\Tim PHU_group_id.Outputs[Lookup Match Output].Columns[PHU_group_id_nds]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].ExternalColumns[city_id]"
+                      dataType="i4"
+                      name="city_id" />
+                    <externalMetadataColumn
+                      refId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].ExternalColumns[city_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="city_name" />
+                    <externalMetadataColumn
+                      refId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].ExternalColumns[PHU_group_id]"
+                      dataType="i4"
+                      name="PHU_group_id" />
+                    <externalMetadataColumn
+                      refId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].ExternalColumns[create_date]"
+                      dataType="dbTimeStamp"
+                      name="create_date" />
+                    <externalMetadataColumn
+                      refId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input].ExternalColumns[update_date]"
+                      dataType="dbTimeStamp"
+                      name="update_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CITY\Them city moi vao.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CITY\Them city moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CITY\Them city moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CITY\Them city moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CITY\Them city moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CITY\Them NgayTao va NgayCapNhat"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Them NgayTao va NgayCapNhat"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\CITY\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\CITY\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[create_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[create_date]"
+                      name="create_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[update_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[update_date]"
+                      name="update_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\CITY\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CITY\Tim city_id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Tim city_id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select city_id, city_name, phu_group_id
+From City</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (Select city_id, city_name, phu_group_id
+From City) [refTable]
+where [refTable].[city_name] = ? and [refTable].[phu_group_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="city_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="city_name" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="phu_group_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_City]};#{Package\CITY\Tim PHU_group_id.Outputs[Lookup Match Output].Columns[PHU_group_id_nds]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CITY\Tim city_id.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CITY\Tim city_id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CITY\Tim city_id.Inputs[Lookup Input].Columns[Phu_City]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Phu_City"
+                      lineageId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_City]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">city_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CITY\Tim city_id.Inputs[Lookup Input].Columns[PHU_group_id_nds]"
+                      cachedDataType="i4"
+                      cachedName="PHU_group_id_nds"
+                      lineageId="Package\CITY\Tim PHU_group_id.Outputs[Lookup Match Output].Columns[PHU_group_id_nds]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">phu_group_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CITY\Tim city_id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\CITY\Tim city_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CITY\Tim city_id.Outputs[Lookup Match Output].Columns[city_id_nds]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\CITY\Tim city_id.Outputs[Lookup Match Output].Columns[city_id_nds]"
+                      name="city_id_nds"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">city_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CITY\Tim city_id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\CITY\Tim city_id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CITY\Tim city_id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\CITY\Tim city_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CITY\Tim city_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CITY\Tim city_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CITY\Tim city_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CITY\Tim city_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CITY\Tim PHU_group_id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Tim PHU_group_id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[PHU_GROUP]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[PHU_GROUP]) [refTable]
+where [refTable].[PHU_group_name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PHU_group_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PHU_group_name" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="create_date" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="update_date" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_Group]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CITY\Tim PHU_group_id.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CITY\Tim PHU_group_id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CITY\Tim PHU_group_id.Inputs[Lookup Input].Columns[Phu_Group]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Phu_Group"
+                      lineageId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_Group]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PHU_group_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CITY\Tim PHU_group_id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\CITY\Tim PHU_group_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CITY\Tim PHU_group_id.Outputs[Lookup Match Output].Columns[PHU_group_id_nds]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\CITY\Tim PHU_group_id.Outputs[Lookup Match Output].Columns[PHU_group_id_nds]"
+                      name="PHU_group_id_nds"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">PHU_group_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CITY\Tim PHU_group_id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\CITY\Tim PHU_group_id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CITY\Tim PHU_group_id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\CITY\Tim PHU_group_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CITY\Tim PHU_group_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CITY\Tim PHU_group_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CITY\Tim PHU_group_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CITY\Tim PHU_group_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\CITY.Paths[Derived Column Output]"
+              endId="Package\CITY\Them city moi vao.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\CITY\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\CITY.Paths[Lookup Match Output]"
+              endId="Package\CITY\Tim city_id.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\CITY\Tim PHU_group_id.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\CITY.Paths[Lookup No Match Output]"
+              endId="Package\CITY\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\CITY\Tim city_id.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\CITY.Paths[OLE DB Source Output]"
+              endId="Package\CITY\Tim PHU_group_id.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\CITY\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PHU"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5BC6E29B-3318-4B4E-B230-6CE690946713}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PHU"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\PHU\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PHU]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PHU\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[STAGE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PHU_ID]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_ID]"
+                      name="PHU_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU]"
+                      length="100"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU]"
+                      name="reporting_PHU"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_Address]"
+                      length="250"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Address]"
+                      name="reporting_PHU_Address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_City]"
+                      length="100"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_City]"
+                      name="reporting_PHU_City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Postal_Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_Postal_Code]"
+                      length="50"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Postal_Code]"
+                      name="reporting_PHU_Postal_Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Website]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_Website]"
+                      length="250"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Website]"
+                      name="reporting_PHU_Website"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Latitude]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_Latitude]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Latitude]"
+                      name="reporting_PHU_Latitude"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Longitude]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_Longitude]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Longitude]"
+                      name="reporting_PHU_Longitude"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PHU_ID]"
+                      dataType="i4"
+                      name="PHU_ID" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU]"
+                      dataType="wstr"
+                      length="100"
+                      name="reporting_PHU" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_Address]"
+                      dataType="wstr"
+                      length="250"
+                      name="reporting_PHU_Address" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_City]"
+                      dataType="wstr"
+                      length="100"
+                      name="reporting_PHU_City" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_Postal_Code]"
+                      dataType="wstr"
+                      length="50"
+                      name="reporting_PHU_Postal_Code" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_Website]"
+                      dataType="wstr"
+                      length="250"
+                      name="reporting_PHU_Website" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_Latitude]"
+                      dataType="r8"
+                      name="reporting_PHU_Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reporting_PHU_Longitude]"
+                      dataType="r8"
+                      name="reporting_PHU_Longitude" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PHU_ID]"
+                      dataType="i4"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PHU_ID]"
+                      name="PHU_ID" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU]"
+                      name="reporting_PHU" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_Address]"
+                      dataType="wstr"
+                      length="250"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_Address]"
+                      name="reporting_PHU_Address" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_City]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_City]"
+                      name="reporting_PHU_City" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_Postal_Code]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_Postal_Code]"
+                      name="reporting_PHU_Postal_Code" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_Website]"
+                      dataType="wstr"
+                      length="250"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_Website]"
+                      name="reporting_PHU_Website" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_Latitude]"
+                      dataType="r8"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_Latitude]"
+                      name="reporting_PHU_Latitude" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_Longitude]"
+                      dataType="r8"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reporting_PHU_Longitude]"
+                      name="reporting_PHU_Longitude" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PHU\Them NgayTao"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Them NgayTao"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\PHU\Them NgayTao.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PHU\Them NgayTao.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\PHU\Them NgayTao.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\Them NgayTao.Outputs[Derived Column Output].Columns[update_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PHU\Them NgayTao.Outputs[Derived Column Output].Columns[update_date]"
+                      name="update_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PHU\Them NgayTao.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\PHU\Them NgayTao.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\Them NgayTao.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Them NgayTao.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU\Them NgayTao.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Them NgayTao.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PHU\Them NgayTao va NgayCapNhat"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Them NgayTao va NgayCapNhat"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\PHU\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\PHU\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[create_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[create_date]"
+                      name="create_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[update_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[update_date]"
+                      name="update_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\PHU\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PHU\Them PHU moi vao"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Them PHU moi vao"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PHU]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PHU\Them PHU moi vao.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].Columns[create_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_date"
+                      externalMetadataColumnId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[create_date]"
+                      lineageId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[create_date]" />
+                    <inputColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].Columns[update_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="update_date"
+                      externalMetadataColumnId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[update_date]"
+                      lineageId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[update_date]" />
+                    <inputColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].Columns[city_id_nds]"
+                      cachedDataType="i4"
+                      cachedName="city_id_nds"
+                      externalMetadataColumnId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[city_id]"
+                      lineageId="Package\PHU\Tim city_id.Outputs[Lookup Match Output].Columns[city_id_nds]" />
+                    <inputColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].Columns[PHU_ID]"
+                      cachedDataType="i4"
+                      cachedName="PHU_ID"
+                      externalMetadataColumnId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[PHU_nk]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_ID]" />
+                    <inputColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].Columns[reporting_PHU]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="reporting_PHU"
+                      externalMetadataColumnId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU]" />
+                    <inputColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].Columns[reporting_PHU_Address]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="reporting_PHU_Address"
+                      externalMetadataColumnId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU_Address]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Address]" />
+                    <inputColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].Columns[reporting_PHU_Website]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="reporting_PHU_Website"
+                      externalMetadataColumnId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU_Website]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Website]" />
+                    <inputColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].Columns[reporting_PHU_Latitude]"
+                      cachedDataType="r8"
+                      cachedName="reporting_PHU_Latitude"
+                      externalMetadataColumnId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU_Latitude]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Latitude]" />
+                    <inputColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].Columns[reporting_PHU_Longitude]"
+                      cachedDataType="r8"
+                      cachedName="reporting_PHU_Longitude"
+                      externalMetadataColumnId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU_Longitude]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Longitude]" />
+                    <inputColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].Columns[reporting_PHU_Postal_Code]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="reporting_PHU_Postal_Code"
+                      externalMetadataColumnId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU_Postal_Code]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Postal_Code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[city_id]"
+                      dataType="i4"
+                      name="city_id" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[create_date]"
+                      dataType="dbTimeStamp"
+                      name="create_date" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[update_date]"
+                      dataType="dbTimeStamp"
+                      name="update_date" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[PHU_id]"
+                      dataType="i4"
+                      name="PHU_id" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[PHU_nk]"
+                      dataType="i4"
+                      name="PHU_nk" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU]"
+                      dataType="wstr"
+                      length="100"
+                      name="reporting_PHU" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU_Address]"
+                      dataType="wstr"
+                      length="250"
+                      name="reporting_PHU_Address" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU_Website]"
+                      dataType="wstr"
+                      length="250"
+                      name="reporting_PHU_Website" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU_Latitude]"
+                      dataType="r8"
+                      name="reporting_PHU_Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU_Longitude]"
+                      dataType="r8"
+                      name="reporting_PHU_Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU_Postal_Code]"
+                      dataType="wstr"
+                      length="50"
+                      name="reporting_PHU_Postal_Code" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PHU\Them PHU moi vao.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\Them PHU moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Them PHU moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU\Them PHU moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Them PHU moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PHU\Tim city_id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Tim city_id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select city_id, city_name
+
+From City</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (Select city_id, city_name
+
+From City) [refTable]
+where [refTable].[city_name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="city_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="city_name" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_City]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PHU\Tim city_id.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PHU\Tim city_id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PHU\Tim city_id.Inputs[Lookup Input].Columns[reporting_PHU_City]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="reporting_PHU_City"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_City]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">city_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PHU\Tim city_id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\PHU\Tim city_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\Tim city_id.Outputs[Lookup Match Output].Columns[city_id_nds]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\PHU\Tim city_id.Outputs[Lookup Match Output].Columns[city_id_nds]"
+                      name="city_id_nds"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">city_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PHU\Tim city_id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\PHU\Tim city_id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PHU\Tim city_id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\PHU\Tim city_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\Tim city_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Tim city_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU\Tim city_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Tim city_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PHU\Tim PHU_id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Tim PHU_id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select PHU_id, reporting_PHU
+from PHU</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (Select PHU_id, reporting_PHU
+from PHU) [refTable]
+where [refTable].[reporting_PHU] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PHU_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="reporting_PHU" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PHU\Tim PHU_id.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PHU\Tim PHU_id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PHU\Tim PHU_id.Inputs[Lookup Input].Columns[reporting_PHU]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="reporting_PHU"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">reporting_PHU</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PHU\Tim PHU_id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\PHU\Tim PHU_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\Tim PHU_id.Outputs[Lookup Match Output].Columns[PHU_id_nds]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\PHU\Tim PHU_id.Outputs[Lookup Match Output].Columns[PHU_id_nds]"
+                      name="PHU_id_nds"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">PHU_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PHU\Tim PHU_id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\PHU\Tim PHU_id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PHU\Tim PHU_id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\PHU\Tim PHU_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\Tim PHU_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Tim PHU_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU\Tim PHU_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Tim PHU_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PHU\Update PHU da ton tai"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update PHU da ton tai"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+Update PHU
+SET 
+    PHU_nk = ?,
+    reporting_PHU = ?,
+    reporting_PHU_Address = ?,
+    reporting_PHU_Website = ?,
+    reporting_PHU_Latitude = ?,
+    reporting_PHU_Longitude = ?,
+    reporting_PHU_Postal_Code = ?,
+    city_id = ?,
+    update_date = ?
+WHERE
+    PHU_id = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PHU\Update PHU da ton tai.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].Columns[PHU_ID]"
+                      cachedDataType="i4"
+                      cachedName="PHU_ID"
+                      externalMetadataColumnId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_ID]" />
+                    <inputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].Columns[reporting_PHU]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="reporting_PHU"
+                      externalMetadataColumnId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU]" />
+                    <inputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].Columns[reporting_PHU_Address]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="reporting_PHU_Address"
+                      externalMetadataColumnId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Address]" />
+                    <inputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].Columns[reporting_PHU_Website]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="reporting_PHU_Website"
+                      externalMetadataColumnId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Website]" />
+                    <inputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].Columns[reporting_PHU_Latitude]"
+                      cachedDataType="r8"
+                      cachedName="reporting_PHU_Latitude"
+                      externalMetadataColumnId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Latitude]" />
+                    <inputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].Columns[reporting_PHU_Longitude]"
+                      cachedDataType="r8"
+                      cachedName="reporting_PHU_Longitude"
+                      externalMetadataColumnId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Longitude]" />
+                    <inputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].Columns[reporting_PHU_Postal_Code]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="reporting_PHU_Postal_Code"
+                      externalMetadataColumnId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output].Columns[reporting_PHU_Postal_Code]" />
+                    <inputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].Columns[city_id_nds]"
+                      cachedDataType="i4"
+                      cachedName="city_id_nds"
+                      externalMetadataColumnId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\PHU\Tim city_id.Outputs[Lookup Match Output].Columns[city_id_nds]" />
+                    <inputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].Columns[update_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="update_date"
+                      externalMetadataColumnId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\PHU\Them NgayTao.Outputs[Derived Column Output].Columns[update_date]" />
+                    <inputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].Columns[PHU_id_nds]"
+                      cachedDataType="i4"
+                      cachedName="PHU_id_nds"
+                      externalMetadataColumnId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\PHU\Tim PHU_id.Outputs[Lookup Match Output].Columns[PHU_id_nds]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="100"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="250"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="250"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="r8"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="r8"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="i4"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="dbTimeStamp"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="i4"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PHU\Update PHU da ton tai.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PHU\Update PHU da ton tai.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Update PHU da ton tai.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU\Update PHU da ton tai.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU\Update PHU da ton tai.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\PHU.Paths[Derived Column Output]"
+              endId="Package\PHU\Them PHU moi vao.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\PHU\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\PHU.Paths[Derived Column Output1]"
+              endId="Package\PHU\Update PHU da ton tai.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\PHU\Them NgayTao.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\PHU.Paths[Lookup Match Output]"
+              endId="Package\PHU\Tim PHU_id.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\PHU\Tim city_id.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\PHU.Paths[Lookup Match Output1]"
+              endId="Package\PHU\Them NgayTao.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\PHU\Tim PHU_id.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\PHU.Paths[Lookup No Match Output]"
+              endId="Package\PHU\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\PHU\Tim PHU_id.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\PHU.Paths[OLE DB Source Output]"
+              endId="Package\PHU\Tim city_id.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\PHU\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PHU_GROUP"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{42E37198-9F2A-4C5A-AFDE-3984C1C61D75}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PHU_GROUP"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\PHU_GROUP\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PHU_Group]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select distinct(Phu_Group)
+From Phu_Group</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PHU_GROUP\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[STAGE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_Group]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phu_Group]"
+                      length="100"
+                      lineageId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_Group]"
+                      name="Phu_Group"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phu_Group]"
+                      dataType="wstr"
+                      length="100"
+                      name="Phu_Group" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phu_Group]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phu_Group]"
+                      name="Phu_Group" />
+                    <outputColumn
+                      refId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Them NgayTao va NgayCapNhat"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[create_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[create_date]"
+                      name="create_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[update_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[update_date]"
+                      name="update_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PHU_GROUP\Them PHU_group moi vao"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Them PHU_group moi vao"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PHU_GROUP]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PHU_GROUP\Them PHU_group moi vao.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input].Columns[create_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_date"
+                      externalMetadataColumnId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input].ExternalColumns[create_date]"
+                      lineageId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[create_date]" />
+                    <inputColumn
+                      refId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input].Columns[update_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="update_date"
+                      externalMetadataColumnId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input].ExternalColumns[update_date]"
+                      lineageId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output].Columns[update_date]" />
+                    <inputColumn
+                      refId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input].Columns[Phu_Group]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Phu_Group"
+                      externalMetadataColumnId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input].ExternalColumns[PHU_group_name]"
+                      lineageId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_Group]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input].ExternalColumns[PHU_group_id]"
+                      dataType="i4"
+                      name="PHU_group_id" />
+                    <externalMetadataColumn
+                      refId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input].ExternalColumns[create_date]"
+                      dataType="dbTimeStamp"
+                      name="create_date" />
+                    <externalMetadataColumn
+                      refId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input].ExternalColumns[update_date]"
+                      dataType="dbTimeStamp"
+                      name="update_date" />
+                    <externalMetadataColumn
+                      refId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input].ExternalColumns[PHU_group_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="PHU_group_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PHU_GROUP\Them PHU_group moi vao.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU_GROUP\Them PHU_group moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU_GROUP\Them PHU_group moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU_GROUP\Them PHU_group moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU_GROUP\Them PHU_group moi vao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PHU_GROUP\Tim PHU_group_id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Tim PHU_group_id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[PHU_GROUP]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[PHU_GROUP]) [refTable]
+where [refTable].[PHU_group_name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PHU_group_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PHU_group_name" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="create_date" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="update_date" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_Group]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PHU_GROUP\Tim PHU_group_id.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PHU_GROUP\Tim PHU_group_id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PHU_GROUP\Tim PHU_group_id.Inputs[Lookup Input].Columns[Phu_Group]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Phu_Group"
+                      lineageId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phu_Group]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PHU_group_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PHU_GROUP\Tim PHU_group_id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\PHU_GROUP\Tim PHU_group_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU_GROUP\Tim PHU_group_id.Outputs[Lookup Match Output].Columns[PHU_group_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\PHU_GROUP\Tim PHU_group_id.Outputs[Lookup Match Output].Columns[PHU_group_id]"
+                      name="PHU_group_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">PHU_group_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PHU_GROUP\Tim PHU_group_id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\PHU_GROUP\Tim PHU_group_id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PHU_GROUP\Tim PHU_group_id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\PHU_GROUP\Tim PHU_group_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU_GROUP\Tim PHU_group_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU_GROUP\Tim PHU_group_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU_GROUP\Tim PHU_group_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU_GROUP\Tim PHU_group_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\PHU_GROUP.Paths[Derived Column Output]"
+              endId="Package\PHU_GROUP\Them PHU_group moi vao.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\PHU_GROUP.Paths[Lookup No Match Output]"
+              endId="Package\PHU_GROUP\Them NgayTao va NgayCapNhat.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\PHU_GROUP\Tim PHU_group_id.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\PHU_GROUP.Paths[OLE DB Source Output]"
+              endId="Package\PHU_GROUP\Tim PHU_group_id.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\PHU_GROUP\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{25995418-D663-4151-8603-280E1CAEE891}"
+      DTS:From="Package\PHU_GROUP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\CITY" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{4D88493F-023E-49C5-8054-72801072F3E6}"
+      DTS:From="Package\CITY"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\PHU" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="100.8,41.6"
+          Id="Package\CITY"
+          TopLeft="75.7142870036922,227.117650244063" />
+        <NodeLayout
+          Size="98.4,41.6"
+          Id="Package\PHU"
+          TopLeft="72.8571440978927,308.941180803372" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\PHU_GROUP"
+          TopLeft="56.4285723895444,146.058825577832" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="125.871429696618,187.658825577832">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4588246662312"
+              Start="0,0"
+              End="0,31.9588246662312">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9588246662312" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="124.085715550792,268.717650244063">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.2235305593089"
+              Start="0,0"
+              End="0,32.7235305593089">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7235305593089" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CITY">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\CITY\OLE DB Source"
+          TopLeft="240.714289813626,32.1176475092614" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\CITY\Tim city_id"
+          TopLeft="252.142861436824,162.88235522554" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\CITY\Them NgayTao va NgayCapNhat"
+          TopLeft="201.42857485888,238.588238640227" />
+        <EdgeLayout
+          Id="Package\CITY.Paths[Lookup No Match Output]"
+          TopLeft="317.185718147852,204.48235522554">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.1058834146875"
+              Start="0,0"
+              End="0,26.6058834146875">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6058834146875" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,7.49825420734376,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\CITY\Them city moi vao"
+          TopLeft="235.714289728476,316.588239734148" />
+        <EdgeLayout
+          Id="Package\CITY.Paths[Derived Column Output]"
+          TopLeft="317.971432293678,280.188238640228">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.4000010939205"
+              Start="0,0"
+              End="0,28.9000010939205">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9000010939205" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\CITY\Tim PHU_group_id"
+          TopLeft="238.571432634276,97.8823543139395" />
+        <EdgeLayout
+          Id="Package\CITY.Paths[OLE DB Source Output]"
+          TopLeft="318.642861223951,73.7176475092614">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.1647068046781"
+              Start="0,0"
+              End="0,16.6647068046781">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.6647068046781" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CITY.Paths[Lookup Match Output]"
+          TopLeft="319.35714703555,139.48235431394">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.4000009116004"
+              Start="0,0"
+              End="0,15.9000009116004">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.9000009116004" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,2.14531295580022,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CITY\Tim PHU_group_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[PHU_GROUP]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CITY\Them city moi vao">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CITY\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CITY\Tim city_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\PHU">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\PHU\OLE DB Source"
+          TopLeft="199,89" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\PHU\Tim city_id"
+          TopLeft="212.571428571429,171.314285714286" />
+        <EdgeLayout
+          Id="Package\PHU.Paths[OLE DB Source Output]"
+          TopLeft="275.585714285714,130.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.7142857142857"
+              Start="0,0"
+              End="0,33.2142857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.2142857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\PHU\Tim PHU_id"
+          TopLeft="209.285714285714,256.428571428571" />
+        <EdgeLayout
+          Id="Package\PHU.Paths[Lookup Match Output]"
+          TopLeft="276.728571428571,212.914285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.5142857142858"
+              Start="0,0"
+              End="0,36.0142857142858">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.0142857142858" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,12.2024553571429,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\PHU\Them NgayTao va NgayCapNhat"
+          TopLeft="332.571428571429,353.742857142857" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\PHU\Them PHU moi vao"
+          TopLeft="366.857143441025,431.742858236778" />
+        <EdgeLayout
+          Id="Package\PHU.Paths[Derived Column Output]"
+          TopLeft="449.914286006227,395.342857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.4000010939206"
+              Start="0,0"
+              End="0,28.9000010939206">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9000010939206" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PHU.Paths[Lookup No Match Output]"
+          TopLeft="276.085714285714,298.028571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="172.485714285714,55.7142857142857"
+              Start="0,0"
+              End="172.485714285714,48.2142857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.8571428571429"
+                    Point2="0,27.8571428571429"
+                    Point3="4,27.8571428571429" />
+                  <mssgle:LineSegment
+                    End="168.485714285714,27.8571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="168.485714285714,27.8571428571429"
+                    Point2="172.485714285714,27.8571428571429"
+                    Point3="172.485714285714,31.8571428571429" />
+                  <mssgle:LineSegment
+                    End="172.485714285714,48.2142857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="30.4364704241072,32.8571428571429,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\PHU\Them NgayTao"
+          TopLeft="82.5714285714287,356.200001093921" />
+        <EdgeLayout
+          Id="Package\PHU.Paths[Lookup Match Output1]"
+          TopLeft="255.152380952381,298.028571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-97.3809523809522,58.1714296653493"
+              Start="0,0"
+              End="-97.3809523809522,50.6714296653493">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.681623437728" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.681623437728"
+                    Point2="0,23.681623437728"
+                    Point3="-4,23.681623437728" />
+                  <mssgle:LineSegment
+                    End="-93.3809523809522,23.681623437728" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-93.3809523809522,23.681623437728"
+                    Point2="-97.3809523809522,23.681623437728"
+                    Point3="-97.3809523809522,27.681623437728" />
+                  <mssgle:LineSegment
+                    End="-97.3809523809522,50.6714296653493" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-96.8818629092261,28.681623437728,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\PHU\Update PHU da ton tai"
+          TopLeft="52.8571428571429,423.428571428571" />
+        <EdgeLayout
+          Id="Package\PHU.Paths[Derived Column Output1]"
+          TopLeft="157.771428571429,397.800001093921">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.9142857142857,25.6285703346507"
+              Start="0,0"
+              End="-12.9142857142857,18.1285703346507">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.81428516732535" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.81428516732535"
+                    Point2="0,12.8142851673254"
+                    Point3="-4,12.8142851673254" />
+                  <mssgle:LineSegment
+                    End="-8.91428571428574,12.8142851673254" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.91428571428574,12.8142851673254"
+                    Point2="-12.9142857142857,12.8142851673254"
+                    Point3="-12.9142857142857,16.8142851673254" />
+                  <mssgle:LineSegment
+                    End="-12.9142857142857,18.1285703346507" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PHU\Tim city_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PHU\Them PHU moi vao">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PHU\Tim PHU_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PHU\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\PHU_GROUP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\PHU_GROUP\OLE DB Source"
+          TopLeft="160,106.666666666667" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\PHU_GROUP\Tim PHU_group_id"
+          TopLeft="153.333333333333,178" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\PHU_GROUP\Them NgayTao va NgayCapNhat"
+          TopLeft="126,270.266666666667" />
+        <NodeLayout
+          Size="202.4,41.6"
+          Id="Package\PHU_GROUP\Them PHU_group moi vao"
+          TopLeft="150.952381536263,348.933334427254" />
+        <EdgeLayout
+          Id="Package\PHU_GROUP.Paths[Derived Column Output]"
+          TopLeft="242,311.866666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.1523815362631,37.0666677605872"
+              Start="0,0"
+              End="10.1523815362631,29.5666677605872">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5333338802936" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5333338802936"
+                    Point2="0,18.5333338802936"
+                    Point3="4,18.5333338802936" />
+                  <mssgle:LineSegment
+                    End="6.15238153626314,18.5333338802936" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.15238153626314,18.5333338802936"
+                    Point2="10.1523815362631,18.5333338802936"
+                    Point3="10.1523815362631,22.5333338802936" />
+                  <mssgle:LineSegment
+                    End="10.1523815362631,29.5666677605872" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PHU_GROUP.Paths[Lookup No Match Output]"
+          TopLeft="239.266666666667,219.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.6666666666668"
+              Start="0,0"
+              End="0,43.1666666666668">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.1666666666668" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,15.7786458333334,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PHU_GROUP.Paths[OLE DB Source Output]"
+          TopLeft="235.666666666667,148.266666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.7333333333333"
+              Start="0,0"
+              End="0,22.2333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.2333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PHU_GROUP\Them PHU_group moi vao">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PHU_GROUP\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PHU_GROUP\Tim PHU_group_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[PHU_GROUP]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

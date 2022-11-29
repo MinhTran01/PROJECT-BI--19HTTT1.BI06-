@@ -2,7 +2,7 @@ select count(*) from Cases_Report;
 
 use BI06_METADATA
 update Data_Flow
-set LSET = '10-10-1990';
+set LSET = '1-1-1990';
 
 use BI06_STAGE;
 EXEC sp_MSForEachTable 'truncate table ?';
@@ -17,3 +17,16 @@ select * from Ongoing_Outbreaks_PHU
 select * from PHU
 select * from PHU_Group
 select * from Vaccines_By_Age_PHU
+
+use BI06_NDS;
+alter table CITY 
+	drop constraint FK_CITY_PHU_GROUP;
+truncate table PHU_GROUP;
+alter table CITY add 
+    constraint FK_CITY_PHU_GROUP     foreign key (PHU_group_id)     references PHU_GROUP (PHU_group_id)
+
+alter table PHU 
+	drop constraint FK_PHU_CITY;
+truncate table city;
+alter table PHU add 
+    constraint FK_PHU_CITY       	foreign key (city_id)		references CITY (city_id);

@@ -1,7 +1,7 @@
-﻿create database NDS
+﻿create database BI06_NDS
 go
 
-use NDS
+use BI06_NDS
 go
 
 -- Dropping tables : 
@@ -111,10 +111,11 @@ create table PHU
 	PHU_id int identity(1,1) not null primary key,
 	PHU_nk int, 
 	reporting_PHU nvarchar(100),
-	reporting_PHU_Address nvarchar(100),
+	reporting_PHU_Address nvarchar(250),
 	reporting_PHU_Website nvarchar(250),
 	reporting_PHU_Latitude float,
 	reporting_PHU_Longitude float,
+	reporting_PHU_Postal_Code nvarchar(50),
 	city_id int,
 	create_date datetime,
 	update_date datetime
@@ -196,16 +197,52 @@ alter table ONGOING_OUTBREAKS_PHU add
     constraint FK_ONGOING_OUTBREAKS_PHU_OUTBREAK_GROUP     	foreign key (outbreak_group_id)     references OUTBREAK_GROUP (outbreak_group_id)
 
 alter table CITY add 
-    constraint FK_CITY_PHU_GROUP       	foreign key (PHU_group_id)		references PHU_GROUP (PHU_group_id)
+    constraint FK_CITY_PHU_GROUP     foreign key (PHU_group_id)     references PHU_GROUP (PHU_group_id)
 
---select * from PHU;
---select * from AGE_GROUP;
---select * from CASE_ACQUISITION;
---select * from CASE_REPORT;
---select * from CITY;
---select * from GENDER;
---select * from ONGOING_OUTBREAKS_PHU;
---select * from PHU_GROUP;
---select * from VACCINE_BY_AGE;
---select * from PROVINCE;
---select * from OUTBREAK_GROUP;
+select * from PHU P join CITY c on (p.city_id = c.city_id);
+select * from AGE_GROUP;
+select * from CASE_ACQUISITION;
+select * from CASE_REPORT;
+select * from CITY;
+select * from GENDER;
+select * from ONGOING_OUTBREAKS_PHU;
+select * from PHU_GROUP;
+select * from VACCINE_BY_AGE;
+select * from PROVINCE;
+select * from OUTBREAK_GROUP;
+
+insert into GENDER values
+('Female', getdate(), getdate()),
+('Male', getdate(), getdate()),
+('Not Reported', getdate(), getdate());
+
+insert into CASE_ACQUISITION values
+('CLOSED CONTACT', getdate(), getdate()),
+('NO KNOWN EPI-LINK', getdate(), getdate()),
+('OUTBREAK', getdate(), getdate()),
+('TRAVEL-RELATED', getdate(), getdate()),
+('MISSING INFORMATION', getdate(), getdate()),
+('UNSPECIFIED EPI LINK', getdate(), getdate());
+
+insert into PROVINCE values
+('Alberta', getdate(), getdate()),
+('British Columbia', getdate(), getdate()),
+('Ontario', getdate(), getdate()),
+('Quebec', getdate(), getdate());
+
+insert into AGE_GROUP values
+('5-11', getdate(), getdate()),
+('12-17', getdate(), getdate()),
+('18-29', getdate(), getdate()),
+('<20', getdate(), getdate()),
+('20-29', getdate(), getdate()),
+('30-39', getdate(), getdate()),
+('40-49', getdate(), getdate()),
+('50-59', getdate(), getdate()),
+('60-69', getdate(), getdate()),
+('70-79', getdate(), getdate()),
+('80+', getdate(), getdate()),
+('Adults_18plus', getdate(), getdate()),
+('Ontario_12plus', getdate(), getdate()),
+('Ontario_5plus', getdate(), getdate()),
+('Not Reported', getdate(), getdate());
