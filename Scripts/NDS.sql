@@ -251,3 +251,13 @@ insert into AGE_GROUP values
 ('Ontario_12plus', getdate(), getdate()),
 ('Ontario_5plus', getdate(), getdate()),
 ('Not Reported', getdate(), getdate());
+
+
+
+insert into OUTBREAK_GROUP values
+('Congregate Care', getdate(), getdate()),
+('Congregate Living', getdate(), getdate()),
+('Education', getdate(), getdate()),
+('Workplace', getdate(), getdate()),
+('Recreational', getdate(), getdate()),
+('Other/Unknown', getdate(), getdate());
