@@ -24,7 +24,7 @@ create table Cases_Report
 	outcome varchar(50),
 	age varchar(50),
 	gender varchar(50),
-	reporting_PHU varchar(100),
+	reporting_PHU nvarchar(100),
 	specimen_date datetime,
 	caseReported_date datetime,
 	PHU_City varchar(100),

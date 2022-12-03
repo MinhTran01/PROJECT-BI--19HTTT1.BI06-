@@ -224,6 +224,7 @@ select * from OUTBREAK_GROUP;
 insert into GENDER values
 ('Female', getdate(), getdate()),
 ('Male', getdate(), getdate()),
+('Gender Diverse', getdate(), getdate()),
 ('Not Reported', getdate(), getdate());
 
 insert into CASE_ACQUISITION values

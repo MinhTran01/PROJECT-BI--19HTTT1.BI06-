@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="68"
-  DTS:VersionGUID="{A62A834D-D1E2-4E0D-BD2A-1A3B92F7DF61}">
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{2D6A1320-394D-4215-9BF0-C38AFC640DE3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{022997EF-159E-4FB6-BC08-D62E88BCFB92}DESKTOP-8NB1L8O.BI06_METADATA;" />
+          DTS:ConnectionString="Data Source=lowend;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{022997EF-159E-4FB6-BC08-D62E88BCFB92}DESKTOP-8NB1L8O.BI06_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{46DE7D1B-C327-4ABC-85CC-C259D8B0A48F}DESKTOP-8NB1L8O.BI06_STAGE;" />
+          DTS:ConnectionString="Data Source=lowend;Initial Catalog=BI06_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{46DE7D1B-C327-4ABC-85CC-C259D8B0A48F}DESKTOP-8NB1L8O.BI06_STAGE;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -53,8 +53,8 @@
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\cases_report.csv">
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\cases_report.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -63,7 +63,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Outcome"
-              DTS:DTSID="{35A17286-03D2-443F-B2F9-EF6486A15CB3}"
+              DTS:DTSID="{92A39AC4-B759-4BAA-A791-D93DE8864958}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -72,7 +72,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Age"
-              DTS:DTSID="{1C237A0D-7C81-49F5-A9AE-0B9E8245D9F9}"
+              DTS:DTSID="{DC5A16B9-BE17-4C5D-9463-D8A159814C91}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -81,16 +81,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Gender"
-              DTS:DTSID="{84C5EE52-115F-4054-AD4B-A3A56B4441A6}"
+              DTS:DTSID="{377C1890-C816-400C-8107-5522D78C97B8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="100"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Reporting PHU"
-              DTS:DTSID="{AE54B850-FD6B-488B-B3BA-75C8EF868AA5}"
+              DTS:DTSID="{4AE851B7-3BC2-4413-A500-E169BC0681DF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -98,7 +98,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="SpecimenDate"
-              DTS:DTSID="{5A9472EB-0F27-486B-AD57-C11ECD6A80F0}"
+              DTS:DTSID="{4E5B9F8D-118C-48F7-A1B5-80654A019B80}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -106,7 +106,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseReported Date"
-              DTS:DTSID="{C5A1823C-CF35-4DAF-B600-E8A4CD74B448}"
+              DTS:DTSID="{6F3B8504-79A9-46F3-BAB8-AFA39F7DA435}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -115,7 +115,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHUCity"
-              DTS:DTSID="{5F37F9E1-EAA8-4DED-8E21-27F7B10C1703}"
+              DTS:DTSID="{0F259819-1F0D-4A54-A50C-4CD669595D67}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -123,7 +123,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="TestReported Date"
-              DTS:DTSID="{3532A76E-1389-4590-BEA8-15489F486265}"
+              DTS:DTSID="{EDCEF85A-BDEB-4CF2-9D78-9F36E4DC1C4E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -132,7 +132,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseAcquisition info"
-              DTS:DTSID="{1B9A76B4-03E5-49B7-91C5-728E678A64A8}"
+              DTS:DTSID="{537D7D1A-8E20-41F3-A281-D2EE909B3F8E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +140,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="AccurateEpisode Dt"
-              DTS:DTSID="{D022D03A-D85D-4090-AAD3-514B84E87180}"
+              DTS:DTSID="{AA50C9B6-8965-4B32-96D7-C63F2C0DB9EA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +149,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Address"
-              DTS:DTSID="{BB3B6BED-F6A0-4470-AB79-BF923A0F9350}"
+              DTS:DTSID="{0A9EF179-1AED-4650-8001-7C8362D45897}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -158,7 +158,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Website"
-              DTS:DTSID="{D389470A-F018-4149-83FA-D7F55C87EB55}"
+              DTS:DTSID="{D8E43CD6-AF5F-4AF6-A25B-163AB9771592}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -167,7 +167,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OutbreakRelated"
-              DTS:DTSID="{6F91089B-CAF4-4BB8-AA2E-3CC95DE9C3BA}"
+              DTS:DTSID="{5FA11236-4AC4-4423-A817-506983560999}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Latitude"
-              DTS:DTSID="{D1581791-CCCF-4425-BC71-7600013FF4F7}"
+              DTS:DTSID="{7EB71793-9D73-47F8-89F9-AAFF910F9E23}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -183,7 +183,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Longitude"
-              DTS:DTSID="{03BCC712-6739-497F-B5D0-9C0BC8720B1D}"
+              DTS:DTSID="{B6D9B4A0-E999-4F55-9147-BC9956C00BBE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -192,7 +192,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Postal Code"
-              DTS:DTSID="{0DF85D84-1AFB-4264-AC06-0DED2E6A7D5A}"
+              DTS:DTSID="{832DD9BA-55D6-4EDE-AB37-F384EAF04576}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -212,7 +212,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\compiled_covid_19_case_details.csv">
+          DTS:ConnectionString="C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\compiled_covid_19_case_details.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -221,7 +221,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ObjectId"
-              DTS:DTSID="{C8C76698-DD6A-400C-BB37-B5C31B035C89}"
+              DTS:DTSID="{4D499008-EDA0-46E0-A2B4-D7B89FEC8442}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -229,7 +229,7 @@
               DTS:DataType="21"
               DTS:TextQualified="True"
               DTS:ObjectName="row_id"
-              DTS:DTSID="{55611FB5-6A1E-4F8A-8117-D25A316114B2}"
+              DTS:DTSID="{E1D342EF-CCCE-4DDC-8D7C-CBB0EE987756}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -237,7 +237,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="date_reported"
-              DTS:DTSID="{1780F3A7-7678-4423-A2E7-F610D166D08A}"
+              DTS:DTSID="{0574D935-DB06-4A1B-8620-8365D868B154}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -246,7 +246,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="health_region"
-              DTS:DTSID="{D264B54F-3070-40B3-9533-BDE7A194D81B}"
+              DTS:DTSID="{8E80FEE7-93DD-4AC0-B966-7439BB742841}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -255,7 +255,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="age_group"
-              DTS:DTSID="{2AEE3EC0-E5C9-4785-AB35-DB4F6CC4C207}"
+              DTS:DTSID="{9E58D584-C28D-47B1-93C5-CBE05CDFC913}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -264,7 +264,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gender"
-              DTS:DTSID="{7EF43AD3-494E-46E4-8204-029F4ABAE6F2}"
+              DTS:DTSID="{D9F5CC0A-BE4D-4811-B3A3-048984341983}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -273,7 +273,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="exposure"
-              DTS:DTSID="{2E0DE828-78CC-41FB-B07B-DF03BC585247}"
+              DTS:DTSID="{158FCEEC-E935-417E-8CA6-4368AD56B3B1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -282,7 +282,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="case_status"
-              DTS:DTSID="{A3A9443B-1961-4C47-85F0-58E49F2F4F0A}"
+              DTS:DTSID="{BD40991A-5807-4B2D-A430-745A550CB32D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -291,7 +291,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="province"
-              DTS:DTSID="{F87425D2-FCBA-449E-A002-7B791EC05160}"
+              DTS:DTSID="{B09D02B1-667F-4818-BD28-E42E661980B8}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -311,7 +311,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\ongoing_outbreaks_phu.csv">
+          DTS:ConnectionString="C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\ongoing_outbreaks_phu.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -319,7 +319,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="date"
-              DTS:DTSID="{E54BB92A-2492-4C44-8586-C1CB8EC59F26}"
+              DTS:DTSID="{95AC26DA-C6AE-4295-B77D-E724BC4A10E2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -327,7 +327,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="phu_num"
-              DTS:DTSID="{DA91786F-D30B-4BEB-9932-AD86176AF49E}"
+              DTS:DTSID="{F1AA66A6-174F-41E4-8BEE-5B649EC85D97}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -336,7 +336,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="outbreak_group"
-              DTS:DTSID="{60804ADA-1C88-47CF-8593-72F83DFC3607}"
+              DTS:DTSID="{4D2B39D3-F907-4271-9027-3E86EEFB314D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -344,7 +344,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="number_ongoing_outbreaks"
-              DTS:DTSID="{D6817D4B-EB4B-499E-8326-25674A96F98F}"
+              DTS:DTSID="{221D99D0-0C6B-4501-8F45-81CC0D3B8C46}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -359,7 +359,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\public_health_units.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\public_health_units.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -371,7 +371,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\public_health_units_group.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\public_health_units_group.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -383,7 +383,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\vaccines_by_age_phu.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\vaccines_by_age_phu.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -455,7 +455,7 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[Outcome]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -477,7 +477,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[Age]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -499,7 +499,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -521,8 +521,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[Reporting PHU]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reporting PHU]"
@@ -583,7 +582,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[PHUCity]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -625,7 +624,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[CaseAcquisition info]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -667,7 +666,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[PHU Address]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -689,7 +688,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[PHU Website]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -711,7 +710,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[OutbreakRelated]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -773,7 +772,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[PHU Postal Code]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -798,26 +797,25 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Outcome]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="50"
                       name="Outcome" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="50"
                       name="Age" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Gender]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="50"
                       name="Gender" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reporting PHU]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="100"
                       name="Reporting PHU" />
                     <externalMetadataColumn
@@ -830,7 +828,7 @@
                       name="CaseReported Date" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PHUCity]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="100"
                       name="PHUCity" />
@@ -840,7 +838,7 @@
                       name="TestReported Date" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CaseAcquisition info]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="150"
                       name="CaseAcquisition info" />
@@ -850,19 +848,19 @@
                       name="AccurateEpisode Dt" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PHU Address]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="250"
                       name="PHU Address" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PHU Website]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="250"
                       name="PHU Website" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OutbreakRelated]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="50"
                       name="OutbreakRelated" />
@@ -876,7 +874,7 @@
                       name="PHU Longitude" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PHU Postal Code]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="50"
                       name="PHU Postal Code" />
@@ -940,11 +938,11 @@
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
+                  name="DefaultCodePage">65001</property>
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -985,7 +983,7 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Gender]"
-                      cachedCodepage="1252"
+                      cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Gender"
@@ -993,7 +991,7 @@
                       lineageId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]" />
                     <inputColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Outcome]"
-                      cachedCodepage="1252"
+                      cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Outcome"
@@ -1001,7 +999,7 @@
                       lineageId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[Outcome]" />
                     <inputColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Age]"
-                      cachedCodepage="1252"
+                      cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Age"
@@ -1009,8 +1007,7 @@
                       lineageId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[Age]" />
                     <inputColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Reporting PHU]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="Reporting PHU"
                       externalMetadataColumnId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU]"
@@ -1029,7 +1026,7 @@
                       lineageId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[CaseReported Date]" />
                     <inputColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHUCity]"
-                      cachedCodepage="1252"
+                      cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="PHUCity"
@@ -1043,7 +1040,7 @@
                       lineageId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[TestReported Date]" />
                     <inputColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CaseAcquisition info]"
-                      cachedCodepage="1252"
+                      cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="150"
                       cachedName="CaseAcquisition info"
@@ -1057,7 +1054,7 @@
                       lineageId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[AccurateEpisode Dt]" />
                     <inputColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHU Address]"
-                      cachedCodepage="1252"
+                      cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="250"
                       cachedName="PHU Address"
@@ -1065,7 +1062,7 @@
                       lineageId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[PHU Address]" />
                     <inputColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHU Website]"
-                      cachedCodepage="1252"
+                      cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="250"
                       cachedName="PHU Website"
@@ -1073,7 +1070,7 @@
                       lineageId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[PHU Website]" />
                     <inputColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OutbreakRelated]"
-                      cachedCodepage="1252"
+                      cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="OutbreakRelated"
@@ -1093,7 +1090,7 @@
                       lineageId="Package\SourceToStage Cases_Report\Flat File Source.Outputs[Flat File Source Output].Columns[PHU Longitude]" />
                     <inputColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHU Postal Code]"
-                      cachedCodepage="1252"
+                      cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="PHU Postal Code"
@@ -1104,7 +1101,7 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="50"
                       name="gender" />
@@ -1114,20 +1111,19 @@
                       name="id" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[outcome]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="50"
                       name="outcome" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[age]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="50"
                       name="age" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[reporting_PHU]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="100"
                       name="reporting_PHU" />
                     <externalMetadataColumn
@@ -1140,7 +1136,7 @@
                       name="caseReported_date" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_City]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="100"
                       name="PHU_City" />
@@ -1150,7 +1146,7 @@
                       name="testReported_date" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[caseAcquisition_info]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="150"
                       name="caseAcquisition_info" />
@@ -1160,19 +1156,19 @@
                       name="accurateEpisode_date" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_Address]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="250"
                       name="PHU_Address" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_Website]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="250"
                       name="PHU_Website" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[outbreakRelated]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="50"
                       name="outbreakRelated" />
@@ -1186,7 +1182,7 @@
                       name="PHU_Longitude" />
                     <externalMetadataColumn
                       refId="Package\SourceToStage Cases_Report\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_PostalCode]"
-                      codePage="1252"
+                      codePage="65001"
                       dataType="str"
                       length="50"
                       name="PHU_PostalCode" />
@@ -3587,18 +3583,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="305.388909695324,450.361114192759">
+          TopLeft="305.388909695324,450.36111419276">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,98.2222233334298"
+              EndConnector="0,98.222223333429"
               Start="0,0"
-              End="0,90.7222233334298">
+              End="0,90.722223333429">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,90.7222233334298" />
+                    End="0,90.722223333429" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3760,7 +3756,7 @@
     design-time-name="Package\SourceToStage Ongoing_Outbreaks_PHU">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage Ongoing_Outbreaks_PHU\OLE DB Destination"
@@ -3788,7 +3784,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3811,7 +3809,7 @@
     design-time-name="Package\SourceToStage PHU">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage PHU\OLE DB Destination"
@@ -3839,7 +3837,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3870,7 +3870,7 @@
     design-time-name="Package\SourceToStage PHU_Group">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage PHU_Group\OLE DB Destination"
@@ -3898,7 +3898,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
