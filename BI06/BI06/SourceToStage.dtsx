@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="74"
-  DTS:VersionGUID="{2D6A1320-394D-4215-9BF0-C38AFC640DE3}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{DFDB25C4-4A96-4C74-B41B-9A54819FCA3C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=lowend;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{022997EF-159E-4FB6-BC08-D62E88BCFB92}DESKTOP-8NB1L8O.BI06_METADATA;" />
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{022997EF-159E-4FB6-BC08-D62E88BCFB92}DESKTOP-8NB1L8O.BI06_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=lowend;Initial Catalog=BI06_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{46DE7D1B-C327-4ABC-85CC-C259D8B0A48F}DESKTOP-8NB1L8O.BI06_STAGE;" />
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{46DE7D1B-C327-4ABC-85CC-C259D8B0A48F}DESKTOP-8NB1L8O.BI06_STAGE;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -54,7 +54,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\cases_report.csv">
+          DTS:ConnectionString="C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\cases_report.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -63,7 +63,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Outcome"
-              DTS:DTSID="{92A39AC4-B759-4BAA-A791-D93DE8864958}"
+              DTS:DTSID="{76893B11-F42B-4343-8000-6F3169A821AD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -72,7 +72,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Age"
-              DTS:DTSID="{DC5A16B9-BE17-4C5D-9463-D8A159814C91}"
+              DTS:DTSID="{993F362B-5344-4787-97F9-AD0B4FD7E491}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -81,7 +81,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Gender"
-              DTS:DTSID="{377C1890-C816-400C-8107-5522D78C97B8}"
+              DTS:DTSID="{1FD056FB-0043-49B8-AFC4-9CFFC8CEC2A6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -90,7 +90,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Reporting PHU"
-              DTS:DTSID="{4AE851B7-3BC2-4413-A500-E169BC0681DF}"
+              DTS:DTSID="{7DB29546-B337-4FF8-9E2F-16DFA035078C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -98,7 +98,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="SpecimenDate"
-              DTS:DTSID="{4E5B9F8D-118C-48F7-A1B5-80654A019B80}"
+              DTS:DTSID="{3615D2D9-736D-4100-9914-6605073D9433}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -106,7 +106,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseReported Date"
-              DTS:DTSID="{6F3B8504-79A9-46F3-BAB8-AFA39F7DA435}"
+              DTS:DTSID="{594502EA-EA92-42D8-B21D-889C1B8BAD59}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -115,7 +115,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHUCity"
-              DTS:DTSID="{0F259819-1F0D-4A54-A50C-4CD669595D67}"
+              DTS:DTSID="{D64279DD-9FD2-4669-93D7-943C62281A89}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -123,7 +123,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="TestReported Date"
-              DTS:DTSID="{EDCEF85A-BDEB-4CF2-9D78-9F36E4DC1C4E}"
+              DTS:DTSID="{C8D4DC75-E9B2-47B0-860D-C87123824287}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -132,7 +132,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseAcquisition info"
-              DTS:DTSID="{537D7D1A-8E20-41F3-A281-D2EE909B3F8E}"
+              DTS:DTSID="{7A98CF57-1761-43C5-8AC2-C890D38803F7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +140,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="AccurateEpisode Dt"
-              DTS:DTSID="{AA50C9B6-8965-4B32-96D7-C63F2C0DB9EA}"
+              DTS:DTSID="{571DE50C-AA4E-4120-894D-85CCBA23B252}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +149,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Address"
-              DTS:DTSID="{0A9EF179-1AED-4650-8001-7C8362D45897}"
+              DTS:DTSID="{72775D3E-2C0B-46DE-B65E-AAF8A5C23603}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -158,7 +158,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Website"
-              DTS:DTSID="{D8E43CD6-AF5F-4AF6-A25B-163AB9771592}"
+              DTS:DTSID="{3350147D-AA29-4E2A-B724-397EABC7545E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -167,7 +167,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OutbreakRelated"
-              DTS:DTSID="{5FA11236-4AC4-4423-A817-506983560999}"
+              DTS:DTSID="{1C87CE54-A408-488B-A66F-BA7D3318F458}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Latitude"
-              DTS:DTSID="{7EB71793-9D73-47F8-89F9-AAFF910F9E23}"
+              DTS:DTSID="{277632BF-8808-4608-AE3A-6A7FC97D9ED9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -183,7 +183,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Longitude"
-              DTS:DTSID="{B6D9B4A0-E999-4F55-9147-BC9956C00BBE}"
+              DTS:DTSID="{AD92E92D-E73A-4E35-A315-F3C246F887AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -192,7 +192,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Postal Code"
-              DTS:DTSID="{832DD9BA-55D6-4EDE-AB37-F384EAF04576}"
+              DTS:DTSID="{A7372D65-2DEB-4621-9E99-1E703A5CD088}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -212,7 +212,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\compiled_covid_19_case_details.csv">
+          DTS:ConnectionString="C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\compiled_covid_19_case_details.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -221,7 +221,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ObjectId"
-              DTS:DTSID="{4D499008-EDA0-46E0-A2B4-D7B89FEC8442}"
+              DTS:DTSID="{4731B922-319E-47EB-81D7-0DC2015CCA54}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -229,7 +229,7 @@
               DTS:DataType="21"
               DTS:TextQualified="True"
               DTS:ObjectName="row_id"
-              DTS:DTSID="{E1D342EF-CCCE-4DDC-8D7C-CBB0EE987756}"
+              DTS:DTSID="{3229B361-0F88-41F8-84A4-4B29C6AE4B67}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -237,7 +237,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="date_reported"
-              DTS:DTSID="{0574D935-DB06-4A1B-8620-8365D868B154}"
+              DTS:DTSID="{C2FD2E1A-4672-4004-96A2-467D8CD86E00}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -246,7 +246,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="health_region"
-              DTS:DTSID="{8E80FEE7-93DD-4AC0-B966-7439BB742841}"
+              DTS:DTSID="{5D07A2CA-3A05-4ED8-9074-CBC6117BBED3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -255,7 +255,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="age_group"
-              DTS:DTSID="{9E58D584-C28D-47B1-93C5-CBE05CDFC913}"
+              DTS:DTSID="{04CD23A3-5A97-4E80-A24E-B1DFBBFD71ED}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -264,7 +264,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gender"
-              DTS:DTSID="{D9F5CC0A-BE4D-4811-B3A3-048984341983}"
+              DTS:DTSID="{D36878A4-CF19-41F1-ACC7-7BD9534C98FA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -273,7 +273,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="exposure"
-              DTS:DTSID="{158FCEEC-E935-417E-8CA6-4368AD56B3B1}"
+              DTS:DTSID="{2259F4B8-69F9-4EDC-9903-ACEE5423BCDF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -282,7 +282,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="case_status"
-              DTS:DTSID="{BD40991A-5807-4B2D-A430-745A550CB32D}"
+              DTS:DTSID="{116E0509-99C2-4453-B6A0-9CB671F29005}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -291,7 +291,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="province"
-              DTS:DTSID="{B09D02B1-667F-4818-BD28-E42E661980B8}"
+              DTS:DTSID="{7BE5DA7D-4909-4193-89A3-2796F121E3DB}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -311,7 +311,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\ongoing_outbreaks_phu.csv">
+          DTS:ConnectionString="C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\ongoing_outbreaks_phu.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -319,7 +319,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="date"
-              DTS:DTSID="{95AC26DA-C6AE-4295-B77D-E724BC4A10E2}"
+              DTS:DTSID="{09042637-0540-48B9-92B9-235D624B8F01}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -327,7 +327,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="phu_num"
-              DTS:DTSID="{F1AA66A6-174F-41E4-8BEE-5B649EC85D97}"
+              DTS:DTSID="{10AB9FBD-DD61-4802-B7CC-BECB49E37982}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -336,7 +336,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="outbreak_group"
-              DTS:DTSID="{4D2B39D3-F907-4271-9027-3E86EEFB314D}"
+              DTS:DTSID="{C5BD28AC-E6C8-4336-939C-E3AA02108529}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -344,7 +344,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="number_ongoing_outbreaks"
-              DTS:DTSID="{221D99D0-0C6B-4501-8F45-81CC0D3B8C46}"
+              DTS:DTSID="{20D5E5FB-4E3B-4B83-9157-B99595E56A9B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -359,7 +359,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\public_health_units.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\public_health_units.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -371,7 +371,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\public_health_units_group.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\public_health_units_group.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -383,7 +383,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\nhkduy\Documents\PROJECT-BI--19HTTT1.BI06-\Datasource\vaccines_by_age_phu.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\vaccines_by_age_phu.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -3380,7 +3380,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate PHU_Group"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3396,7 +3396,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Vaccines_By_Age_PHU"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData

@@ -2,7 +2,7 @@ create database BI06_STAGE
 go
 use BI06_STAGE
 go
---
+
 
 create table Compile_COVID19_Case_Details
 (  
