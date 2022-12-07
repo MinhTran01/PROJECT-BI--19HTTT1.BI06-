@@ -5,7 +5,7 @@ go
 
 create table Data_Flow
 (  
-	id int IDENTITY(1, 1) NOT NULL,
+id int IDENTITY(1, 1) NOT NULL,
   table_name varchar(50) NULL,
   LSET datetime NULL
 )
@@ -26,4 +26,12 @@ insert into Data_Flow values
 ('PHU', '10-10-2020'),
 ('Ongoing_Outbreaks_PHU', '10-10-2020'),
 ('PHU_Group', '10-10-2020')
+go
+
+insert into DDS values
+('Compile_case_details','1-1-1990'),
+('Dim_Geography','1-1-1990'),
+('Dim_Gender','1-1-1990'),
+('Dim_AgeGroup','1-1-1990'),
+('Dim_CaseAcquisition','1-1-1990')
 go

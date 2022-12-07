@@ -19,6 +19,7 @@ create table Dim_CaseStatus (
 
 create table Dim_Geography (
     geography_id int identity(1,1) primary key,
+	phu_id_nds int not null,
     city_name nvarchar(100),
     phu_group_name nvarchar(100),
     phu_name nvarchar(100)
@@ -62,4 +63,13 @@ alter table Fact_Case add
     constraint FK_FACT_CASE_AGE_GROUP     		foreign key (age_group_id)      	    references Dim_AgeGroup (age_group_id),
     constraint FK_FACT_CASE_GENDER       		foreign key (gender_id)        		references Dim_Gender (gender_id),
     constraint FK_FACT_CASE_CASE_ACQUISITION    foreign key (case_acquisition_id)	references Dim_CaseAcquisition (case_acquisition_id)
-   
+  
+
+  select * from Dim_Date;
+
+
+truncate table Dim_Date;
+truncate table Dim_CaseStatus;
+truncate table Dim_Gender;
+truncate table Dim_AgeGroup;
+truncate table Dim_CaseAcquisition;
