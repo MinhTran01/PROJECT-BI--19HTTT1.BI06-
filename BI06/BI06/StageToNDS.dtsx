@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="69"
-  DTS:VersionGUID="{F37A8E0F-6459-4922-B952-282489CB5C17}">
+  DTS:VersionBuild="73"
+  DTS:VersionGUID="{B7425B2A-D203-4A0E-AA51-466C03122B00}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5291,6 +5291,22 @@ WHERE
               startId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Doi ten 2 city cho dong nhat voi PHU"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C05BA293-74A6-4DF6-9777-FBE59040AA01}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Doi ten 2 city cho dong nhat voi PHU"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9E921EC2-840A-45D5-ACE1-E903B2A0E06F}"
+          SQLTask:SqlStatementSource="Update City&#xA;Set city_name= 'Whitby'&#xA;Where city_name= 'Durham Region';&#xA;&#xA;Update City&#xA;Set city_name= 'Guelph'&#xA;Where city_name= 'Fergus';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -10775,11 +10791,11 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{4D88493F-023E-49C5-8054-72801072F3E6}"
+      DTS:DTSID="{C191C9BD-C6FB-4A60-A341-C6E4819A63C9}"
       DTS:From="Package\CITY"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\PHU" />
+      DTS:To="Package\Doi ten 2 city cho dong nhat voi PHU" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -10812,6 +10828,14 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\COMPILED_CASE_DETAILS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{7E317905-5D67-4F98-90A9-750EC31D2390}"
+      DTS:From="Package\Doi ten 2 city cho dong nhat voi PHU"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\PHU" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -10828,23 +10852,23 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         <NodeLayout
           Size="156,41.6"
           Id="Package\CASE_REPORT"
-          TopLeft="219.166657957766,425.533336715168" />
+          TopLeft="188.554412538484,340.390478009567" />
         <NodeLayout
           Size="172,41.6"
           Id="Package\CITY"
-          TopLeft="288.035717474639,126.558825926519" />
+          TopLeft="287.321431748189,107.441178599578" />
         <NodeLayout
           Size="208,42.4"
           Id="Package\COMPILED_CASE_DETAILS"
-          TopLeft="438.958322798006,472.599997787342" />
+          TopLeft="385.795056586519,341.465541798071" />
         <NodeLayout
           Size="217.6,42.4"
           Id="Package\ONGOING_OUTBREAKS_PHU"
-          TopLeft="472.916657839798,255.016661188834" />
+          TopLeft="461.692167852728,245.251954800888" />
         <NodeLayout
           Size="123.2,41.6"
           Id="Package\PHU"
-          TopLeft="308.125002752724,207.923532452247" />
+          TopLeft="304.553574120474,242.730255260827" />
         <NodeLayout
           Size="179.2,41.6"
           Id="Package\PHU_GROUP"
@@ -10852,43 +10876,21 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\VACCINE_BY_AGE"
-          TopLeft="99.2261976489795,287.147062307497" />
+          TopLeft="106.369054913479,243.516809226112" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="373.067859985292,75.8970605281288">
+          TopLeft="372.710717122067,75.8970605281288">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.6617653983902"
+              EndConnector="0,31.5441180714489"
               Start="0,0"
-              End="0,43.1617653983902">
+              End="0,24.0441180714489">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.1617653983902" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="371.913693447015,167.892159259852">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.0313731923949"
-              Start="0,0"
-              End="0,32.5313731923949">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5313731923949" />
+                    End="0,24.0441180714489" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10899,30 +10901,18 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="340.925002752724,249.523532452247">
+          TopLeft="304.553574120474,263.923532243469">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-159.298805103745,37.6235298552503"
+              EndConnector="-33.3845192069956,0"
               Start="0,0"
-              End="-159.298805103745,30.1235298552503">
+              End="-25.8845192069956,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.07258240733274" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.07258240733274"
-                    Point2="0,13.0725824073327"
-                    Point3="-4,13.0725824073327" />
-                  <mssgle:LineSegment
-                    End="-155.298805103745,13.0725824073327" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-155.298805103745,13.0725824073327"
-                    Point2="-159.298805103745,13.0725824073327"
-                    Point3="-159.298805103745,17.0725824073327" />
-                  <mssgle:LineSegment
-                    End="-159.298805103745,30.1235298552503" />
+                    End="-25.8845192069956,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10933,30 +10923,18 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="431.325002752724,228.723532452247">
+          TopLeft="427.753574120474,264.991105030857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41.5916550870745,47.4931287365872"
+              EndConnector="33.9385937322533,0"
               Start="0,0"
-              End="34.0916550870745,47.4931287365872">
+              End="26.4385937322533,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="16.7958275435372,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.7958275435372,0"
-                    Point2="20.7958275435372,0"
-                    Point3="20.7958275435372,4" />
-                  <mssgle:LineSegment
-                    End="20.7958275435372,43.4931287365872" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20.7958275435372,43.4931287365872"
-                    Point2="20.7958275435372,47.4931287365872"
-                    Point3="24.7958275435372,47.4931287365872" />
-                  <mssgle:LineSegment
-                    End="34.0916550870745,47.4931287365872" />
+                    End="26.4385937322533,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10967,30 +10945,30 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="369.725002752724,249.523532452247">
+          TopLeft="346.953574120474,284.330255260827">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-72.5583447949583,176.009804262921"
+              EndConnector="-80.3991615819909,56.0602227487404"
               Start="0,0"
-              End="-72.5583447949583,168.509804262921">
+              End="-80.3991615819909,48.5602227487404">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,84.0049021314607" />
+                    End="0,18.8553215821788" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,84.0049021314607"
-                    Point2="0,88.0049021314607"
-                    Point3="-4,88.0049021314607" />
+                    Point1="0,18.8553215821788"
+                    Point2="0,22.8553215821788"
+                    Point3="-4,22.8553215821788" />
                   <mssgle:LineSegment
-                    End="-68.5583447949583,88.0049021314607" />
+                    End="-76.3991615819909,22.8553215821788" />
                   <mssgle:CubicBezierSegment
-                    Point1="-68.5583447949583,88.0049021314607"
-                    Point2="-72.5583447949583,88.0049021314607"
-                    Point3="-72.5583447949583,92.0049021314607" />
+                    Point1="-76.3991615819909,22.8553215821788"
+                    Point2="-80.3991615819909,22.8553215821788"
+                    Point3="-80.3991615819909,26.8553215821788" />
                   <mssgle:LineSegment
-                    End="-72.5583447949583,168.509804262921" />
+                    End="-80.3991615819909,48.5602227487404" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11001,30 +10979,78 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="404.285002752724,249.523532452247">
+          TopLeft="385.353574120474,284.330255260827">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="138.673320045282,223.076465335095"
+              EndConnector="104.441482466044,57.1352865372444"
               Start="0,0"
-              End="138.673320045282,215.576465335095">
+              End="104.441482466044,49.6352865372444">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64.0504018802006" />
+                    End="0,19.2936168190304" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,64.0504018802006"
-                    Point2="0,68.0504018802006"
-                    Point3="4,68.0504018802006" />
+                    Point1="0,19.2936168190304"
+                    Point2="0,23.2936168190304"
+                    Point3="4,23.2936168190304" />
                   <mssgle:LineSegment
-                    End="134.673320045282,68.0504018802006" />
+                    End="100.441482466044,23.2936168190304" />
                   <mssgle:CubicBezierSegment
-                    Point1="134.673320045282,68.0504018802006"
-                    Point2="138.673320045282,68.0504018802006"
-                    Point3="138.673320045282,72.0504018802006" />
+                    Point1="100.441482466044,23.2936168190304"
+                    Point2="104.441482466044,23.2936168190304"
+                    Point3="104.441482466044,27.2936168190304" />
                   <mssgle:LineSegment
-                    End="138.673320045282,215.576465335095" />
+                    End="104.441482466044,49.6352865372444" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="252.8,41.6"
+          Id="Package\Doi ten 2 city cho dong nhat voi PHU"
+          TopLeft="240.204085723304,171.981514242859" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="369.962758735747,149.041178599578">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.9403356432808"
+              Start="0,0"
+              End="0,15.4403356432808">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4403356432808" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="366.378829921889,213.581514242859">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.1487410179681"
+              Start="0,0"
+              End="0,21.6487410179681">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6487410179681" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11316,7 +11342,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11338,7 +11366,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -11530,7 +11560,7 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         <NodeLayout
           Size="165.6,41.6"
           Id="Package\CITY\Them city moi vao"
-          TopLeft="235.714289728476,316.588239734148" />
+          TopLeft="235.714289728476,308.176474910294" />
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\CITY\Tim PHU_group_id"
@@ -11549,38 +11579,38 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23.4000009116004"
+              EndConnector="0,23.4000009116005"
               Start="0,0"
-              End="0,15.9000009116004">
+              End="0,15.9000009116005">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.9000009116004" />
+                    End="0,15.9000009116005" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,2.14531295580022,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,2.14531295580025,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CITY.Paths[Derived Column Output]"
-          TopLeft="317.971432293678,280.188238640228">
+          TopLeft="317.971432293678,280.188238640227">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.4000010939205"
+              EndConnector="0,27.9882362700669"
               Start="0,0"
-              End="0,28.9000010939205">
+              End="0,20.4882362700669">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.9000010939205" />
+                    End="0,20.4882362700669" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11617,21 +11647,21 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.1058834146875"
+              EndConnector="0,34.105883414687"
               Start="0,0"
-              End="0,26.6058834146875">
+              End="0,26.605883414687">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.6058834146875" />
+                    End="0,26.605883414687" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,7.49825420734376,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,7.49825420734348,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -11778,7 +11808,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11956,7 +11988,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11978,7 +12012,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12012,7 +12048,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12046,7 +12084,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12243,7 +12283,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12397,7 +12439,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12419,7 +12463,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12441,7 +12487,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12558,7 +12606,7 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         <NodeLayout
           Size="184,41.6"
           Id="Package\PHU\Update PHU da ton tai"
-          TopLeft="52.8571428571429,423.428571428571" />
+          TopLeft="60.7142857142858,423.428571428571" />
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\PHU\Them PHU moi vao"
@@ -12695,30 +12743,18 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PHU.Paths[Derived Column Output1]"
-          TopLeft="157.771428571429,397.800001093921">
+          TopLeft="155.242857142857,397.800001093921">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12.9142857142857,25.6285703346507"
+              EndConnector="0,25.62857033465"
               Start="0,0"
-              End="-12.9142857142857,18.1285703346507">
+              End="0,18.12857033465">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.81428516732535" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.81428516732535"
-                    Point2="0,12.8142851673254"
-                    Point3="-4,12.8142851673254" />
-                  <mssgle:LineSegment
-                    End="-8.91428571428574,12.8142851673254" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8.91428571428574,12.8142851673254"
-                    Point2="-12.9142857142857,12.8142851673254"
-                    Point3="-12.9142857142857,16.8142851673254" />
-                  <mssgle:LineSegment
-                    End="-12.9142857142857,18.1285703346507" />
+                    End="0,18.12857033465" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12864,7 +12900,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12922,7 +12960,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13148,7 +13188,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13170,7 +13212,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13192,7 +13236,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13214,7 +13260,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13260,7 +13308,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

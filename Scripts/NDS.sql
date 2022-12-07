@@ -264,20 +264,20 @@ insert into OUTBREAK_GROUP values
 ('Other/Unknown', getdate(), getdate());
 
 
-truncate table PHU;
-truncate table COMPILED_CASE_DETAILS;
-truncate table CASE_REPORT;
-truncate table CITY;
-truncate table ONGOING_OUTBREAKS_PHU;
-truncate table VACCINE_BY_AGE;
-truncate table PHU_GROUP;
+--truncate table PHU;
+--truncate table COMPILED_CASE_DETAILS;
+--truncate table CASE_REPORT;
+--truncate table CITY;
+--truncate table ONGOING_OUTBREAKS_PHU;
+--truncate table VACCINE_BY_AGE;
+--truncate table PHU_GROUP;
 
 
 
-select distinct PHU_id from COMPILED_CASE_DETAILS  ORDER BY PHU_id ASC;
+--select distinct PHU_id from COMPILED_CASE_DETAILS  ORDER BY PHU_id ASC;
 
-SELECT DISTINCT com.PHU_id,  p.reporting_PHU
-FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
-             PHU AS p ON com.PHU_id = p.PHU_id 
-ORDER BY com.PHU_id ASC
+--SELECT DISTINCT com.PHU_id,  p.reporting_PHU
+--FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
+--             PHU AS p ON com.PHU_id = p.PHU_id 
+--ORDER BY com.PHU_id ASC
 
