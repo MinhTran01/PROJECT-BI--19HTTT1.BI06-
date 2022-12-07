@@ -1,62 +1,62 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/6/2022 4:56:48 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-NKULHIL"
   DTS:CreatorName="DESKTOP-NKULHIL\MiDu"
-  DTS:DTSID="{167B43F3-01B2-49EA-AB59-B5D8D06826D3}"
+  DTS:DTSID="{708389CB-ACE0-4BA9-B586-C89EB31014D4}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LastModifiedProductVersion="16.0.948.0"
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:VersionBuild="12"
-  DTS:VersionGUID="{4A66BCCE-0F56-465A-9107-D1487FE53E08}">
+  DTS:VersionGUID="{57B61939-8F47-410A-B434-78A3FC7E6C42}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-JU4SLVC\MSSQLSERVER03.BI06_METADATA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}"
+      DTS:DTSID="{01388191-E0B5-4C7A-8122-9C6A9CE433DC}"
       DTS:ObjectName="DESKTOP-JU4SLVC\MSSQLSERVER03.BI06_METADATA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-JU4SLVC\MSSQLSERVER03;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}DESKTOP-JU4SLVC\MSSQLSERVER03.BI06_METADATA;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-JU4SLVC\MSSQLSERVER03;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{01388191-E0B5-4C7A-8122-9C6A9CE433DC}DESKTOP-JU4SLVC\MSSQLSERVER03.BI06_METADATA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-NKULHIL\SQLEXPRESS.BI06_DDS_Case]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{553076B7-7335-4699-BA2C-40FF7ECF2665}"
+      DTS:DTSID="{095FAB8B-DF70-403D-8F2D-1A1C28330D4B}"
       DTS:ObjectName="DESKTOP-NKULHIL\SQLEXPRESS.BI06_DDS_Case">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-JU4SLVC\MSSQLSERVER03;Initial Catalog=BI06_DDS_Case;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{553076B7-7335-4699-BA2C-40FF7ECF2665}DESKTOP-NKULHIL\SQLEXPRESS.BI06_DDS_Case;" />
+          DTS:ConnectionString="Data Source=DESKTOP-JU4SLVC\MSSQLSERVER03;Initial Catalog=BI06_DDS_Case;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{095FAB8B-DF70-403D-8F2D-1A1C28330D4B}DESKTOP-NKULHIL\SQLEXPRESS.BI06_DDS_Case;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[NDS]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{132B8890-A614-4676-B220-34F7060BC61B}"
+      DTS:DTSID="{16067B7B-95DE-4299-9B67-F7716A6D7F6B}"
       DTS:ObjectName="NDS">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-JU4SLVC\MSSQLSERVER03;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{132B8890-A614-4676-B220-34F7060BC61B}DESKTOP-NKULHIL\SQLEXPRESS.BI06_NDS;" />
+          DTS:ConnectionString="Data Source=DESKTOP-JU4SLVC\MSSQLSERVER03;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{16067B7B-95DE-4299-9B67-F7716A6D7F6B}DESKTOP-NKULHIL\SQLEXPRESS.BI06_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{69F881AE-C953-4C00-A79C-D0455A51230C}"
+      DTS:DTSID="{7E6B2AB4-53BD-492E-BD4A-2B9EDAE20FDE}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CET_Result_AgeGroup">
@@ -65,7 +65,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{282DEA63-E7DF-4475-9A1F-0FDFEA981978}"
+      DTS:DTSID="{F991E42F-9186-4578-B728-BEC77AE60F98}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CET_Result_CaseAcquisition">
@@ -74,7 +74,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3DDC3366-2F29-49A3-9902-5C8A308D0169}"
+      DTS:DTSID="{A8E3C6EC-216A-40DE-B347-517F11AC4BD8}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CET_Result_CaseStatus">
@@ -83,7 +83,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{349E1FE9-142B-491E-971B-5EE6BC27E6CE}"
+      DTS:DTSID="{5CD1B32C-13E6-494F-8FBD-E9A22C1F05EC}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CET_Result_Compile">
@@ -92,7 +92,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1D9B3660-00EE-4576-910A-342068756AFA}"
+      DTS:DTSID="{1C351C12-EBB8-4889-95FA-66047B34852F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CET_Result_Date">
@@ -101,7 +101,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{CDB77DEE-F33A-446E-AE5D-A99F83764E0A}"
+      DTS:DTSID="{64ED72CC-72D7-4294-83FB-B41A1A511060}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CET_Result_Gender">
@@ -110,7 +110,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0EF59E77-E87A-4D83-8876-246029B52B00}"
+      DTS:DTSID="{FA470D38-D673-4D02-BAD8-20F6218D1E92}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LSET_Result_AgeGroup">
@@ -119,7 +119,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2F42E526-67DE-4B86-8BDA-BC18A6021319}"
+      DTS:DTSID="{C4D994B5-8AFD-43A0-B882-D3953771641A}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LSET_Result_CaseAcquisition">
@@ -128,7 +128,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{60FB26D0-4FB3-47FF-8C09-7D00F95194CF}"
+      DTS:DTSID="{3CA33A1E-68D7-478B-A8AF-F5F55346161B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LSET_Result_CaseStatus">
@@ -137,7 +137,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{277A886E-1664-418E-AF1F-AFE1D7D6D0F0}"
+      DTS:DTSID="{5F5E2BE6-4D7B-4CA4-B5BE-14BE52B3820D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LSET_Result_Compile">
@@ -146,7 +146,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9C1C1BC9-7E14-4D83-A7C0-325944F0A1E8}"
+      DTS:DTSID="{7D06EBFF-673C-4743-A1F1-9E239D749092}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LSET_Result_Date">
@@ -155,7 +155,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{55F907FC-EBD0-4B5E-8CA5-257AF06483E6}"
+      DTS:DTSID="{60F7D40D-5097-4712-B267-FB289E1BBF87}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LSET_Result_Gender">
@@ -168,15 +168,15 @@
       DTS:refId="Package\Get Compile_case_details LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{3a826840-b319-4869-b41d-59050de2eeed}"
+      DTS:DTSID="{14269870-82DF-4785-A417-9A368B3270B2}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Compile_case_details LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}"
+          SQLTask:Connection="{01388191-E0B5-4C7A-8122-9C6A9CE433DC}"
           SQLTask:SqlStatementSource="SELECT LSET FROM DDS WHERE table_name='Compile_case_details';"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -189,15 +189,15 @@
       DTS:refId="Package\Get Dim_AgeGroup LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{52e4e6b1-827d-4836-91de-5310a189e9d9}"
+      DTS:DTSID="{A1CAEE26-C8D8-43A8-A2C5-31CBE2296068}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Dim_AgeGroup LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}"
+          SQLTask:Connection="{01388191-E0B5-4C7A-8122-9C6A9CE433DC}"
           SQLTask:SqlStatementSource="SELECT LSET FROM DDS WHERE table_name='Dim_AgeGroup';"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -210,15 +210,15 @@
       DTS:refId="Package\Get Dim_Dim_CaseAcquisition  LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{82b2f509-9a9b-4331-85b4-5c1f7ad9e75f}"
+      DTS:DTSID="{FD655ED9-4E17-456E-BFE3-FEC41C19A30A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Dim_Dim_CaseAcquisition  LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}"
+          SQLTask:Connection="{01388191-E0B5-4C7A-8122-9C6A9CE433DC}"
           SQLTask:SqlStatementSource="SELECT LSET FROM DDS WHERE table_name='Dim_CaseAcquisition ';"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -231,15 +231,15 @@
       DTS:refId="Package\Get Dim_Gender LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{96815673-78b1-4f54-ac41-ef51f4a81716}"
+      DTS:DTSID="{3716D7C5-B99C-41FC-8A44-B99ABB73B0E5}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Dim_Gender LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}"
+          SQLTask:Connection="{01388191-E0B5-4C7A-8122-9C6A9CE433DC}"
           SQLTask:SqlStatementSource="SELECT LSET FROM DDS WHERE table_name='Dim_Gender';"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -252,7 +252,7 @@
       DTS:refId="Package\Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{3a2864e8-468f-48de-87d9-ed44cc2f1199}"
+      DTS:DTSID="{2C110757-6866-4D46-9F61-CC39D10E041B}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sequence Container">
@@ -262,7 +262,7 @@
           DTS:refId="Package\Sequence Container\Dim_AgeGroup"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{85d5ae2c-c70c-4a2d-9066-7c132f0dca9e}"
+          DTS:DTSID="{5CFC2FB1-F832-4979-8158-68774CACCB7F}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Dim_AgeGroup"
@@ -320,7 +320,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{0EF59E77-E87A-4D83-8876-246029B52B00};"Parameter1:Input",{69F881AE-C953-4C00-A79C-D0455A51230C};"Parameter2:Input",{0EF59E77-E87A-4D83-8876-246029B52B00};"Parameter3:Input",{69F881AE-C953-4C00-A79C-D0455A51230C};</property>
+                      name="ParameterMapping">"Parameter0:Input",{FA470D38-D673-4D02-BAD8-20F6218D1E92};"Parameter1:Input",{7E6B2AB4-53BD-492E-BD4A-2B9EDAE20FDE};"Parameter2:Input",{FA470D38-D673-4D02-BAD8-20F6218D1E92};"Parameter3:Input",{7E6B2AB4-53BD-492E-BD4A-2B9EDAE20FDE};</property>
                   </properties>
                   <connections>
                     <connection
@@ -724,7 +724,7 @@ where [refTable].[age_group_name] = ?</property>
           DTS:refId="Package\Sequence Container\Dim_CaseAcquisition"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{8732553d-c633-43a6-afc9-e0e6e3b2893e}"
+          DTS:DTSID="{AD739CE9-B568-402C-A3FB-D1B24181C307}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Dim_CaseAcquisition"
@@ -782,7 +782,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{2F42E526-67DE-4B86-8BDA-BC18A6021319};"Parameter1:Input",{282DEA63-E7DF-4475-9A1F-0FDFEA981978};"Parameter2:Input",{2F42E526-67DE-4B86-8BDA-BC18A6021319};"Parameter3:Input",{282DEA63-E7DF-4475-9A1F-0FDFEA981978};</property>
+                      name="ParameterMapping">"Parameter0:Input",{C4D994B5-8AFD-43A0-B882-D3953771641A};"Parameter1:Input",{F991E42F-9186-4578-B728-BEC77AE60F98};"Parameter2:Input",{C4D994B5-8AFD-43A0-B882-D3953771641A};"Parameter3:Input",{F991E42F-9186-4578-B728-BEC77AE60F98};</property>
                   </properties>
                   <connections>
                     <connection
@@ -1186,7 +1186,7 @@ where [refTable].[case_acquisition_name] = ?</property>
           DTS:refId="Package\Sequence Container\Dim_CaseStatus"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{f1af6c35-65dd-43ae-aee0-3c7d2a109686}"
+          DTS:DTSID="{EA661819-11F3-4FBD-BC98-94E9122AB015}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Dim_CaseStatus"
@@ -1244,7 +1244,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{277A886E-1664-418E-AF1F-AFE1D7D6D0F0};"Parameter1:Input",{349E1FE9-142B-491E-971B-5EE6BC27E6CE};"Parameter2:Input",{277A886E-1664-418E-AF1F-AFE1D7D6D0F0};"Parameter3:Input",{349E1FE9-142B-491E-971B-5EE6BC27E6CE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{5F5E2BE6-4D7B-4CA4-B5BE-14BE52B3820D};"Parameter1:Input",{5CD1B32C-13E6-494F-8FBD-E9A22C1F05EC};"Parameter2:Input",{5F5E2BE6-4D7B-4CA4-B5BE-14BE52B3820D};"Parameter3:Input",{5CD1B32C-13E6-494F-8FBD-E9A22C1F05EC};</property>
                   </properties>
                   <connections>
                     <connection
@@ -1594,7 +1594,7 @@ where [refTable].[case_status_name] = ?</property>
           DTS:refId="Package\Sequence Container\Dim_Date"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{E3CD6C34-6068-458C-8DF2-B51C501CA709}"
+          DTS:DTSID="{766CC1FE-DE90-4F19-A7C9-C7CE7758A7CA}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Dim_Date"
@@ -1652,7 +1652,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{277A886E-1664-418E-AF1F-AFE1D7D6D0F0};"Parameter1:Input",{349E1FE9-142B-491E-971B-5EE6BC27E6CE};"Parameter2:Input",{277A886E-1664-418E-AF1F-AFE1D7D6D0F0};"Parameter3:Input",{349E1FE9-142B-491E-971B-5EE6BC27E6CE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{5F5E2BE6-4D7B-4CA4-B5BE-14BE52B3820D};"Parameter1:Input",{5CD1B32C-13E6-494F-8FBD-E9A22C1F05EC};"Parameter2:Input",{5F5E2BE6-4D7B-4CA4-B5BE-14BE52B3820D};"Parameter3:Input",{5CD1B32C-13E6-494F-8FBD-E9A22C1F05EC};</property>
                   </properties>
                   <connections>
                     <connection
@@ -2282,7 +2282,7 @@ where [refTable].[calendar_day] = ? and [refTable].[calendar_month] = ? and [ref
           DTS:refId="Package\Sequence Container\Dim_Gender"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{102cfe02-d32d-4c49-a26a-dd91b1218427}"
+          DTS:DTSID="{0E734706-14BC-4D1C-BCB1-959058EF73A1}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Dim_Gender"
@@ -2340,7 +2340,7 @@ WHERE  (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{55F907FC-EBD0-4B5E-8CA5-257AF06483E6};"Parameter1:Input",{CDB77DEE-F33A-446E-AE5D-A99F83764E0A};"Parameter2:Input",{55F907FC-EBD0-4B5E-8CA5-257AF06483E6};"Parameter3:Input",{CDB77DEE-F33A-446E-AE5D-A99F83764E0A};</property>
+                      name="ParameterMapping">"Parameter0:Input",{60F7D40D-5097-4712-B267-FB289E1BBF87};"Parameter1:Input",{64ED72CC-72D7-4294-83FB-B41A1A511060};"Parameter2:Input",{60F7D40D-5097-4712-B267-FB289E1BBF87};"Parameter3:Input",{64ED72CC-72D7-4294-83FB-B41A1A511060};</property>
                   </properties>
                   <connections>
                     <connection
@@ -2745,7 +2745,7 @@ where [refTable].[gender_name] = ?</property>
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:Disabled="True"
-          DTS:DTSID="{614DCC4D-028F-41C1-9276-2548EC6C5713}"
+          DTS:DTSID="{9C40A1C4-6B84-4AE3-8437-56B728A142B6}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Dim_Geography"
@@ -2894,15 +2894,15 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
       DTS:refId="Package\Set Compile_case_details CET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{615ce163-3316-4a33-9e33-efdc0ed923d3}"
+      DTS:DTSID="{8CEC262E-C409-4B96-ABC8-3643B6A17B5F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Compile_case_details CET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}"
+          SQLTask:Connection="{01388191-E0B5-4C7A-8122-9C6A9CE433DC}"
           SQLTask:SqlStatementSource="SELECT getdate();"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -2915,15 +2915,15 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
       DTS:refId="Package\Set Dim_AgeGroup CET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{eccf992a-0aad-4900-94bf-fb513ef62298}"
+      DTS:DTSID="{42A9A1FB-8822-48EE-BBE1-52D221C6F068}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Dim_AgeGroup CET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}"
+          SQLTask:Connection="{01388191-E0B5-4C7A-8122-9C6A9CE433DC}"
           SQLTask:SqlStatementSource="SELECT getdate();"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -2936,15 +2936,15 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
       DTS:refId="Package\Set Dim_CaseAcquisition CET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{5da745d9-26ca-4bba-9ad6-59b4080ab1ac}"
+      DTS:DTSID="{91A38BA6-8558-47B2-84E1-396F333AA1F5}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Dim_CaseAcquisition CET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}"
+          SQLTask:Connection="{01388191-E0B5-4C7A-8122-9C6A9CE433DC}"
           SQLTask:SqlStatementSource="SELECT getdate();"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -2957,15 +2957,15 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
       DTS:refId="Package\Set Dim_Gender CET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{cb876c55-dcd9-486f-b0f7-1a789138c232}"
+      DTS:DTSID="{4D3FDA2C-A9EF-4297-9BCC-A47C3A548EDE}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Dim_Gender CET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}"
+          SQLTask:Connection="{01388191-E0B5-4C7A-8122-9C6A9CE433DC}"
           SQLTask:SqlStatementSource="SELECT getdate();"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -2978,7 +2978,7 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
       DTS:refId="Package\Set LSET to METADATA"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{b72ea1bc-51ca-42bb-81d5-567e0dfd7677}"
+      DTS:DTSID="{3AB1E26A-2A80-47F8-A557-75DD514D31DF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET to METADATA"
@@ -2986,7 +2986,7 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}"
+          SQLTask:Connection="{01388191-E0B5-4C7A-8122-9C6A9CE433DC}"
           SQLTask:SqlStatementSource="UPDATE DDS SET LSET = ?  WHERE TenBang='Dim_Gender'; &#xA;UPDATE DDS SET LSET = ?  WHERE TenBang='Dim_CaseAcquisition';&#xA;UPDATE DDS SET LSET = ?  WHERE TenBang='Dim_AgeGroup';&#xA;UPDATE DDS SET LSET = ?  WHERE TenBang=''Compile_case_details&quot;;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -3020,7 +3020,7 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{AEC8AA98-E26E-47BF-8A58-3C2C8B44D051}"
+      DTS:DTSID="{33495BFF-20D0-476C-B2D9-7DDD695C078D}"
       DTS:From="Package\Set Dim_Gender CET"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -3028,7 +3028,7 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{4DDD8422-0930-4827-9C6A-10E8848C8913}"
+      DTS:DTSID="{EA197810-871C-49FB-BB0C-40EC4B1B2C4A}"
       DTS:From="Package\Get Dim_Gender LSET"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3036,7 +3036,7 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
       DTS:CreationName=""
-      DTS:DTSID="{49E8595A-EF56-49D4-BC93-DE4BAA149DB1}"
+      DTS:DTSID="{5F42A13C-4B6B-463A-9791-AA02A5F15137}"
       DTS:From="Package\Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
@@ -3044,7 +3044,7 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{C0F107CF-0E33-4644-8F56-FC10626A91A6}"
+      DTS:DTSID="{F2B595C8-B04D-4234-A78A-D98D2AF18064}"
       DTS:From="Package\Set Compile_case_details CET"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -3052,7 +3052,7 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{356AD8B3-8268-4103-AF72-1C7C2BCCA127}"
+      DTS:DTSID="{25928FC8-AAE1-4380-B044-B1C73EE0DAE5}"
       DTS:From="Package\Set Dim_CaseAcquisition CET"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -3060,7 +3060,7 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{1399F8DB-D9AF-49C4-9F50-6CD01D7ACBF5}"
+      DTS:DTSID="{A3E3E812-944F-45C8-9280-215ED5CE72ED}"
       DTS:From="Package\Get Dim_Dim_CaseAcquisition  LSET"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -3068,7 +3068,7 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{13C2D415-2F71-49F2-8343-36F8E962680C}"
+      DTS:DTSID="{E646FE5C-D876-4938-BDEC-A474DFB44EE3}"
       DTS:From="Package\Set Dim_AgeGroup CET"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -3076,7 +3076,7 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{ADD38688-DFE1-4115-95E8-31AF6CD5E243}"
+      DTS:DTSID="{89A1481F-FC4D-4004-B5C8-011BE80DB1FB}"
       DTS:From="Package\Get Dim_AgeGroup LSET"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -3084,7 +3084,7 @@ FROM   COMPILED_CASE_DETAILS AS com INNER JOIN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{CD17E906-9BE8-4D7A-81A1-738E80B86A83}"
+      DTS:DTSID="{15257608-D2E7-408C-9394-8A0B9AD589F5}"
       DTS:From="Package\Get Compile_case_details LSET"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
