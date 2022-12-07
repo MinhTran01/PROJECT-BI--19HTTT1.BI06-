@@ -44,3 +44,19 @@ FROM
 */
 
 
+Use BI06_NDS;
+Select count(*), c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, c.gender_id, c.PHU_id
+From COMPILED_CASE_DETAILS c LEFT JOIN AGE_GROUP a on (c.age_group_id = a.age_group_id)
+		LEFT JOIN CASE_ACQUISITION ac on (c.case_acquisition_id = ac.case_acquisition_id)
+		LEFT JOIN GENDER g on (c.gender_id = g.gender_id)
+		LEFT JOIN PHU p on (c.PHU_id = p.PHU_id)
+GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, c.gender_id, c.PHU_id
+Order by  c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, c.gender_id, c.PHU_id
+
+Select count(*) as number_of_case, a.age_group_name, ac.case_acquisition_name, c.case_status, c.date_reported, c.gender_id, c.PHU_id
+From COMPILED_CASE_DETAILS c LEFT JOIN AGE_GROUP a on (c.age_group_id = a.age_group_id)
+		LEFT JOIN CASE_ACQUISITION ac on (c.case_acquisition_id = ac.case_acquisition_id)
+		LEFT JOIN GENDER g on (c.gender_id = g.gender_id)
+		LEFT JOIN PHU p on (c.PHU_id = p.PHU_id)
+GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, c.gender_id, c.PHU_id, a.age_group_name, ac.case_acquisition_name
+Order by  c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, c.gender_id, c.PHU_id

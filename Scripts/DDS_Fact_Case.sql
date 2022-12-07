@@ -22,7 +22,8 @@ create table Dim_Geography (
 	phu_id_nds int not null,
     city_name nvarchar(100),
     phu_group_name nvarchar(100),
-    phu_name nvarchar(100)
+    phu_name nvarchar(100),
+	active bit
 )
 
 create table Dim_Gender (
