@@ -13,7 +13,7 @@ create table Dim_Geography(
     geography_id int identity(1,1) primary key, 
     city_name nvarchar(100),
     PHU_group_name nvarchar(100),
-    reporting_PHU nvarchar(100) -- khum có phu_name trong NDS
+    PHU_name nvarchar(100)
 )
 
 create table Dim_OutbreakGroup(
