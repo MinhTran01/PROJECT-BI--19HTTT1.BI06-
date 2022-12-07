@@ -9,11 +9,12 @@ create table Dim_Date (
     calendar_month int not null
 )
 
-create table Dim_Geography(
-    geography_id int identity(1,1) primary key, 
+create table Dim_Geography (
+    geography_id int identity(1,1) primary key,
+	phu_id_nds int not null,
     city_name nvarchar(100),
-    PHU_group_name nvarchar(100),
-    PHU_name nvarchar(100)
+    phu_group_name nvarchar(100),
+    phu_name nvarchar(100)
 )
 
 create table Dim_OutbreakGroup(
@@ -29,7 +30,7 @@ create table Fact_Outbreak(
     number_of_outbreak bigint not null
 )
 
-Dim_OutbreakGroup
+
 alter table Fact_Outbreak add 
     constraint FK_Fact_Outbreak_Dim_Date    		foreign key (date_id)        		references Dim_Date (date_id),
     constraint FK_Fact_Outbreak_Dim_Geography   	foreign key (geography_id)      	references Dim_Geography (geography_id),

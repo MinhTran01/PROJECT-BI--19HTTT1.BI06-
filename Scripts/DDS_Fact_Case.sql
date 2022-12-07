@@ -68,8 +68,8 @@ alter table Fact_Case add
   select * from Dim_Date;
 
 
-truncate table Dim_Date;
-truncate table Dim_CaseStatus;
-truncate table Dim_Gender;
-truncate table Dim_AgeGroup;
-truncate table Dim_CaseAcquisition;
+--truncate table Dim_Date;
+--truncate table Dim_CaseStatus;
+--truncate table Dim_Gender;
+--truncate table Dim_AgeGroup;
+--truncate table Dim_CaseAcquisition;
