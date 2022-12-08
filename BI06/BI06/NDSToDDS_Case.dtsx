@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{8976C9DE-D565-432F-BDD8-C6265480FF1A}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{AD19FDF0-EB24-4DAD-8BFA-2CEF5588D6E1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -181,7 +181,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Compile_case_details LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -202,7 +202,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Dim_AgeGroup LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3949,7 +3949,6 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
           DTS:refId="Package\Sequence Container\Fact_Case"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{83F159B5-F217-4A61-B233-8B194511EBFC}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -3977,7 +3976,7 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
                           refId="Package\Sequence Container\Fact_Case\Lay ngay, thang, nam.Inputs[Derived Column Input].Columns[date_reported]"
                           cachedDataType="dbTimeStamp"
                           cachedName="date_reported"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_reported]" />
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[date_reported]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -4003,7 +4002,7 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">[DAY](#{Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_reported]})</property>
+                              name="Expression">[DAY](#{Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[date_reported]})</property>
                             <property
                               containsID="true"
                               dataType="System.String"
@@ -4025,7 +4024,7 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">[MONTH](#{Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_reported]})</property>
+                              name="Expression">[MONTH](#{Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[date_reported]})</property>
                             <property
                               containsID="true"
                               dataType="System.String"
@@ -4047,7 +4046,7 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">[YEAR](#{Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_reported]})</property>
+                              name="Expression">[YEAR](#{Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[date_reported]})</property>
                             <property
                               containsID="true"
                               dataType="System.String"
@@ -4077,6 +4076,249 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
                           refId="Package\Sequence Container\Fact_Case\Lay ngay, thang, nam.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Sequence Container\Fact_Case\Lay ngay, thang, nam.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Fact_Case\Lay number_of_case"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Lay number_of_case"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select count(*) as number_of_case, a.age_group_name, ac.case_acquisition_name, c.case_status, c.date_reported, g.gender_name, c.PHU_id
+From COMPILED_CASE_DETAILS c LEFT JOIN AGE_GROUP a on (c.age_group_id = a.age_group_id)
+		LEFT JOIN CASE_ACQUISITION ac on (c.case_acquisition_id = ac.case_acquisition_id)
+		LEFT JOIN GENDER g on (c.gender_id = g.gender_id)
+		LEFT JOIN PHU p on (c.PHU_id = p.PHU_id)
+GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, c.gender_id, c.PHU_id, a.age_group_name, ac.case_acquisition_name, g.gender_name</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[number_of_case]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[number_of_case]"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[number_of_case]"
+                          name="number_of_case"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[case_status]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[case_status]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[case_status]"
+                          name="case_status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[date_reported]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[date_reported]"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[date_reported]"
+                          name="date_reported"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[PHU_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[PHU_id]"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[PHU_id]"
+                          name="PHU_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[age_group_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[age_group_name]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[age_group_name]"
+                          name="age_group_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[case_acquisition_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[case_acquisition_name]"
+                          length="100"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[case_acquisition_name]"
+                          name="case_acquisition_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[gender_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[gender_name]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[gender_name]"
+                          name="gender_name"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[number_of_case]"
+                          dataType="i4"
+                          name="number_of_case" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[case_status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="case_status" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[date_reported]"
+                          dataType="dbTimeStamp"
+                          name="date_reported" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[PHU_id]"
+                          dataType="i4"
+                          name="PHU_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[age_group_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="age_group_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[case_acquisition_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="case_acquisition_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].ExternalColumns[gender_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="gender_name" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[number_of_case]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[number_of_case]"
+                          name="number_of_case" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[age_group_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[age_group_name]"
+                          name="age_group_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[case_acquisition_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[case_acquisition_name]"
+                          name="case_acquisition_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[case_status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[case_status]"
+                          name="case_status" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[date_reported]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[date_reported]"
+                          name="date_reported" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[gender_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[gender_name]"
+                          name="gender_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[PHU_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[PHU_id]"
+                          name="PHU_id" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -4141,7 +4383,7 @@ where [refTable].[age_group_name] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[age_group_name]};</property>
+                      name="ParameterMap">#{Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[age_group_name]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4170,7 +4412,7 @@ where [refTable].[age_group_name] = ?</property>
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="age_group_name"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[age_group_name]">
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[age_group_name]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -4301,7 +4543,7 @@ where [refTable].[case_acquisition_name] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[case_acquisition_name]};</property>
+                      name="ParameterMap">#{Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[case_acquisition_name]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4330,7 +4572,7 @@ where [refTable].[case_acquisition_name] = ?</property>
                           cachedDataType="str"
                           cachedLength="100"
                           cachedName="case_acquisition_name"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[case_acquisition_name]">
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[case_acquisition_name]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -4461,7 +4703,7 @@ where [refTable].[case_status_name] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[case_status]};</property>
+                      name="ParameterMap">#{Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[case_status]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4490,7 +4732,7 @@ where [refTable].[case_status_name] = ?</property>
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="case_status"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[case_status]">
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[case_status]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -4811,7 +5053,7 @@ where [refTable].[gender_name] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[gender_name]};</property>
+                      name="ParameterMap">#{Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[gender_name]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4840,7 +5082,7 @@ where [refTable].[gender_name] = ?</property>
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="gender_name"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[gender_name]">
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[gender_name]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -4971,7 +5213,7 @@ where [refTable].[phu_id_nds] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_id]};</property>
+                      name="ParameterMap">#{Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[PHU_id]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4998,7 +5240,7 @@ where [refTable].[phu_id_nds] = ?</property>
                           refId="Package\Sequence Container\Fact_Case\Lookup geography_id.Inputs[Lookup Input].Columns[PHU_id]"
                           cachedDataType="i4"
                           cachedName="PHU_id"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_id]">
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[PHU_id]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -5073,11 +5315,11 @@ where [refTable].[phu_id_nds] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence Container\Fact_Case\OLE DB Destination"
+                  refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
-                  name="OLE DB Destination"
+                  name="Them du lieu vao Fact_case"
                   usesDispositions="true"
                   version="4">
                   <properties>
@@ -5130,7 +5372,7 @@ where [refTable].[phu_id_nds] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Connections[OleDbConnection]"
+                      refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[BI06_DDS_Case]"
                       connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_Case]"
                       description="The OLE DB runtime connection used to access the database."
@@ -5138,87 +5380,87 @@ where [refTable].[phu_id_nds] = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[number_of_case]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[number_of_case]"
                           cachedDataType="i4"
                           cachedName="number_of_case"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[number_of_case]"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[number_of_case]" />
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[number_of_case]"
+                          lineageId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output].Columns[number_of_case]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date_id]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[date_id]"
                           cachedDataType="i4"
                           cachedName="date_id"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
                           lineageId="Package\Sequence Container\Fact_Case\Lookup date_id.Outputs[Lookup Match Output].Columns[date_id]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[case_status_id_dds]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[case_status_id_dds]"
                           cachedDataType="i4"
                           cachedName="case_status_id_dds"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[case_status_id]"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[case_status_id]"
                           lineageId="Package\Sequence Container\Fact_Case\Lookup case_status_id.Outputs[Lookup Match Output].Columns[case_status_id_dds]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[geography_id_dds]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[geography_id_dds]"
                           cachedDataType="i4"
                           cachedName="geography_id_dds"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[geography_id]"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[geography_id]"
                           lineageId="Package\Sequence Container\Fact_Case\Lookup geography_id.Outputs[Lookup Match Output].Columns[geography_id_dds]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gender_id_dds]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[gender_id_dds]"
                           cachedDataType="i4"
                           cachedName="gender_id_dds"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender_id]"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[gender_id]"
                           lineageId="Package\Sequence Container\Fact_Case\Lookup gender_id.Outputs[Lookup Match Output].Columns[gender_id_dds]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[age_group_id_dds]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[age_group_id_dds]"
                           cachedDataType="i4"
                           cachedName="age_group_id_dds"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
                           lineageId="Package\Sequence Container\Fact_Case\Lookup age_group_id.Outputs[Lookup Match Output].Columns[age_group_id_dds]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[case_acquisition_id_dds]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[case_acquisition_id_dds]"
                           cachedDataType="i4"
                           cachedName="case_acquisition_id_dds"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[case_acquisition_id]"
+                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[case_acquisition_id]"
                           lineageId="Package\Sequence Container\Fact_Case\Lookup case_acquisition_id.Outputs[Lookup Match Output].Columns[case_acquisition_id_dds]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[case_id]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[case_id]"
                           dataType="i4"
                           name="case_id" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[number_of_case]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[number_of_case]"
                           dataType="i8"
                           name="number_of_case" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
                           dataType="i4"
                           name="date_id" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[case_status_id]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[case_status_id]"
                           dataType="i4"
                           name="case_status_id" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[geography_id]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[geography_id]"
                           dataType="i4"
                           name="geography_id" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender_id]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[gender_id]"
                           dataType="i4"
                           name="gender_id" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
                           dataType="i4"
                           name="age_group_id" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[case_acquisition_id]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[case_acquisition_id]"
                           dataType="i4"
                           name="case_acquisition_id" />
                       </externalMetadataColumns>
@@ -5226,265 +5468,22 @@ where [refTable].[phu_id_nds] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Sequence Container\Fact_Case\OLE DB Source"
-                  componentClassID="Microsoft.OLEDBSource"
-                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-                  description="OLE DB Source"
-                  name="OLE DB Source"
-                  usesDispositions="true"
-                  version="7">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset"></property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select count(*) as number_of_case, a.age_group_name, ac.case_acquisition_name, c.case_status, c.date_reported, g.gender_name, c.PHU_id
-From COMPILED_CASE_DETAILS c LEFT JOIN AGE_GROUP a on (c.age_group_id = a.age_group_id)
-		LEFT JOIN CASE_ACQUISITION ac on (c.case_acquisition_id = ac.case_acquisition_id)
-		LEFT JOIN GENDER g on (c.gender_id = g.gender_id)
-		LEFT JOIN PHU p on (c.PHU_id = p.PHU_id)
-GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, c.gender_id, c.PHU_id, a.age_group_name, ac.case_acquisition_name, g.gender_name</property>
-                    <property
-                      dataType="System.String"
-                      description="The variable that contains the SQL command to be executed."
-                      name="SqlCommandVariable"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">2</property>
-                    <property
-                      dataType="System.String"
-                      description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping"></property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Sequence Container\Fact_Case\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[NDS]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <outputs>
-                    <output
-                      refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output]"
-                      name="OLE DB Source Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[number_of_case]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[number_of_case]"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[number_of_case]"
-                          name="number_of_case"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[case_status]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[case_status]"
-                          length="50"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[case_status]"
-                          name="case_status"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_reported]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date_reported]"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_reported]"
-                          name="date_reported"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_id]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PHU_id]"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_id]"
-                          name="PHU_id"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[age_group_name]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[age_group_name]"
-                          length="50"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[age_group_name]"
-                          name="age_group_name"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[case_acquisition_name]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[case_acquisition_name]"
-                          length="100"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[case_acquisition_name]"
-                          name="case_acquisition_name"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[gender_name]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[gender_name]"
-                          length="50"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].Columns[gender_name]"
-                          name="gender_name"
-                          truncationRowDisposition="FailComponent" />
-                      </outputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[number_of_case]"
-                          dataType="i4"
-                          name="number_of_case" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[case_status]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="case_status" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date_reported]"
-                          dataType="dbTimeStamp"
-                          name="date_reported" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PHU_id]"
-                          dataType="i4"
-                          name="PHU_id" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[age_group_name]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="age_group_name" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[case_acquisition_name]"
-                          codePage="1252"
-                          dataType="str"
-                          length="100"
-                          name="case_acquisition_name" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[gender_name]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="gender_name" />
-                      </externalMetadataColumns>
-                    </output>
-                    <output
-                      refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output]"
-                      isErrorOut="true"
-                      name="OLE DB Source Error Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[number_of_case]"
-                          dataType="i4"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[number_of_case]"
-                          name="number_of_case" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[age_group_name]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[age_group_name]"
-                          name="age_group_name" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[case_acquisition_name]"
-                          codePage="1252"
-                          dataType="str"
-                          length="100"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[case_acquisition_name]"
-                          name="case_acquisition_name" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[case_status]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[case_status]"
-                          name="case_status" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date_reported]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date_reported]"
-                          name="date_reported" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[gender_name]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[gender_name]"
-                          name="gender_name" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PHU_id]"
-                          dataType="i4"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PHU_id]"
-                          name="PHU_id" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -5526,14 +5525,14 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
                   startId="Package\Sequence Container\Fact_Case\Lookup geography_id.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output5]"
-                  endId="Package\Sequence Container\Fact_Case\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  endId="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence Container\Fact_Case\Lookup date_id.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Sequence Container\Fact_Case.Paths[OLE DB Source Output]"
                   endId="Package\Sequence Container\Fact_Case\Lookup age_group_id.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
-                  startId="Package\Sequence Container\Fact_Case\OLE DB Source.Outputs[OLE DB Source Output]" />
+                  startId="Package\Sequence Container\Fact_Case\Lay number_of_case.Outputs[OLE DB Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -5548,7 +5547,7 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Compile_case_details CET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5569,7 +5568,7 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Dim_AgeGroup CET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5798,19 +5797,23 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         <NodeLayout
           Size="226.4,42.4"
           Id="Package\Get Compile_case_details LSET"
-          TopLeft="818.397317805774,222.791840093088" />
+          TopLeft="892.206842872267,218.9683106277" />
         <NodeLayout
           Size="196.8,42.4"
           Id="Package\Get Dim_AgeGroup LSET"
-          TopLeft="549.699404782907,225.333513297639" />
+          TopLeft="623.5089298494,221.509983832251" />
         <NodeLayout
           Size="250.4,42.4"
           Id="Package\Get Dim_Dim_CaseAcquisition  LSET"
-          TopLeft="273.136909090273,231.04183422352" />
+          TopLeft="346.946434156765,227.218304758132" />
         <NodeLayout
           Size="184,42.4"
           Id="Package\Get Dim_Gender LSET"
-          TopLeft="0.480662966903807,238.592263073915" />
+          TopLeft="74.2901880333964,234.768733608527" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Get Dim_Geography LSET"
+          TopLeft="799.290200380073,433.553339350538" />
         <NodeLayout
           Size="150.4,42.4"
           Id="Package\Sequence Container\Dim_AgeGroup"
@@ -5845,30 +5848,34 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
           PanelSize="365.6,437.6"
           Size="365.6,480.8"
           Id="Package\Sequence Container"
-          TopLeft="287.64733078841,350.101039488057" />
+          TopLeft="361.456855854902,346.277510022669" />
         <NodeLayout
           Size="220,42.4"
           Id="Package\Set Compile_case_details CET"
-          TopLeft="822.303567747566,149.538549091483" />
+          TopLeft="896.113092814059,145.715019626095" />
         <NodeLayout
           Size="190.4,42.4"
           Id="Package\Set Dim_AgeGroup CET"
-          TopLeft="553.605654724699,152.080222296034" />
+          TopLeft="627.415179791192,148.256692830646" />
         <NodeLayout
           Size="217.6,42.4"
           Id="Package\Set Dim_CaseAcquisition CET"
-          TopLeft="286.418158892367,158.601043207387" />
+          TopLeft="360.227683958859,154.777513741999" />
         <NodeLayout
           Size="178.4,42.4"
           Id="Package\Set Dim_Gender CET"
-          TopLeft="9.85566282720532,158.026472203068" />
+          TopLeft="83.6651878936978,154.20294273768" />
+        <NodeLayout
+          Size="194.4,41.6"
+          Id="Package\Set Dim_Geography CET"
+          TopLeft="803.196450321865,360.300048348934" />
         <NodeLayout
           Size="197.6,42.4"
           Id="Package\Set LSET to METADATA"
-          TopLeft="372.802085306074,862.061821513932" />
+          TopLeft="446.611610372567,858.238292048544" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="95.8348295637212,200.693138869735">
+          TopLeft="169.644354630214,196.869609404347">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5890,7 +5897,7 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="92.4806629669038,280.992263073915">
+          TopLeft="166.290188033396,277.168733608527">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5924,18 +5931,18 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="471.024708047242,830.901039488057">
+          TopLeft="544.834233113734,827.077510022669">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.1607820258749"
+              EndConnector="0,31.1607820258748"
               Start="0,0"
-              End="0,23.6607820258749">
+              End="0,23.6607820258748">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.6607820258749" />
+                    End="0,23.6607820258748" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5946,7 +5953,7 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="932.017109443337,192.20521575815">
+          TopLeft="1005.82663450983,188.381686292762">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5968,7 +5975,7 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="396.77753399132,201.267709874054">
+          TopLeft="470.587059057812,197.444180408666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5990,13 +5997,13 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="398.336909090273,273.44183422352">
+          TopLeft="472.146434156765,269.618304758132">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="36.350421698137,76.6592052645369"
+              EndConnector="36.3504216981369,76.6592052645369"
               Start="0,0"
-              End="36.350421698137,69.1592052645369">
+              End="36.3504216981369,69.1592052645369">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -6007,13 +6014,13 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
                     Point2="0,42.4851525659633"
                     Point3="4,42.4851525659633" />
                   <mssgle:LineSegment
-                    End="32.350421698137,42.4851525659633" />
+                    End="32.3504216981369,42.4851525659633" />
                   <mssgle:CubicBezierSegment
-                    Point1="32.350421698137,42.4851525659633"
-                    Point2="36.350421698137,42.4851525659633"
-                    Point3="36.350421698137,46.4851525659633" />
+                    Point1="32.3504216981369,42.4851525659633"
+                    Point2="36.3504216981369,42.4851525659633"
+                    Point3="36.3504216981369,46.4851525659633" />
                   <mssgle:LineSegment
-                    End="36.350421698137,69.1592052645369" />
+                    End="36.3504216981369,69.1592052645369" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6024,7 +6031,7 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="648.485863087136,194.746888962701">
+          TopLeft="722.295388153629,190.923359497313">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6046,7 +6053,7 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="648.099404782907,267.733513297639">
+          TopLeft="721.9089298494,263.909983832251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6080,7 +6087,7 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="931.597317805774,265.191840093088">
+          TopLeft="1005.40684287227,261.3683106277">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6112,17 +6119,9 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="200,41.6"
-          Id="Package\Get Dim_Geography LSET"
-          TopLeft="725.48067531358,437.376868815927" />
-        <NodeLayout
-          Size="194.4,41.6"
-          Id="Package\Set Dim_Geography CET"
-          TopLeft="729.386925255372,364.123577814322" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="826.033800284476,405.723577814322">
+          TopLeft="899.843325350969,401.900048348934">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6144,30 +6143,30 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="725.48067531358,458.176868815927">
+          TopLeft="799.290200380073,454.353339350538">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-72.2333445251705,132.32417067213"
+              EndConnector="-72.2333445251709,132.32417067213"
               Start="0,0"
-              End="-64.7333445251705,132.32417067213">
+              End="-64.7333445251709,132.32417067213">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-32.1166722625853,0" />
+                    End="-32.1166722625854,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-32.1166722625853,0"
-                    Point2="-36.1166722625853,0"
-                    Point3="-36.1166722625853,4" />
+                    Point1="-32.1166722625854,0"
+                    Point2="-36.1166722625854,0"
+                    Point3="-36.1166722625854,4" />
                   <mssgle:LineSegment
-                    End="-36.1166722625853,128.32417067213" />
+                    End="-36.1166722625854,128.32417067213" />
                   <mssgle:CubicBezierSegment
-                    Point1="-36.1166722625853,128.32417067213"
-                    Point2="-36.1166722625853,132.32417067213"
-                    Point3="-40.1166722625853,132.32417067213" />
+                    Point1="-36.1166722625854,128.32417067213"
+                    Point2="-36.1166722625854,132.32417067213"
+                    Point3="-40.1166722625854,132.32417067213" />
                   <mssgle:LineSegment
-                    End="-64.7333445251705,132.32417067213" />
+                    End="-64.7333445251709,132.32417067213" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6185,43 +6184,31 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="222.666666666667,42.6666666666667"
+          Size="222.4,42.4"
           Id="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS"
-          TopLeft="277.285718020128,110.647060389337" />
+          TopLeft="293.685718020128,135.847060389337" />
         <NodeLayout
-          Size="246.666666666667,42.6666666666667"
+          Size="246.4,42.4"
           Id="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup"
-          TopLeft="247.857147674171,322.435297753324" />
+          TopLeft="275.057147674171,295.635297753324" />
         <NodeLayout
-          Size="285.333333333334,42.6666666666667"
+          Size="285.6,42.4"
           Id="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup"
           TopLeft="262,210.666666666667" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_AgeGroup.Paths[OLE DB Source Output]"
-          TopLeft="388.619051353461,153.313727056004">
+          TopLeft="404.842859010064,178.247060389337">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="16.0476153132053,57.3529396106633"
+              EndConnector="0,32.41960627733"
               Start="0,0"
-              End="16.0476153132053,49.8529396106633">
+              End="0,24.91960627733">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.6764698053317" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.6764698053317"
-                    Point2="0,28.6764698053317"
-                    Point3="4,28.6764698053317" />
-                  <mssgle:LineSegment
-                    End="12.0476153132053,28.6764698053317" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.0476153132053,28.6764698053317"
-                    Point2="16.0476153132053,28.6764698053317"
-                    Point3="16.0476153132053,32.6764698053317" />
-                  <mssgle:LineSegment
-                    End="16.0476153132053,49.8529396106633" />
+                    End="0,24.91960627733" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6234,37 +6221,25 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Dim_AgeGroup.Paths[Lookup No Match Output]"
-          TopLeft="404.666666666667,253.333333333334">
+          TopLeft="401.528573837086,253.066666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-33.4761856591623,69.1019644199903"
+              EndConnector="0,42.568631086657"
               Start="0,0"
-              End="-33.4761856591623,61.6019644199903">
+              End="0,35.068631086657">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5509822099952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.5509822099952"
-                    Point2="0,34.5509822099952"
-                    Point3="-4,34.5509822099952" />
-                  <mssgle:LineSegment
-                    End="-29.4761856591623,34.5509822099952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.4761856591623,34.5509822099952"
-                    Point2="-33.4761856591623,34.5509822099952"
-                    Point3="-33.4761856591623,38.5509822099952" />
-                  <mssgle:LineSegment
-                    End="-33.4761856591623,61.6019644199903" />
+                    End="0,35.068631086657" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-72.5444795483311,39.5509822099952,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,11.7296280433285,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6321,43 +6296,31 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="249.333333333334,42.6666666666667"
+          Size="249.6,42.4"
           Id="Package\Sequence Container\Dim_CaseAcquisition\Get data case_acquisition from NDS"
           TopLeft="277.285718020128,110.647060389337" />
         <NodeLayout
-          Size="273.333333333334,42.6666666666667"
+          Size="273.6,42.4"
           Id="Package\Sequence Container\Dim_CaseAcquisition\Insert new row into Dim_CaseAcquisition"
-          TopLeft="247.857147674171,322.435297753324" />
+          TopLeft="271.857147674171,266.435297753324" />
         <NodeLayout
-          Size="337.333333333334,42.6666666666667"
+          Size="337.6,42.4"
           Id="Package\Sequence Container\Dim_CaseAcquisition\Lookup case_acquisition_name in Dim_CaseAcquisition"
-          TopLeft="262,210.666666666667" />
+          TopLeft="240,184.666666666667" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_CaseAcquisition.Paths[OLE DB Source Output]"
-          TopLeft="401.952384686795,153.313727056004">
+          TopLeft="405.442859010064,153.047060389337">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="28.7142819798719,57.3529396106633"
+              EndConnector="0,31.61960627733"
               Start="0,0"
-              End="28.7142819798719,49.8529396106633">
+              End="0,24.11960627733">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.6764698053317" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.6764698053317"
-                    Point2="0,28.6764698053317"
-                    Point3="4,28.6764698053317" />
-                  <mssgle:LineSegment
-                    End="24.7142819798719,28.6764698053317" />
-                  <mssgle:CubicBezierSegment
-                    Point1="24.7142819798719,28.6764698053317"
-                    Point2="28.7142819798719,28.6764698053317"
-                    Point3="28.7142819798719,32.6764698053317" />
-                  <mssgle:LineSegment
-                    End="28.7142819798719,49.8529396106633" />
+                    End="0,24.11960627733" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6370,37 +6333,25 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Dim_CaseAcquisition.Paths[Lookup No Match Output]"
-          TopLeft="430.666666666667,253.333333333334">
+          TopLeft="408.728573837086,227.066666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-46.142852325829,69.1019644199903"
+              EndConnector="0,39.368631086657"
               Start="0,0"
-              End="-46.142852325829,61.6019644199903">
+              End="0,31.868631086657">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5509822099952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.5509822099952"
-                    Point2="0,34.5509822099952"
-                    Point3="-4,34.5509822099952" />
-                  <mssgle:LineSegment
-                    End="-42.142852325829,34.5509822099952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-42.142852325829,34.5509822099952"
-                    Point2="-46.142852325829,34.5509822099952"
-                    Point3="-46.142852325829,38.5509822099952" />
-                  <mssgle:LineSegment
-                    End="-46.142852325829,61.6019644199903" />
+                    End="0,31.868631086657" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-78.8778128816645,39.5509822099952,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,10.1296280433285,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6467,27 +6418,29 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         <NodeLayout
           Size="348,42.4"
           Id="Package\Sequence Container\Dim_CaseStatus\Get distinct case_status from COMPILED_CASE_DETAILS"
-          TopLeft="237.285718020128,189.647060389337" />
+          TopLeft="235.285718020128,241.647060389337" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_CaseStatus.Paths[OLE DB Source Output]"
-          TopLeft="409.666670753843,232.313727056004">
+          TopLeft="408.600004087176,284.047060389337">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,95.6156883765533"
+              EndConnector="0,43.88235504322"
               Start="0,0"
-              End="0,88.1156883765533">
+              End="0,36.38235504322">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,88.1156883765533" />
+                    End="0,36.38235504322" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6573,11 +6526,11 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         <NodeLayout
           Size="127.2,41.6"
           Id="Package\Sequence Container\Dim_Date\Them Quy"
-          TopLeft="307.142862373469,245.470591677926" />
+          TopLeft="307.142862373469,241.624437831772" />
         <NodeLayout
           Size="224,41.6"
           Id="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua"
-          TopLeft="260.714290154224,327.929415432557" />
+          TopLeft="261.483520923455,317.929415432557" />
         <NodeLayout
           Size="312,41.6"
           Id="Package\Sequence Container\Dim_Date\Get distinct date from COMPILED_CASE_DETAILS"
@@ -6585,27 +6538,29 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         <NodeLayout
           Size="221.6,41.6"
           Id="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date"
-          TopLeft="282.857147674171,406.435297753324" />
+          TopLeft="264.395609212633,392.58914390717" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Date.Paths[Derived Column Output1]"
-          TopLeft="371.728576263846,287.070591677926">
+          TopLeft="372.113191648462,283.224437831772">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.8588237546307"
+              EndConnector="0,34.7049776007848"
               Start="0,0"
-              End="0,33.3588237546307">
+              End="0,27.2049776007848">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.3588237546307" />
+                    End="0,27.2049776007848" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6614,20 +6569,22 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.4588244839111"
+              EndConnector="0,22.6126706377572"
               Start="0,0"
-              End="0,18.9588244839111">
+              End="0,15.1126706377572">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.9588244839111" />
+                    End="0,15.1126706377572" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6649,42 +6606,32 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Date.Paths[Lookup No Match Output]"
-          TopLeft="372.714290154224,369.529415432557">
+          TopLeft="374.339565068044,359.529415432557">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="20.9428575199478,36.905882320767"
+              EndConnector="0,33.0597284746131"
               Start="0,0"
-              End="20.9428575199478,29.405882320767">
+              End="0,25.5597284746131">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.4529411603835" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.4529411603835"
-                    Point2="0,18.4529411603835"
-                    Point3="4,18.4529411603835" />
-                  <mssgle:LineSegment
-                    End="16.9428575199478,18.4529411603835" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.9428575199478,18.4529411603835"
-                    Point2="20.9428575199478,18.4529411603835"
-                    Point3="20.9428575199478,22.4529411603835" />
-                  <mssgle:LineSegment
-                    End="20.9428575199478,29.405882320767" />
+                    End="0,25.5597284746131" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-45.3349579587761,23.4529411603835,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,6.97517673730653,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6741,31 +6688,31 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="206.666666666667,42.6666666666667"
+          Size="206.4,42.4"
           Id="Package\Sequence Container\Dim_Gender\Get data Gender from NDS"
           TopLeft="277.285718020128,110.647060389337" />
         <NodeLayout
-          Size="233.333333333334,42.6666666666667"
+          Size="233.6,42.4"
           Id="Package\Sequence Container\Dim_Gender\Insert new row into Dim_Gender"
-          TopLeft="247.857147674171,322.435297753324" />
+          TopLeft="275.000004817028,275.292440610467" />
         <NodeLayout
-          Size="224,42.6666666666667"
+          Size="224,42.4"
           Id="Package\Sequence Container\Dim_Gender\Lookup gender in Dim_Gender"
-          TopLeft="262,210.666666666667" />
+          TopLeft="272,188.52380952381" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Gender.Paths[OLE DB Source Output]"
-          TopLeft="377.309525676731,153.313727056004">
+          TopLeft="382.242859010064,153.047060389337">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.352939610663"
+              EndConnector="0,35.4767491344729"
               Start="0,0"
-              End="0,49.852939610663">
+              End="0,27.9767491344729">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.852939610663" />
+                    End="0,27.9767491344729" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6778,37 +6725,25 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Gender.Paths[Lookup No Match Output]"
-          TopLeft="374,253.333333333333">
+          TopLeft="387.900002408514,230.92380952381">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9.4761856591623,69.1019644199906"
+              EndConnector="0,44.368631086657"
               Start="0,0"
-              End="-9.4761856591623,61.6019644199906">
+              End="0,36.868631086657">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5509822099953" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.5509822099953"
-                    Point2="0,34.5509822099953"
-                    Point3="-4,34.5509822099953" />
-                  <mssgle:LineSegment
-                    End="-5.4761856591623,34.5509822099953" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.4761856591623,34.5509822099953"
-                    Point2="-9.4761856591623,34.5509822099953"
-                    Point3="-9.4761856591623,38.5509822099953" />
-                  <mssgle:LineSegment
-                    End="-9.4761856591623,61.6019644199906" />
+                    End="0,36.868631086657" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-60.5444795483311,39.5509822099953,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,12.6296280433285,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6867,14 +6802,14 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         <NodeLayout
           Size="252,42.4"
           Id="Package\Sequence Container\Dim_Geography\Get PHU, City, PHU_group from NDS"
-          TopLeft="237.042859393237,21.7500002279002" />
+          TopLeft="104.9,5.50000000000005" />
         <NodeLayout
           Size="208,41.6"
           Id="Package\Sequence Container\Dim_Geography\Slowly Changing Dimension"
-          TopLeft="259.042859393237,124.1500002279" />
+          TopLeft="126.9,107.9" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Geography.Paths[OLE DB Source Output]"
-          TopLeft="363.042859393237,64.1500002279002">
+          TopLeft="230.9,47.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6897,10 +6832,10 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Sequence Container\Dim_Geography\Derived Column"
-          TopLeft="149.642859393237,225.7500002279" />
+          TopLeft="17.5,209.5" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Geography.Paths[Historical Attribute Inserts Output]"
-          TopLeft="313.042859393237,165.7500002279">
+          TopLeft="180.9,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6937,10 +6872,10 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Sequence Container\Dim_Geography\OLE DB Command"
-          TopLeft="137.642859393237,327.3500002279" />
+          TopLeft="5.50000000000003,311.1" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Geography.Paths[Derived Column Output]"
-          TopLeft="223.042859393237,267.3500002279">
+          TopLeft="90.9,251.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6963,10 +6898,10 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         <NodeLayout
           Size="120,41.6"
           Id="Package\Sequence Container\Dim_Geography\Union All"
-          TopLeft="303.042859393237,428.9500002279" />
+          TopLeft="170.9,412.7" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Geography.Paths[New Output]"
-          TopLeft="363.042859393237,165.7500002279">
+          TopLeft="230.9,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7002,7 +6937,7 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Geography.Paths[OLE DB Command Output]"
-          TopLeft="220.042859393237,368.9500002279">
+          TopLeft="87.9,352.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7037,21 +6972,21 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Sequence Container\Dim_Geography\Derived Column 1"
-          TopLeft="281.842859393237,517.167647099041" />
+          TopLeft="149.7,514.3" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Geography.Paths[Union All Output 1]"
-          TopLeft="363.042859393237,470.5500002279">
+          TopLeft="230.9,454.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.6176468711409"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,39.1176468711409">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.1176468711409" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7063,10 +6998,10 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Sequence Container\Dim_Geography\Insert Destination"
-          TopLeft="281.842859393237,618.767647099041" />
+          TopLeft="149.7,615.9" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Geography.Paths[Derived Column Output1]"
-          TopLeft="363.042859393237,558.767647099041">
+          TopLeft="230.9,555.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7089,10 +7024,10 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\Sequence Container\Dim_Geography\OLE DB Command 1"
-          TopLeft="423.842859393237,225.7500002279" />
+          TopLeft="291.7,209.5" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_Geography.Paths[Inferred Member Updates Output]"
-          TopLeft="413.042859393237,165.7500002279">
+          TopLeft="280.9,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7132,397 +7067,6 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
   <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Dim_Geography\Get PHU, City, PHU_group from NDS">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Sequence Container\Fact_Case">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Sequence Container\Fact_Case\OLE DB Source"
-          TopLeft="226,74" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Sequence Container\Fact_Case\OLE DB Destination"
-          TopLeft="227,661" />
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\Sequence Container\Fact_Case\Lookup age_group_id"
-          TopLeft="218,153" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Fact_Case.Paths[OLE DB Source Output]"
-          TopLeft="304.4,115.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.4000000000001"
-              Start="0,0"
-              End="0,29.9000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.9000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="206.4,41.6"
-          Id="Package\Sequence Container\Fact_Case\Lookup case_acquisition_id"
-          TopLeft="207,227" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output]"
-          TopLeft="309.1,194.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.3999999999999"
-              Start="0,0"
-              End="0,24.8999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.8999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,6.64531249999996,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="184.8,41.6"
-          Id="Package\Sequence Container\Fact_Case\Lookup case_status_id"
-          TopLeft="220,307" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output1]"
-          TopLeft="311.3,268.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.3999999999999"
-              Start="0,0"
-              End="0,30.8999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.8999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.64531249999996,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Sequence Container\Fact_Case\Lookup gender_id"
-          TopLeft="227,382.8" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output2]"
-          TopLeft="310.3,348.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.1999999999999"
-              Start="0,0"
-              End="0,26.6999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.6999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,7.54531249999994,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\Sequence Container\Fact_Case\Lookup geography_id"
-          TopLeft="219,448.8" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output3]"
-          TopLeft="308.6,424.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24.4000000000005"
-              Start="0,0"
-              End="0,16.9000000000005">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.9000000000005" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,2.64531250000024,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Sequence Container\Fact_Case\Lay ngay, thang, nam"
-          TopLeft="226,529.6" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output4]"
-          TopLeft="312.9,490.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.1999999999995"
-              Start="0,0"
-              End="0,31.6999999999995">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.6999999999995" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,10.0453124999998,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Sequence Container\Fact_Case\Lookup date_id"
-          TopLeft="243,595.4" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Fact_Case.Paths[Derived Column Output]"
-          TopLeft="317.5,571.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24.2000000000002"
-              Start="0,0"
-              End="0,16.7000000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.7000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output5]"
-          TopLeft="315.2,637">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,23.9999999999998"
-              Start="0,0"
-              End="0,16.4999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.4999999999998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,2.44531249999989,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Fact_Case\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Fact_Case\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Fact_Case\Lookup age_group_id">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_AgeGroup]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Fact_Case\Lookup case_acquisition_id">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_CaseAcquisition]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Fact_Case\Lookup case_status_id">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_CaseStatus]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Fact_Case\Lookup gender_id">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Gender]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Fact_Case\Lookup geography_id">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Geography]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Fact_Case\Lookup date_id">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Date]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -7584,6 +7128,401 @@ GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, 
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Fact_Case">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Sequence Container\Fact_Case\Lookup geography_id"
+          TopLeft="77.4615384615383,194.953846153847" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Sequence Container\Fact_Case\Lookup case_status_id"
+          TopLeft="657.692307692307,191.615384615385" />
+        <NodeLayout
+          Size="206.4,41.6"
+          Id="Package\Sequence Container\Fact_Case\Lookup case_acquisition_id"
+          TopLeft="650.076923076922,100.076923076923" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Sequence Container\Fact_Case\Lookup date_id"
+          TopLeft="376.846153846154,285.4" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Sequence Container\Fact_Case\Lookup gender_id"
+          TopLeft="375.461538461539,195.107692307692" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case"
+          TopLeft="656.999999999999,283.307692307692" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Sequence Container\Fact_Case\Lookup age_group_id"
+          TopLeft="368,101.461538461539" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Sequence Container\Fact_Case\Lay ngay, thang, nam"
+          TopLeft="72.9230769230768,282.676923076923" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Sequence Container\Fact_Case\Lay number_of_case"
+          TopLeft="84.7692307692307,98.8205128205129" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Fact_Case.Paths[OLE DB Source Output]"
+          TopLeft="260.769230769231,120.941025641026">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.230769230769,0"
+              Start="0,0"
+              End="99.7307692307693,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="99.7307692307693,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output5]"
+          TopLeft="527.246153846154,305.153846153846">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="129.753846153846,0"
+              Start="0,0"
+              End="122.253846153846,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="122.253846153846,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="12.9355363581728,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output4]"
+          TopLeft="165.592307692308,236.553846153847">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.1230769230765"
+              Start="0,0"
+              End="0,38.6230769230765">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.6230769230765" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.5068509615382,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output3]"
+          TopLeft="375.461538461539,215.830769230769">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-118,0"
+              Start="0,0"
+              End="-110.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-110.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-103.44138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output2]"
+          TopLeft="657.692307692307,214.161538461538">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-119.830769230768,0"
+              Start="0,0"
+              End="-112.330769230768,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-112.330769230768,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-104.356771334134,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output1]"
+          TopLeft="751.684615384615,141.676923076923">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.9384615384616"
+              Start="0,0"
+              End="0,42.4384615384616">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.4384615384616" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,15.4145432692308,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Fact_Case.Paths[Lookup Match Output]"
+          TopLeft="548,121.569230769231">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.076923076922,0"
+              Start="0,0"
+              End="94.5769230769224,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="94.5769230769224,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-0.902925180288797,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Fact_Case.Paths[Derived Column Output]"
+          TopLeft="254.523076923077,304.838461538462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="122.323076923077,0"
+              Start="0,0"
+              End="114.823076923077,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="114.823076923077,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Fact_Case\Lookup geography_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Geography]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Fact_Case\Lookup case_status_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_CaseStatus]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Fact_Case\Lookup case_acquisition_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_CaseAcquisition]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Fact_Case\Lookup date_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Date]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Fact_Case\Lookup gender_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Gender]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Fact_Case\Them du lieu vao Fact_case">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Fact_Case\Lookup age_group_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_AgeGroup]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Fact_Case\Lay number_of_case">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{DFDB25C4-4A96-4C74-B41B-9A54819FCA3C}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{3DC090F2-B82F-4E17-878A-316666FE97F4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3380,7 +3380,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate PHU_Group"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3396,7 +3396,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Vaccines_By_Age_PHU"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3470,65 +3470,65 @@
         <NodeLayout
           Size="220,41.6"
           Id="Package\SourceToStage Cases_Report"
-          TopLeft="191.388881283778,287.427779895156" />
+          TopLeft="58.7358178002196,222.973997478611" />
         <NodeLayout
           Size="309.6,41.6"
           Id="Package\SourceToStage Compile_COVID19_Case_Details"
-          TopLeft="529.166645639473,290.027778345435" />
+          TopLeft="396.513582155915,225.57399592889" />
         <NodeLayout
           Size="274.4,41.6"
           Id="Package\SourceToStage Ongoing_Outbreaks_PHU"
-          TopLeft="898.766645639473,287.427779895156" />
+          TopLeft="766.113582155914,222.973997478611" />
         <NodeLayout
           Size="175.2,41.6"
           Id="Package\SourceToStage PHU"
-          TopLeft="597.40278201357,549.322226587841" />
+          TopLeft="466.790534891297,410.582728843753" />
         <NodeLayout
           Size="210.4,41.6"
           Id="Package\SourceToStage PHU_Group"
-          TopLeft="934.555546394101,570.516671017935" />
+          TopLeft="804.963707452471,413.205744441961" />
         <NodeLayout
-          Size="265.6,41.6"
+          Size="260,41.6"
           Id="Package\SourceToStage Vaccines_By_Age_PHU"
-          TopLeft="175.388909894006,548.583337526189" />
+          TopLeft="43.7562545910903,414.213587742545" />
         <NodeLayout
           Size="188.8,41.6"
           Id="Package\Truncate Cases_Report"
-          TopLeft="210.277769422091,160.894445556226" />
+          TopLeft="73.5430732159618,141.230579734229" />
         <NodeLayout
           Size="278.4,41.6"
           Id="Package\Truncate Compile_COVID19_Case_Details"
-          TopLeft="545.555533877127,150.49444390319" />
+          TopLeft="408.820837670998,130.830578081193" />
         <NodeLayout
           Size="243.2,41.6"
           Id="Package\Truncate Ongoing_Outbreaks_PHU"
-          TopLeft="915.711089410607,150.494445473574" />
+          TopLeft="778.976393204478,130.830579651577" />
         <NodeLayout
           Size="144,41.6"
           Id="Package\Truncate PHU"
-          TopLeft="615.736114618404,404.300003213088" />
+          TopLeft="483.083051134846,339.846220796543" />
         <NodeLayout
           Size="178.4,41.6"
           Id="Package\Truncate PHU_Group"
-          TopLeft="954.277767832634,403.827780804325" />
+          TopLeft="821.624704349076,339.37399838778" />
         <NodeLayout
           Size="234.4,41.6"
           Id="Package\Truncate Vaccines_By_Age_PHU"
-          TopLeft="185.388909496642,408.76111419276" />
+          TopLeft="52.7358460130836,344.307331776215" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="303.033325352934,202.494445556226">
+          TopLeft="168.339445508091,182.830579734229">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,84.9333343389305"
+              EndConnector="0,40.1434177443818"
               Start="0,0"
-              End="0,77.4333343389305">
+              End="0,32.6434177443818">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,77.4333343389305" />
+                    End="0,32.6434177443818" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3539,18 +3539,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="684.3610897583,192.09444390319">
+          TopLeft="549.667209913456,172.430578081193">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,97.9333344422453"
+              EndConnector="0,53.1434178476968"
               Start="0,0"
-              End="0,90.4333344422453">
+              End="0,45.6434178476968">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,90.4333344422453" />
+                    End="0,45.6434178476968" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3561,18 +3561,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1036.63886752504,192.094445473574">
+          TopLeft="901.944987680196,172.430579651577">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,95.3333344215822"
+              EndConnector="0,50.5434178270338"
               Start="0,0"
-              End="0,87.8333344215822">
+              End="0,43.0434178270338">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,87.8333344215822" />
+                    End="0,43.0434178270338" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3583,18 +3583,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="305.388909695324,450.36111419276">
+          TopLeft="171.846050302087,385.907331776215">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,98.222223333429"
+              EndConnector="0,28.3062559663295"
               Start="0,0"
-              End="0,90.722223333429">
+              End="0,20.8062559663295">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,90.722223333429" />
+                    End="0,20.8062559663295" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3605,18 +3605,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="686.369448315987,445.900003213088">
+          TopLeft="554.736793013071,381.446220796543">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,103.422223374753"
+              EndConnector="0,29.1365080472097"
               Start="0,0"
-              End="0,95.9222233747529">
+              End="0,21.6365080472097">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,95.9222233747529" />
+                    End="0,21.6365080472097" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3627,18 +3627,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="1041.61665711337,445.427780804325">
+          TopLeft="910.494205900773,380.97399838778">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,125.088890213609"
+              EndConnector="0,32.2317460541806"
               Start="0,0"
-              End="0,117.588890213609">
+              End="0,24.7317460541806">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,117.588890213609" />
+                    End="0,24.7317460541806" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3654,7 +3654,7 @@
     design-time-name="Package\SourceToStage Cases_Report">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage Cases_Report\OLE DB Destination"
@@ -3682,7 +3682,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3705,7 +3707,7 @@
     design-time-name="Package\SourceToStage Compile_COVID19_Case_Details">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage Compile_COVID19_Case_Details\OLE DB Destination"
@@ -3733,7 +3735,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3931,7 +3935,7 @@
     design-time-name="Package\SourceToStage Vaccines_By_Age_PHU">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="140,41.6"
           Id="Package\SourceToStage Vaccines_By_Age_PHU\Excel Source"
@@ -3959,7 +3963,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

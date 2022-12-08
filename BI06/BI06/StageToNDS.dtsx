@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{40D52730-A468-4E61-B74D-72DB6AE4ADB8}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{C69B5622-91CD-415D-9CF7-28355D6583D4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -68,11 +68,11 @@
           version="1">
           <components>
             <component
-              refId="Package\CASE_REPORT\Insert a new compiled_case_details"
+              refId="Package\CASE_REPORT\Insert a new case_report"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Insert a new compiled_case_details"
+              name="Insert a new case_report"
               usesDispositions="true"
               version="4">
               <properties>
@@ -125,7 +125,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\CASE_REPORT\Insert a new compiled_case_details.Connections[OleDbConnection]"
+                  refId="Package\CASE_REPORT\Insert a new case_report.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[NDS]"
                   connectionManagerRefId="Package.ConnectionManagers[NDS]"
                   description="The OLE DB runtime connection used to access the database."
@@ -133,170 +133,168 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input]"
+                  refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[create_date]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[create_date]"
                       cachedDataType="dbTimeStamp"
                       cachedName="create_date"
-                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[create_date]"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[create_date]"
                       lineageId="Package\CASE_REPORT\Update create_date, update_date.Outputs[Derived Column Output].Columns[create_date]" />
                     <inputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[update_date]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[update_date]"
                       cachedDataType="dbTimeStamp"
                       cachedName="update_date"
-                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[update_date]"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[update_date]"
                       lineageId="Package\CASE_REPORT\Update create_date, update_date.Outputs[Derived Column Output].Columns[update_date]" />
                     <inputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[PHU_id_nds]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[PHU_id_nds]"
                       cachedDataType="i4"
                       cachedName="PHU_id_nds"
-                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[PHU_id]"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[PHU_id]"
                       lineageId="Package\CASE_REPORT\Lookup PHU_id.Outputs[Lookup Match Output].Columns[PHU_id_nds]" />
                     <inputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[age_group_id_nds]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[age_group_id_nds]"
                       cachedDataType="i4"
                       cachedName="age_group_id_nds"
-                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
                       lineageId="Package\CASE_REPORT\Lookup age_group_id.Outputs[Lookup Match Output].Columns[age_group_id_nds]" />
                     <inputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[gender_id_nds]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[gender_id_nds]"
                       cachedDataType="i4"
                       cachedName="gender_id_nds"
-                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[gender_id]"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[gender_id]"
                       lineageId="Package\CASE_REPORT\Lookup gender_id.Outputs[Lookup Match Output].Columns[gender_id_nds]" />
                     <inputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[case_acquisition_id_nds]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[case_acquisition_id_nds]"
                       cachedDataType="i4"
                       cachedName="case_acquisition_id_nds"
-                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[case_acquisition_id]"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[case_acquisition_id]"
                       lineageId="Package\CASE_REPORT\Lookup case_acquistion_id.Outputs[Lookup Match Output].Columns[case_acquisition_id_nds]" />
                     <inputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[outcome]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[outcome]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="outcome"
-                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[outcome]"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[outcome]"
                       lineageId="Package\CASE_REPORT\Load data from Stage.Outputs[OLE DB Source Output].Columns[outcome]" />
                     <inputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[testReported_date]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[testReported_date]"
                       cachedDataType="dbTimeStamp"
                       cachedName="testReported_date"
-                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[test_reported_date]"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[test_reported_date]"
                       lineageId="Package\CASE_REPORT\Load data from Stage.Outputs[OLE DB Source Output].Columns[testReported_date]" />
                     <inputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[accurateEpisode_date]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[accurateEpisode_date]"
                       cachedDataType="dbTimeStamp"
                       cachedName="accurateEpisode_date"
-                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[accurate_episode_date]"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[accurate_episode_date]"
                       lineageId="Package\CASE_REPORT\Load data from Stage.Outputs[OLE DB Source Output].Columns[accurateEpisode_date]" />
                     <inputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[outbreakRelated]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[outbreakRelated]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="outbreakRelated"
-                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[outbreak_related]"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[outbreak_related]"
                       lineageId="Package\CASE_REPORT\Load data from Stage.Outputs[OLE DB Source Output].Columns[outbreakRelated]" />
+                    <inputColumn
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[specimen_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="specimen_date"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[specimen_date]"
+                      lineageId="Package\CASE_REPORT\Load data from Stage.Outputs[OLE DB Source Output].Columns[specimen_date]" />
+                    <inputColumn
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].Columns[caseReported_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="caseReported_date"
+                      externalMetadataColumnId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[case_reported_date]"
+                      lineageId="Package\CASE_REPORT\Load data from Stage.Outputs[OLE DB Source Output].Columns[caseReported_date]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[create_date]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[create_date]"
                       dataType="dbTimeStamp"
                       name="create_date" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[update_date]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[update_date]"
                       dataType="dbTimeStamp"
                       name="update_date" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[PHU_id]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[PHU_id]"
                       dataType="i4"
                       name="PHU_id" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
                       dataType="i4"
                       name="age_group_id" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[gender_id]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[gender_id]"
                       dataType="i4"
                       name="gender_id" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[case_acquisition_id]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[case_acquisition_id]"
                       dataType="i4"
                       name="case_acquisition_id" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[case_report_id]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[case_report_id]"
                       dataType="i4"
                       name="case_report_id" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[outcome]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[outcome]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="outcome" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[test_reported_date]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[test_reported_date]"
                       dataType="dbTimeStamp"
                       name="test_reported_date" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[accurate_episode_date]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[accurate_episode_date]"
                       dataType="dbTimeStamp"
                       name="accurate_episode_date" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[outbreak_related]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[outbreak_related]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="outbreak_related" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[case_report_nk]"
-                      dataType="i4"
-                      name="case_report_nk" />
-                    <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[reported_date]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[case_reported_date]"
                       dataType="dbTimeStamp"
-                      name="reported_date" />
+                      name="case_reported_date" />
                     <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[province_id]"
-                      dataType="i4"
-                      name="province_id" />
-                    <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[case_status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="case_status" />
-                    <externalMetadataColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[speimen_date]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input].ExternalColumns[specimen_date]"
                       dataType="dbTimeStamp"
-                      name="speimen_date" />
+                      name="specimen_date" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\CASE_REPORT\Insert a new compiled_case_details.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\CASE_REPORT\Insert a new case_report.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\CASE_REPORT\Insert a new compiled_case_details.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\CASE_REPORT\Insert a new case_report.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\CASE_REPORT\Insert a new compiled_case_details.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\CASE_REPORT\Insert a new case_report.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\CASE_REPORT\Insert a new compiled_case_details.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\CASE_REPORT\Insert a new case_report.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2041,7 +2039,7 @@ where [refTable].[reporting_PHU] = ?</property>
           <paths>
             <path
               refId="Package\CASE_REPORT.Paths[Derived Column Output]"
-              endId="Package\CASE_REPORT\Insert a new compiled_case_details.Inputs[OLE DB Destination Input]"
+              endId="Package\CASE_REPORT\Insert a new case_report.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\CASE_REPORT\Update create_date, update_date.Outputs[Derived Column Output]" />
             <path
@@ -3042,37 +3040,37 @@ where [refTable].[PHU_group_name] = ?</property>
                       cachedDataType="i4"
                       cachedName="PHU_id_nds"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[PHU_id]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[PHU_id_nds]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup PHU_id.Outputs[Lookup Match Output].Columns[PHU_id_nds]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[objectID]"
                       cachedDataType="i4"
                       cachedName="objectID"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[compiled_case_details_nk]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[objectID]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[objectID]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[date_reported]"
                       cachedDataType="dbTimeStamp"
                       cachedName="date_reported"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[date_reported]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[date_reported]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[date_reported]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[age_group_id_nds]"
                       cachedDataType="i4"
                       cachedName="age_group_id_nds"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[age_group_id_nds]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup age_group_id.Outputs[Lookup Match Output].Columns[age_group_id_nds]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[gender_id_nds]"
                       cachedDataType="i4"
                       cachedName="gender_id_nds"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[gender_id]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[gender_id_nds]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup gender_id.Outputs[Lookup Match Output].Columns[gender_id_nds]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[case_acquisition_id_nds]"
                       cachedDataType="i4"
                       cachedName="case_acquisition_id_nds"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[case_acquisition_id]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[case_acquisition_id_nds]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup Match Output].Columns[case_acquisition_id_nds]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].Columns[case_status]"
                       cachedCodepage="1252"
@@ -3080,7 +3078,7 @@ where [refTable].[PHU_group_name] = ?</property>
                       cachedLength="50"
                       cachedName="case_status"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Insert a new compiled_case_details.Inputs[OLE DB Destination Input].ExternalColumns[case_status]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[case_status]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[case_status]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3398,794 +3396,6 @@ WHERE (province = 'Ontario')</property>
               </outputs>
             </component>
             <component
-              refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id"
-              componentClassID="Microsoft.FuzzyLookup"
-              contactInfo="Fuzzy Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
-              description="Performs data cleaning tasks such as standardizing data, correcting data, and providing missing values.  Uses fuzzy matching to return one or more close matches from a reference table. For example, lookup customer data by address, even if your input address data does not exactly match your reference address data."
-              name="Look up case_acquisition_id"
-              version="5">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Indicates whether to reuse an existing fuzzy-match index table or build a new one. The new index table can be temporary, persisted, or persisted and maintained."
-                  name="MatchIndexOptions"
-                  typeConverter="tcMatchIndexOptions">1</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the maximum amount of memory (MB) that this instance of the Fuzzy Lookup transformation can use.  If 0 is given, then the transform will dynamically adjust it's memory usage based upon it's requirements and available system memory."
-                  expressionType="Notify"
-                  name="MaxMemoryUsage" />
-                <property
-                  dataType="System.Null"
-                  description="Specifies the name of the fuzzy-match index table to be reused or the table name in which a newly generated fuzzy-match index table will be written."
-                  name="MatchIndexName"
-                  state="escaped" />
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the reference table or view against which to match incoming records."
-                  name="ReferenceTableName"
-                  state="escaped">_x005B_dbo_x005D_._x005B_CASE_ACQUISITION_x005D_</property>
-                <property
-                  dataType="System.Int32"
-                  description="Indicates whether to drop an existing fuzzy-match index table if transformation is configured to generate a new table and a table with the same name already exists."
-                  name="DropExistingMatchIndex">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Whether a copy of the reference table should be made for fuzzy match index construction and subsequent matching.  It is strongly recommended that a copy always be made, otherwise unpredictable output may result if the contents of the reference table change during package execution (or between executions if reusing a fuzzy match index).  If this property is set to false, the reference table must additionally have a clustered index built upon an integer identity column."
-                  name="CopyReferenceTable">1</property>
-                <property
-                  dataType="System.UInt32"
-                  description="Specifies the maximum number of fuzzy matches to return for an input record."
-                  name="MaxOutputMatchesPerInput">1</property>
-                <property
-                  dataType="System.Single"
-                  description="Specifies the minimum similarity score required for the match results that the transformation returns."
-                  name="MinSimilarity">0.7</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the set of white-space and punctuation characters used to separate fuzzy match fields into the words used for matching and scoring a fuzzy lookup."
-                  name="Delimiters"
-                  state="escaped">_x0020__x0009__x000D__x000A__x002C_._x003B_:-_x0022__x0027__x0026__x002F__x005C__x0040__x0021__x003F__x0028__x0029__x003C__x003E__x005B__x005D__x007B__x007D__x007C__x0023__x002A__x005E__x0025_</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the metadata of the reference table in XML format."
-                  name="ReferenceMetadataXml"
-                  state="escaped">_x003C_referenceMetadata_x003E__x003C_referenceColumns_x003E__x003C_referenceColumn_x0020_name_x003D__x0022_case_acquisition_id_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_case_acquisition_name_x0022__x0020_dataType_x003D__x0022_DT_STR_x0022__x0020_length_x003D__x0022_100_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_1252_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_create_date_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_update_date_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C__x002F_referenceColumns_x003E__x003C__x002F_referenceMetadata_x003E__x000D__x000A_</property>
-                <property
-                  dataType="System.Boolean"
-                  description="If true, each input record will be directly compared against EVERY record in the reference table.  This may produce slightly better results, but will be extremely slow unless the number of records in the reference table is very small.  Note that the entire reference table will be loaded into main memory if this option is enabled.  This option is primarily intended for debugging purposes and should be used with care."
-                  name="Exhaustive">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="If true, Fuzzy Lookup will partially load the error-tolerant index and the reference table into main memory before execution begins.  This can greatly enhance performance if many input rows are to be processed."
-                  name="WarmCaches">true</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
-                  description="Microsoft SQL Server connection and database in which the fuzzy lookup reference table is located and where the fuzzy match index table will be stored and accessed."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input]"
-                  name="Fuzzy Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input].Columns[objectID]"
-                      cachedDataType="i4"
-                      cachedName="objectID"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[objectID]">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Name of the reference table column with which the input column should be matched."
-                          name="JoinToReferenceColumn"
-                          state="escaped" />
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the match is a fuzzy or an exact match."
-                          name="JoinType"
-                          typeConverter="tcJoinType">2</property>
-                        <property
-                          dataType="System.Single"
-                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
-                          name="MinSimilarity">0</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
-                          name="FuzzyComparisonFlags"
-                          typeConverter="tcComparisonFlags">1</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
-                          name="FuzzyComparisonFlagsEx"
-                          typeConverter="tcComparisonFlagsEx">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input].Columns[date_reported]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="date_reported"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[date_reported]">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Name of the reference table column with which the input column should be matched."
-                          name="JoinToReferenceColumn"
-                          state="escaped" />
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the match is a fuzzy or an exact match."
-                          name="JoinType"
-                          typeConverter="tcJoinType">2</property>
-                        <property
-                          dataType="System.Single"
-                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
-                          name="MinSimilarity">0</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
-                          name="FuzzyComparisonFlags"
-                          typeConverter="tcComparisonFlags">1</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
-                          name="FuzzyComparisonFlagsEx"
-                          typeConverter="tcComparisonFlagsEx">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input].Columns[health_region]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="health_region"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[health_region]">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Name of the reference table column with which the input column should be matched."
-                          name="JoinToReferenceColumn"
-                          state="escaped" />
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the match is a fuzzy or an exact match."
-                          name="JoinType"
-                          typeConverter="tcJoinType">2</property>
-                        <property
-                          dataType="System.Single"
-                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
-                          name="MinSimilarity">0</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
-                          name="FuzzyComparisonFlags"
-                          typeConverter="tcComparisonFlags">1</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
-                          name="FuzzyComparisonFlagsEx"
-                          typeConverter="tcComparisonFlagsEx">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input].Columns[age_group]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="age_group"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[age_group]">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Name of the reference table column with which the input column should be matched."
-                          name="JoinToReferenceColumn"
-                          state="escaped" />
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the match is a fuzzy or an exact match."
-                          name="JoinType"
-                          typeConverter="tcJoinType">2</property>
-                        <property
-                          dataType="System.Single"
-                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
-                          name="MinSimilarity">0</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
-                          name="FuzzyComparisonFlags"
-                          typeConverter="tcComparisonFlags">1</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
-                          name="FuzzyComparisonFlagsEx"
-                          typeConverter="tcComparisonFlagsEx">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input].Columns[gender]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="gender"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[gender]">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Name of the reference table column with which the input column should be matched."
-                          name="JoinToReferenceColumn"
-                          state="escaped" />
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the match is a fuzzy or an exact match."
-                          name="JoinType"
-                          typeConverter="tcJoinType">2</property>
-                        <property
-                          dataType="System.Single"
-                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
-                          name="MinSimilarity">0</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
-                          name="FuzzyComparisonFlags"
-                          typeConverter="tcComparisonFlags">1</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
-                          name="FuzzyComparisonFlagsEx"
-                          typeConverter="tcComparisonFlagsEx">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input].Columns[exposure]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="exposure"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[exposure]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Name of the reference table column with which the input column should be matched."
-                          name="JoinToReferenceColumn"
-                          state="escaped">case_acquisition_name</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the match is a fuzzy or an exact match."
-                          name="JoinType"
-                          typeConverter="tcJoinType">2</property>
-                        <property
-                          dataType="System.Single"
-                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
-                          name="MinSimilarity">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
-                          name="FuzzyComparisonFlags"
-                          typeConverter="tcComparisonFlags">1</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
-                          name="FuzzyComparisonFlagsEx"
-                          typeConverter="tcComparisonFlagsEx">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input].Columns[case_status]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="case_status"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[case_status]">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Name of the reference table column with which the input column should be matched."
-                          name="JoinToReferenceColumn"
-                          state="escaped" />
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the match is a fuzzy or an exact match."
-                          name="JoinType"
-                          typeConverter="tcJoinType">2</property>
-                        <property
-                          dataType="System.Single"
-                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
-                          name="MinSimilarity">0</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
-                          name="FuzzyComparisonFlags"
-                          typeConverter="tcComparisonFlags">1</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
-                          name="FuzzyComparisonFlagsEx"
-                          typeConverter="tcComparisonFlagsEx">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input].Columns[PHU_id_nds]"
-                      cachedDataType="i4"
-                      cachedName="PHU_id_nds"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup PHU_id.Outputs[Lookup Match Output].Columns[PHU_id_nds]">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Name of the reference table column with which the input column should be matched."
-                          name="JoinToReferenceColumn"
-                          state="escaped" />
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the match is a fuzzy or an exact match."
-                          name="JoinType"
-                          typeConverter="tcJoinType">2</property>
-                        <property
-                          dataType="System.Single"
-                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
-                          name="MinSimilarity">0</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
-                          name="FuzzyComparisonFlags"
-                          typeConverter="tcComparisonFlags">1</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
-                          name="FuzzyComparisonFlagsEx"
-                          typeConverter="tcComparisonFlagsEx">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input].Columns[age_group_id_nds]"
-                      cachedDataType="i4"
-                      cachedName="age_group_id_nds"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup age_group_id.Outputs[Lookup Match Output].Columns[age_group_id_nds]">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Name of the reference table column with which the input column should be matched."
-                          name="JoinToReferenceColumn"
-                          state="escaped" />
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the match is a fuzzy or an exact match."
-                          name="JoinType"
-                          typeConverter="tcJoinType">2</property>
-                        <property
-                          dataType="System.Single"
-                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
-                          name="MinSimilarity">0</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
-                          name="FuzzyComparisonFlags"
-                          typeConverter="tcComparisonFlags">1</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
-                          name="FuzzyComparisonFlagsEx"
-                          typeConverter="tcComparisonFlagsEx">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input].Columns[gender_id_nds]"
-                      cachedDataType="i4"
-                      cachedName="gender_id_nds"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup gender_id.Outputs[Lookup Match Output].Columns[gender_id_nds]">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Name of the reference table column with which the input column should be matched."
-                          name="JoinToReferenceColumn"
-                          state="escaped" />
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the match is a fuzzy or an exact match."
-                          name="JoinType"
-                          typeConverter="tcJoinType">2</property>
-                        <property
-                          dataType="System.Single"
-                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
-                          name="MinSimilarity">0</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
-                          name="FuzzyComparisonFlags"
-                          typeConverter="tcComparisonFlags">1</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
-                          name="FuzzyComparisonFlagsEx"
-                          typeConverter="tcComparisonFlagsEx">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input].Columns[case_acquisition]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="case_acquisition"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Derived Column exposure.Outputs[Derived Column Output].Columns[case_acquisition]">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Name of the reference table column with which the input column should be matched."
-                          name="JoinToReferenceColumn"
-                          state="escaped" />
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the match is a fuzzy or an exact match."
-                          name="JoinType"
-                          typeConverter="tcJoinType">2</property>
-                        <property
-                          dataType="System.Single"
-                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
-                          name="MinSimilarity">0</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
-                          name="FuzzyComparisonFlags"
-                          typeConverter="tcComparisonFlags">1</property>
-                        <property
-                          dataType="System.UInt32"
-                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
-                          name="FuzzyComparisonFlagsEx"
-                          typeConverter="tcComparisonFlagsEx">0</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output]"
-                  name="Fuzzy Lookup Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[objectID]"
-                      dataType="i4"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[objectID]"
-                      name="objectID">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[objectID]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[date_reported]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[date_reported]"
-                      name="date_reported">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[date_reported]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[health_region]"
-                      dataType="wstr"
-                      length="100"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[health_region]"
-                      name="health_region">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[health_region]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[age_group]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[age_group]"
-                      name="age_group">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[age_group]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[gender]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[gender]"
-                      name="gender">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[gender]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[exposure]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[exposure]"
-                      name="exposure">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[exposure]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[case_status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[case_status]"
-                      name="case_status">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[case_status]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[PHU_id_nds]"
-                      dataType="i4"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[PHU_id_nds]"
-                      name="PHU_id_nds">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Lookup PHU_id.Outputs[Lookup Match Output].Columns[PHU_id_nds]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[age_group_id_nds]"
-                      dataType="i4"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[age_group_id_nds]"
-                      name="age_group_id_nds">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Lookup age_group_id.Outputs[Lookup Match Output].Columns[age_group_id_nds]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[gender_id_nds]"
-                      dataType="i4"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[gender_id_nds]"
-                      name="gender_id_nds">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Lookup gender_id.Outputs[Lookup Match Output].Columns[gender_id_nds]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[case_acquisition]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[case_acquisition]"
-                      name="case_acquisition">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Derived Column exposure.Outputs[Derived Column Output].Columns[case_acquisition]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[case_acquisition_id_nds]"
-                      dataType="i4"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[case_acquisition_id_nds]"
-                      name="case_acquisition_id_nds">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped">case_acquisition_id</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Null"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID" />
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[_Similarity]"
-                      dataType="r4"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[_Similarity]"
-                      name="_Similarity">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">1</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[_Confidence]"
-                      dataType="r4"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[_Confidence]"
-                      name="_Confidence">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">2</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[_Similarity_exposure]"
-                      dataType="r4"
-                      description="Column-level similarity score for fuzzy join on column &quot;exposure&quot;."
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[_Similarity_exposure]"
-                      name="_Similarity_exposure">
-                      <properties>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the reference table column that is copied to the output for each match result."
-                          name="CopyFromReferenceColumn"
-                          state="escaped" />
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
-                          name="SourceInputColumnLineageID">#{Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[exposure]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies whether the column is used to indicate confidence or similarity."
-                          name="ColumnType"
-                          typeConverter="tcColumnType">3</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\COMPILED_CASE_DETAILS\Lookup age_group_id"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -4346,6 +3556,344 @@ where [refTable].[age_group_name] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup case_acquistion in nds"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT *
+FROM
+(
+    SELECT 'Close Contact', 'CLOSED CONTACT'
+    UNION ALL SELECT 'Travel-Related', 'TRAVEL-RELATED'
+    UNION ALL SELECT 'Outbreak', 'OUTBREAK'
+    UNION ALL SELECT 'Not Reported', 'MISSING INFORMATION'
+ 
+) D (case_acquisition_stage, case_acquisition_nds)</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT *
+FROM
+(
+    SELECT 'Close Contact', 'CLOSED CONTACT'
+    UNION ALL SELECT 'Travel-Related', 'TRAVEL-RELATED'
+    UNION ALL SELECT 'Outbreak', 'OUTBREAK'
+    UNION ALL SELECT 'Not Reported', 'MISSING INFORMATION'
+ 
+) D (case_acquisition_stage, case_acquisition_nds)) [refTable]
+where [refTable].[case_acquisition_stage] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="case_acquisition_stage" dataType="DT_STR" length="14" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="case_acquisition_nds" dataType="DT_STR" length="19" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[exposure]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Inputs[Lookup Input].Columns[exposure]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="exposure"
+                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[exposure]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">case_acquisition_stage</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup Match Output].Columns[case_acquisition_nds]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="19"
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup Match Output].Columns[case_acquisition_nds]"
+                      name="case_acquisition_nds"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">case_acquisition_nds</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup case_acquistion_id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT case_acquisition_id, case_acquisition_name from CASE_ACQUISITION</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT case_acquisition_id, case_acquisition_name from CASE_ACQUISITION) [refTable]
+where [refTable].[case_acquisition_name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="case_acquisition_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="case_acquisition_name" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup Match Output].Columns[case_acquisition_nds]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Inputs[Lookup Input].Columns[case_acquisition_nds]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="19"
+                      cachedName="case_acquisition_nds"
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup Match Output].Columns[case_acquisition_nds]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">case_acquisition_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup Match Output].Columns[case_acquisition_id_nds]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup Match Output].Columns[case_acquisition_id_nds]"
+                      name="case_acquisition_id_nds"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">case_acquisition_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\COMPILED_CASE_DETAILS\Lookup compile_case_details_id"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -4431,7 +3979,7 @@ where [refTable].[compiled_case_details_nk] = ?</property>
                       refId="Package\COMPILED_CASE_DETAILS\Lookup compile_case_details_id.Inputs[Lookup Input].Columns[objectID]"
                       cachedDataType="i4"
                       cachedName="objectID"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[objectID]">
+                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[objectID]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -4879,37 +4427,37 @@ WHERE
                       cachedDataType="i4"
                       cachedName="objectID"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[objectID]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[objectID]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].Columns[date_reported]"
                       cachedDataType="dbTimeStamp"
                       cachedName="date_reported"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[date_reported]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[date_reported]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].Columns[PHU_id_nds]"
                       cachedDataType="i4"
                       cachedName="PHU_id_nds"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[PHU_id_nds]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup PHU_id.Outputs[Lookup Match Output].Columns[PHU_id_nds]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].Columns[age_group_id_nds]"
                       cachedDataType="i4"
                       cachedName="age_group_id_nds"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[age_group_id_nds]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup age_group_id.Outputs[Lookup Match Output].Columns[age_group_id_nds]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].Columns[gender_id_nds]"
                       cachedDataType="i4"
                       cachedName="gender_id_nds"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[gender_id_nds]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup gender_id.Outputs[Lookup Match Output].Columns[gender_id_nds]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].Columns[case_acquisition_id_nds]"
                       cachedDataType="i4"
                       cachedName="case_acquisition_id_nds"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[case_acquisition_id_nds]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup Match Output].Columns[case_acquisition_id_nds]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].Columns[case_status]"
                       cachedCodepage="1252"
@@ -4917,7 +4465,7 @@ WHERE
                       cachedLength="50"
                       cachedName="case_status"
                       externalMetadataColumnId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      lineageId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output].Columns[case_status]" />
+                      lineageId="Package\COMPILED_CASE_DETAILS\Load data from Stage.Outputs[OLE DB Source Output].Columns[case_status]" />
                     <inputColumn
                       refId="Package\COMPILED_CASE_DETAILS\Update compiled_case_details.Inputs[OLE DB Command Input].Columns[update_date]"
                       cachedDataType="dbTimeStamp"
@@ -5251,14 +4799,9 @@ WHERE
               startId="Package\COMPILED_CASE_DETAILS\Update update_date.Outputs[Derived Column Output]" />
             <path
               refId="Package\COMPILED_CASE_DETAILS.Paths[Derived Column Output2]"
-              endId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Inputs[Fuzzy Lookup Input]"
+              endId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\COMPILED_CASE_DETAILS\Derived Column exposure.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\COMPILED_CASE_DETAILS.Paths[Fuzzy Lookup Output]"
-              endId="Package\COMPILED_CASE_DETAILS\Lookup compile_case_details_id.Inputs[Lookup Input]"
-              name="Fuzzy Lookup Output"
-              startId="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id.Outputs[Fuzzy Lookup Output]" />
             <path
               refId="Package\COMPILED_CASE_DETAILS.Paths[Lookup Match Output]"
               endId="Package\COMPILED_CASE_DETAILS\Update update_date.Inputs[Derived Column Input]"
@@ -5279,6 +4822,16 @@ WHERE
               endId="Package\COMPILED_CASE_DETAILS\Derived Column exposure.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\COMPILED_CASE_DETAILS\Lookup gender_id.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\COMPILED_CASE_DETAILS.Paths[Lookup Match Output4]"
+              endId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\COMPILED_CASE_DETAILS.Paths[Lookup Match Output5]"
+              endId="Package\COMPILED_CASE_DETAILS\Lookup compile_case_details_id.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id.Outputs[Lookup Match Output]" />
             <path
               refId="Package\COMPILED_CASE_DETAILS.Paths[Lookup No Match Output]"
               endId="Package\COMPILED_CASE_DETAILS\Update create_date, update_date.Inputs[Derived Column Input]"
@@ -11100,9 +10653,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
           Id="Package\CASE_REPORT\Lookup PHU_id"
           TopLeft="335.208326943427,125.216664395034" />
         <NodeLayout
-          Size="243.2,41.6"
-          Id="Package\CASE_REPORT\Insert a new compiled_case_details"
-          TopLeft="280.299248529738,904.826406582295" />
+          Size="196.8,41.6"
+          Id="Package\CASE_REPORT\Insert a new case_report"
+          TopLeft="309.530017760507,895.595637351526" />
         <NodeLayout
           Size="227.2,41.6"
           Id="Package\CASE_REPORT\Lookup age_group_name in nds"
@@ -11313,38 +10866,24 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CASE_REPORT.Paths[Derived Column Output]"
-          TopLeft="411.68853296165,867.926405511622">
+          TopLeft="409.809275361079,867.926405511622">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9.78928443191205,36.900001070675"
+              EndConnector="0,27.6692318399038"
               Start="0,0"
-              End="-9.78928443191205,29.400001070675">
+              End="0,20.1692318399038">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.4500005353375" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.4500005353375"
-                    Point2="0,18.4500005353375"
-                    Point3="-4,18.4500005353375" />
-                  <mssgle:LineSegment
-                    End="-5.78928443191205,18.4500005353375" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.78928443191205,18.4500005353375"
-                    Point2="-9.78928443191205,18.4500005353375"
-                    Point3="-9.78928443191205,22.4500005353375" />
-                  <mssgle:LineSegment
-                    End="-9.78928443191205,29.400001070675" />
+                    End="0,20.1692318399038" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11366,9 +10905,7 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -11513,7 +11050,7 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\CASE_REPORT\Insert a new compiled_case_details">
+    design-time-name="Package\CASE_REPORT\Insert a new case_report">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11616,7 +11153,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11638,7 +11177,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11746,10 +11287,6 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="208.8,41.6"
-          Id="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id"
-          TopLeft="319.999987284343,455.333336157269" />
-        <NodeLayout
           Size="181.6,42.4"
           Id="Package\COMPILED_CASE_DETAILS\Load data from Stage"
           TopLeft="323.660715916078,44.025492251943" />
@@ -11843,7 +11380,7 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="2.98468440828227,24.0408350771799,111.6127734375,11.609375"
+              BoundingBox="2.9846844082825,24.0408350771799,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -11956,50 +11493,6 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\COMPILED_CASE_DETAILS.Paths[Fuzzy Lookup Output]"
-          TopLeft="420.450588333542,496.933336157269">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.8147018131843"
-              Start="0,0"
-              End="0,20.3147018131843">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.3147018131843" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\COMPILED_CASE_DETAILS.Paths[Derived Column Output2]"
-          TopLeft="421.399993642171,417.066666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.266669490602"
-              Start="0,0"
-              End="0,30.766669490602">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.766669490602" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\COMPILED_CASE_DETAILS.Paths[Derived Column Output1]"
           TopLeft="291.092260340995,658.316526442375">
           <EdgeLayout.Curve>
@@ -12043,22 +11536,99 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion_id"
+          TopLeft="583.412705367925,503.138555641186" />
+        <NodeLayout
+          Size="221.6,41.6"
+          Id="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds"
+          TopLeft="567.021830520978,377.661100692101" />
+        <EdgeLayout
+          Id="Package\COMPILED_CASE_DETAILS.Paths[Lookup Match Output4]"
+          TopLeft="681.617267944451,419.261100692101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83.8774549490849"
+              Start="0,0"
+              End="0,76.3774549490849">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.3774549490849" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,32.3840399745424,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\COMPILED_CASE_DETAILS.Paths[Derived Column Output2]"
+          TopLeft="518.8,397.163883679384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.2218305209783,0"
+              Start="0,0"
+              End="40.7218305209783,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="40.7218305209783,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\COMPILED_CASE_DETAILS.Paths[Lookup Match Output5]"
+          TopLeft="583.412705367925,523.938555641186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-52.5115159851838,21.6094823292671"
+              Start="0,0"
+              End="-45.0115159851838,21.6094823292671">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-22.2557579925919,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.2557579925919,0"
+                    Point2="-26.2557579925919,0"
+                    Point3="-26.2557579925919,4" />
+                  <mssgle:LineSegment
+                    End="-26.2557579925919,17.6094823292671" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.2557579925919,17.6094823292671"
+                    Point2="-26.2557579925919,21.6094823292671"
+                    Point3="-30.2557579925919,21.6094823292671" />
+                  <mssgle:LineSegment
+                    End="-45.0115159851838,21.6094823292671" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-74.4471447113419,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\COMPILED_CASE_DETAILS\Look up case_acquisition_id">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\COMPILED_CASE_DETAILS\Load data from Stage">
     <Properties>
@@ -12596,7 +12166,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12714,7 +12286,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12736,7 +12310,9 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13352,6 +12928,29 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\COMPILED_CASE_DETAILS\Lookup case_acquistion in nds">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
