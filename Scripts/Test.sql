@@ -43,4 +43,11 @@ FROM
  ) D (city_stage, city_nds)
 */
 
-
+use BI06_DDS_Case;
+select * from Dim_Date;
+select * from Dim_AgeGroup;
+select * from Dim_CaseAcquisition;
+select * from Dim_CaseStatus;
+select * from Dim_Gender;
+select * from Dim_Geography;
+select * from Fact_Case;
