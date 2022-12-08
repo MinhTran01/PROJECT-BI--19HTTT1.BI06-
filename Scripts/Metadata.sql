@@ -33,5 +33,6 @@ insert into DDS values
 ('Dim_Geography','1-1-1990'),
 ('Dim_Gender','1-1-1990'),
 ('Dim_AgeGroup','1-1-1990'),
-('Dim_CaseAcquisition','1-1-1990')
+('Dim_CaseAcquisition','1-1-1990'),
+('Vaccine_By_Age','1-1-1990')
 go
