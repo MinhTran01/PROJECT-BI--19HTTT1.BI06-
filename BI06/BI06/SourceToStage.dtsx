@@ -12,7 +12,7 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:VersionBuild="77"
-  DTS:VersionGUID="{3BAA2266-90FB-4AB1-94D5-F2D8AB7C56C9}">
+  DTS:VersionGUID="{3DC090F2-B82F-4E17-878A-316666FE97F4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=YENNHILE\MISOSQLSERVER;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{022997EF-159E-4FB6-BC08-D62E88BCFB92}DESKTOP-8NB1L8O.BI06_METADATA;" />
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{022997EF-159E-4FB6-BC08-D62E88BCFB92}DESKTOP-8NB1L8O.BI06_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=YENNHILE\MISOSQLSERVER;Initial Catalog=BI06_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{46DE7D1B-C327-4ABC-85CC-C259D8B0A48F}DESKTOP-8NB1L8O.BI06_STAGE;" />
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{46DE7D1B-C327-4ABC-85CC-C259D8B0A48F}DESKTOP-8NB1L8O.BI06_STAGE;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -54,7 +54,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="\\Mac\Home\Downloads\BI\Datasource\cases_report.csv">
+          DTS:ConnectionString="C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\cases_report.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -63,7 +63,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Outcome"
-              DTS:DTSID="{9103BBFD-7C65-46AA-950D-9316E2274992}"
+              DTS:DTSID="{76893B11-F42B-4343-8000-6F3169A821AD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -72,7 +72,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Age"
-              DTS:DTSID="{82A3BBEC-03A3-44C5-AEA2-15EF7D9D9E7D}"
+              DTS:DTSID="{993F362B-5344-4787-97F9-AD0B4FD7E491}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -81,7 +81,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Gender"
-              DTS:DTSID="{816E01E4-3740-469A-820F-2F9C01A136E0}"
+              DTS:DTSID="{1FD056FB-0043-49B8-AFC4-9CFFC8CEC2A6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -90,7 +90,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Reporting PHU"
-              DTS:DTSID="{0D38E97F-E573-40E0-BD40-C9FDB6E190FA}"
+              DTS:DTSID="{7DB29546-B337-4FF8-9E2F-16DFA035078C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -98,7 +98,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="SpecimenDate"
-              DTS:DTSID="{3651ACE4-E1D8-4C2B-8A02-B16A73FE636D}"
+              DTS:DTSID="{3615D2D9-736D-4100-9914-6605073D9433}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -106,7 +106,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseReported Date"
-              DTS:DTSID="{4B5A5929-5E4B-4EDA-8052-9A695FF9EF2B}"
+              DTS:DTSID="{594502EA-EA92-42D8-B21D-889C1B8BAD59}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -115,7 +115,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHUCity"
-              DTS:DTSID="{A184EC5D-43F0-4861-9103-62AA5DAF96A2}"
+              DTS:DTSID="{D64279DD-9FD2-4669-93D7-943C62281A89}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -123,7 +123,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="TestReported Date"
-              DTS:DTSID="{94195747-2145-43B0-9BC8-AC0F0F25FED4}"
+              DTS:DTSID="{C8D4DC75-E9B2-47B0-860D-C87123824287}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -132,7 +132,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseAcquisition info"
-              DTS:DTSID="{8BFCE6C3-7DB4-43E2-979A-21BB360E5B7A}"
+              DTS:DTSID="{7A98CF57-1761-43C5-8AC2-C890D38803F7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +140,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="AccurateEpisode Dt"
-              DTS:DTSID="{53BE16BA-3E14-4059-B50F-9344AA2B9244}"
+              DTS:DTSID="{571DE50C-AA4E-4120-894D-85CCBA23B252}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +149,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Address"
-              DTS:DTSID="{7BBBE6F2-E2EF-4D60-91C1-D122F69A74B5}"
+              DTS:DTSID="{72775D3E-2C0B-46DE-B65E-AAF8A5C23603}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -158,7 +158,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Website"
-              DTS:DTSID="{5D6504FA-929E-4A49-BBCF-3D6FCA62585E}"
+              DTS:DTSID="{3350147D-AA29-4E2A-B724-397EABC7545E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -167,7 +167,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OutbreakRelated"
-              DTS:DTSID="{91B33718-73BA-4AA2-BB2D-0B5D5A089FD5}"
+              DTS:DTSID="{1C87CE54-A408-488B-A66F-BA7D3318F458}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Latitude"
-              DTS:DTSID="{2CA81AED-A7C3-4FDF-994D-D1511523FE8F}"
+              DTS:DTSID="{277632BF-8808-4608-AE3A-6A7FC97D9ED9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -183,7 +183,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Longitude"
-              DTS:DTSID="{E1C6D572-ACEE-4C86-84ED-47A59368AEE6}"
+              DTS:DTSID="{AD92E92D-E73A-4E35-A315-F3C246F887AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -192,7 +192,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Postal Code"
-              DTS:DTSID="{4544AE29-2DDE-4E74-9AEB-31678E9B7D2A}"
+              DTS:DTSID="{A7372D65-2DEB-4621-9E99-1E703A5CD088}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -212,7 +212,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="\\Mac\Home\Downloads\BI\Datasource\compiled_covid_19_case_details.csv">
+          DTS:ConnectionString="C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\compiled_covid_19_case_details.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -221,7 +221,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ObjectId"
-              DTS:DTSID="{7C3D7AA3-AC1E-4657-9AD6-478514E5A959}"
+              DTS:DTSID="{4731B922-319E-47EB-81D7-0DC2015CCA54}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -229,7 +229,7 @@
               DTS:DataType="21"
               DTS:TextQualified="True"
               DTS:ObjectName="row_id"
-              DTS:DTSID="{589027EC-0B99-4238-99B1-97A7DD56427A}"
+              DTS:DTSID="{3229B361-0F88-41F8-84A4-4B29C6AE4B67}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -237,7 +237,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="date_reported"
-              DTS:DTSID="{3FEE64F4-2541-43DD-A03B-DF666175154D}"
+              DTS:DTSID="{C2FD2E1A-4672-4004-96A2-467D8CD86E00}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -246,7 +246,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="health_region"
-              DTS:DTSID="{A6E2D335-9646-476A-89E9-A9D71FB697E0}"
+              DTS:DTSID="{5D07A2CA-3A05-4ED8-9074-CBC6117BBED3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -255,7 +255,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="age_group"
-              DTS:DTSID="{E055213C-58E1-4580-8FCE-BD3D6F9E24CC}"
+              DTS:DTSID="{04CD23A3-5A97-4E80-A24E-B1DFBBFD71ED}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -264,7 +264,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gender"
-              DTS:DTSID="{B72DCADC-81A9-48D6-8353-4DEC56A01ADC}"
+              DTS:DTSID="{D36878A4-CF19-41F1-ACC7-7BD9534C98FA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -273,7 +273,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="exposure"
-              DTS:DTSID="{E24102B2-3AAB-45D2-8635-4753B1F5BFC6}"
+              DTS:DTSID="{2259F4B8-69F9-4EDC-9903-ACEE5423BCDF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -282,7 +282,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="case_status"
-              DTS:DTSID="{E4D73668-60C2-4CFB-B0BC-7D8955B48FCA}"
+              DTS:DTSID="{116E0509-99C2-4453-B6A0-9CB671F29005}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -291,7 +291,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="province"
-              DTS:DTSID="{65DACA7E-FDBE-46C8-A6DA-1B7E5A87B727}"
+              DTS:DTSID="{7BE5DA7D-4909-4193-89A3-2796F121E3DB}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -311,7 +311,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="\\Mac\Home\Downloads\BI\Datasource\ongoing_outbreaks_phu.csv">
+          DTS:ConnectionString="C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\ongoing_outbreaks_phu.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -319,7 +319,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="date"
-              DTS:DTSID="{E4C5BEFA-8C69-46F2-BF39-155C7ACB95C0}"
+              DTS:DTSID="{09042637-0540-48B9-92B9-235D624B8F01}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -327,7 +327,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="phu_num"
-              DTS:DTSID="{71E510FC-7325-46E7-8B49-AEAB02889959}"
+              DTS:DTSID="{10AB9FBD-DD61-4802-B7CC-BECB49E37982}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -336,7 +336,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="outbreak_group"
-              DTS:DTSID="{637623EE-E348-4B85-AD59-B88F376A338F}"
+              DTS:DTSID="{C5BD28AC-E6C8-4336-939C-E3AA02108529}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -344,7 +344,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="number_ongoing_outbreaks"
-              DTS:DTSID="{FDDA656D-481F-4AEA-8F2E-1CFD8FF15D69}"
+              DTS:DTSID="{20D5E5FB-4E3B-4B83-9157-B99595E56A9B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -359,7 +359,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Mac\Home\Downloads\BI\Datasource\public_health_units.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\public_health_units.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -371,7 +371,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Mac\Home\Downloads\BI\Datasource\public_health_units_group.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\public_health_units_group.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -383,7 +383,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Mac\Home\Downloads\BI\Datasource\vaccines_by_age_phu.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MiDu\MiDu\BI\DoAnTH\PROJECT-BI--19HTTT1.BI06-\Datasource\vaccines_by_age_phu.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -3468,67 +3468,67 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="220,41.5"
+          Size="220,41.6"
           Id="Package\SourceToStage Cases_Report"
-          TopLeft="191.388881283778,287.427779895156" />
+          TopLeft="58.7358178002196,222.973997478611" />
         <NodeLayout
-          Size="309.5,41.5"
+          Size="309.6,41.6"
           Id="Package\SourceToStage Compile_COVID19_Case_Details"
-          TopLeft="529.166645639473,290.027778345435" />
+          TopLeft="396.513582155915,225.57399592889" />
         <NodeLayout
-          Size="274.5,41.5"
+          Size="274.4,41.6"
           Id="Package\SourceToStage Ongoing_Outbreaks_PHU"
-          TopLeft="898.766645639473,287.427779895156" />
+          TopLeft="766.113582155914,222.973997478611" />
         <NodeLayout
-          Size="175,41.5"
+          Size="175.2,41.6"
           Id="Package\SourceToStage PHU"
-          TopLeft="597.40278201357,549.322226587841" />
+          TopLeft="466.790534891297,410.582728843753" />
         <NodeLayout
-          Size="210.5,41.5"
+          Size="210.4,41.6"
           Id="Package\SourceToStage PHU_Group"
-          TopLeft="934.555546394101,570.516671017935" />
+          TopLeft="804.963707452471,413.205744441961" />
         <NodeLayout
-          Size="265.5,41.5"
+          Size="260,41.6"
           Id="Package\SourceToStage Vaccines_By_Age_PHU"
-          TopLeft="175.388909894006,548.583337526189" />
+          TopLeft="43.7562545910903,414.213587742545" />
         <NodeLayout
-          Size="189,41.5"
+          Size="188.8,41.6"
           Id="Package\Truncate Cases_Report"
-          TopLeft="210.277769422091,160.894445556226" />
+          TopLeft="73.5430732159618,141.230579734229" />
         <NodeLayout
-          Size="278.5,41.5"
+          Size="278.4,41.6"
           Id="Package\Truncate Compile_COVID19_Case_Details"
-          TopLeft="545.555533877127,150.49444390319" />
+          TopLeft="408.820837670998,130.830578081193" />
         <NodeLayout
-          Size="243,41.5"
+          Size="243.2,41.6"
           Id="Package\Truncate Ongoing_Outbreaks_PHU"
-          TopLeft="915.711089410607,150.494445473574" />
+          TopLeft="778.976393204478,130.830579651577" />
         <NodeLayout
-          Size="144,41.5"
+          Size="144,41.6"
           Id="Package\Truncate PHU"
-          TopLeft="615.736114618404,404.300003213088" />
+          TopLeft="483.083051134846,339.846220796543" />
         <NodeLayout
-          Size="178.5,41.5"
+          Size="178.4,41.6"
           Id="Package\Truncate PHU_Group"
-          TopLeft="954.277767832634,403.827780804325" />
+          TopLeft="821.624704349076,339.37399838778" />
         <NodeLayout
-          Size="234.5,41.5"
+          Size="234.4,41.6"
           Id="Package\Truncate Vaccines_By_Age_PHU"
-          TopLeft="185.388909496642,408.76111419276" />
+          TopLeft="52.7358460130836,344.307331776215" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="303.033325352934,202.494445556226">
+          TopLeft="168.339445508091,182.830579734229">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,84.9333343389305"
+              EndConnector="0,40.1434177443818"
               Start="0,0"
-              End="0,77.4333343389305">
+              End="0,32.6434177443818">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,77.4333343389305" />
+                    End="0,32.6434177443818" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3539,18 +3539,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="684.3610897583,192.09444390319">
+          TopLeft="549.667209913456,172.430578081193">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,97.9333344422453"
+              EndConnector="0,53.1434178476968"
               Start="0,0"
-              End="0,90.4333344422453">
+              End="0,45.6434178476968">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,90.4333344422453" />
+                    End="0,45.6434178476968" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3561,18 +3561,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1036.63886752504,192.094445473574">
+          TopLeft="901.944987680196,172.430579651577">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,95.3333344215822"
+              EndConnector="0,50.5434178270338"
               Start="0,0"
-              End="0,87.8333344215822">
+              End="0,43.0434178270338">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,87.8333344215822" />
+                    End="0,43.0434178270338" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3583,18 +3583,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="305.388909695324,450.36111419276">
+          TopLeft="171.846050302087,385.907331776215">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,98.222223333429"
+              EndConnector="0,28.3062559663295"
               Start="0,0"
-              End="0,90.722223333429">
+              End="0,20.8062559663295">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,90.722223333429" />
+                    End="0,20.8062559663295" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3605,18 +3605,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="686.369448315987,445.900003213088">
+          TopLeft="554.736793013071,381.446220796543">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,103.422223374753"
+              EndConnector="0,29.1365080472097"
               Start="0,0"
-              End="0,95.9222233747529">
+              End="0,21.6365080472097">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,95.9222233747529" />
+                    End="0,21.6365080472097" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3627,18 +3627,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="1041.61665711337,445.427780804325">
+          TopLeft="910.494205900773,380.97399838778">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,125.088890213609"
+              EndConnector="0,32.2317460541806"
               Start="0,0"
-              End="0,117.588890213609">
+              End="0,24.7317460541806">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,117.588890213609" />
+                    End="0,24.7317460541806" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3654,7 +3654,7 @@
     design-time-name="Package\SourceToStage Cases_Report">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage Cases_Report\OLE DB Destination"
@@ -3682,7 +3682,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3705,7 +3707,7 @@
     design-time-name="Package\SourceToStage Compile_COVID19_Case_Details">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\SourceToStage Compile_COVID19_Case_Details\OLE DB Destination"
@@ -3733,7 +3735,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3931,7 +3935,7 @@
     design-time-name="Package\SourceToStage Vaccines_By_Age_PHU">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="140,41.6"
           Id="Package\SourceToStage Vaccines_By_Age_PHU\Excel Source"
@@ -3959,7 +3963,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
