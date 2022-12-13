@@ -11,7 +11,7 @@ id int IDENTITY(1, 1) NOT NULL,
 )
 go
 
-create table DDS
+create table DDS_Vaccine
 (  
 	id int IDENTITY(1, 1) NOT NULL,
   table_name varchar(50) NULL,
@@ -28,11 +28,9 @@ insert into Data_Flow values
 ('PHU_Group', '10-10-2020')
 go
 
-insert into DDS values
-('Compile_case_details','1-1-1990'),
-('Dim_Geography','1-1-1990'),
-('Dim_Gender','1-1-1990'),
+insert into DDS_Vaccine values
 ('Dim_AgeGroup','1-1-1990'),
-('Dim_CaseAcquisition','1-1-1990'),
 ('Vaccine_By_Age','1-1-1990')
 go
+
+
