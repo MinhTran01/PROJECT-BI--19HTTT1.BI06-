@@ -236,7 +236,7 @@ insert into CASE_ACQUISITION values
 ('UNSPECIFIED EPI LINK', getdate(), getdate());
 
 insert into AGE_GROUP values
-('5-11', getdate(), getdate()),
+('05-11', getdate(), getdate()),
 ('12-17', getdate(), getdate()),
 ('18-29', getdate(), getdate()),
 ('<20', getdate(), getdate()),
