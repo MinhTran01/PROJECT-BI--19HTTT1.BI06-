@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/6/2022 4:56:48 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="NDSToDDS_VaccinatedCase"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{E4FE0FDA-F489-4EE4-BF33-ABF85D38FEAC}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{5F9ABBD0-6F73-44E2-AFE7-613752E0CA8A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -964,7 +964,7 @@ where [refTable].[calendar_month] = ? and [refTable].[calendar_year] = ?</proper
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Dim_AgeGroup LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2004,7 +2004,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Dim_AgeGroup CET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2054,7 +2054,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Vaccine_By_Age CET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2075,7 +2075,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Vaccine_By_Age LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2152,6 +2152,10 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Fact_VaccinatedCase"
+          TopLeft="457.421435380346,922.649680142695" />
+        <NodeLayout
           Size="196.8,41.6"
           Id="Package\Get Dim_AgeGroup LSET"
           TopLeft="450.5089298494,378.509983832251" />
@@ -2177,7 +2181,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
         <NodeLayout
           Size="198.4,41.6"
           Id="Package\Set LSET to METADATA"
-          TopLeft="451.468753363516,972.473586884747" />
+          TopLeft="450.754467637066,995.414763677077" />
         <NodeLayout
           Size="207.2,41.6"
           Id="Package\Set Vaccine_By_Age CET"
@@ -2212,6 +2216,62 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
                     Point3="184.406249941792,47.3847982152281" />
                   <mssgle:LineSegment
                     End="184.406249941792,65.1329767872919" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="539.456855854902,876.724559837441">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.5645795254444,45.9251203052537"
+              Start="0,0"
+              End="11.5645795254444,38.4251203052537">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.9625601526269" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.9625601526269"
+                    Point2="0,22.9625601526269"
+                    Point3="4,22.9625601526269" />
+                  <mssgle:LineSegment
+                    End="7.5645795254444,22.9625601526269" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.5645795254444,22.9625601526269"
+                    Point2="11.5645795254444,22.9625601526269"
+                    Point3="11.5645795254444,26.9625601526269" />
+                  <mssgle:LineSegment
+                    End="11.5645795254444,38.4251203052537" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="550.487951508706,964.249680142695">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.1650835343819"
+              Start="0,0"
+              End="0,23.6650835343819">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6650835343819" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2298,315 +2358,9 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Fact_VaccinatedCase"
-          TopLeft="431.707149228149,908.884974067297" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="539.456855854902,876.724559837441">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-14.1497066267525,32.1604142298556"
-              Start="0,0"
-              End="-14.1497066267525,24.6604142298556">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.0802071149278" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.0802071149278"
-                    Point2="0,16.0802071149278"
-                    Point3="-4,16.0802071149278" />
-                  <mssgle:LineSegment
-                    End="-10.1497066267525,16.0802071149278" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-10.1497066267525,16.0802071149278"
-                    Point2="-14.1497066267525,16.0802071149278"
-                    Point3="-14.1497066267525,20.0802071149278" />
-                  <mssgle:LineSegment
-                    End="-14.1497066267525,24.6604142298556" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="618.907149228149,929.684974067296">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-68.2383958646333,42.7886128174504"
-              Start="0,0"
-              End="-68.2383958646333,35.2886128174504">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-64.2383958646333,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-64.2383958646333,0"
-                    Point2="-68.2383958646333,0"
-                    Point3="-68.2383958646333,4" />
-                  <mssgle:LineSegment
-                    End="-68.2383958646333,35.2886128174504" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Sequence Container\Dim_AgeGroup">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="222.4,41.6"
-          Id="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS"
-          TopLeft="293.685718020128,135.847060389337" />
-        <NodeLayout
-          Size="246.4,41.6"
-          Id="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup"
-          TopLeft="275.057147674171,295.635297753324" />
-        <NodeLayout
-          Size="286.4,41.6"
-          Id="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup"
-          TopLeft="262,210.666666666667" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Dim_AgeGroup.Paths[OLE DB Source Output]"
-          TopLeft="404.842859010064,178.247060389337">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.41960627733"
-              Start="0,0"
-              End="0,24.91960627733">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.91960627733" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,4.459803138665,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Dim_AgeGroup.Paths[Lookup No Match Output]"
-          TopLeft="401.528573837086,253.066666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.568631086657"
-              Start="0,0"
-              End="0,35.068631086657">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.068631086657" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,11.7296280433285,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_AgeGroup]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Sequence Container\Dim_Date">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="224,41.6"
-          Id="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua"
-          TopLeft="261.483520923455,273.929415432557" />
-        <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam"
-          TopLeft="269.285718871623,177.411767194015" />
-        <NodeLayout
-          Size="222.4,41.6"
-          Id="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date"
-          TopLeft="258.395609212633,396.58914390717" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Dim_Date.Paths[Derived Column Output]"
-          TopLeft="371.884619897539,219.411767194015">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54.517648238542"
-              Start="0,0"
-              End="0,47.017648238542">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.017648238542" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Dim_Date.Paths[Lookup No Match Output]"
-          TopLeft="371.439565068044,315.929415432557">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,80.659728474613"
-              Start="0,0"
-              End="0,73.159728474613">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,73.159728474613" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,30.7751767373065,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Sequence Container\Dim_Date\OLE DB Source"
-          TopLeft="298,95" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Dim_Date.Paths[OLE DB Source Output]"
-          TopLeft="371.442859435811,136.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.811767194015"
-              Start="0,0"
-              End="0,33.311767194015">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.311767194015" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Date]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Fact_VaccinatedCase">
     <LayoutInfo>
@@ -2745,7 +2499,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2755,7 +2509,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2781,7 +2535,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2791,7 +2545,7 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2806,9 +2560,251 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Dim_AgeGroup">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS"
+          TopLeft="293.685718020128,135.847060389337" />
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup"
+          TopLeft="275.057147674171,295.635297753324" />
+        <NodeLayout
+          Size="286.4,41.6"
+          Id="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup"
+          TopLeft="262,210.666666666667" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_AgeGroup.Paths[OLE DB Source Output]"
+          TopLeft="404.842859010064,178.247060389337">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.41960627733"
+              Start="0,0"
+              End="0,24.91960627733">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.91960627733" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_AgeGroup.Paths[Lookup No Match Output]"
+          TopLeft="401.528573837086,253.066666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.568631086657"
+              Start="0,0"
+              End="0,35.068631086657">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.068631086657" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,11.7296280433285,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_AgeGroup]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Dim_Date">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date"
+          TopLeft="258.395609212633,396.58914390717" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam"
+          TopLeft="269.285718871623,177.411767194015" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Sequence Container\Dim_Date\OLE DB Source"
+          TopLeft="298,95" />
+        <NodeLayout
+          Size="224,41.6"
+          Id="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua"
+          TopLeft="261.483520923455,273.929415432557" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_Date.Paths[Derived Column Output]"
+          TopLeft="371.884619897539,219.411767194015">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.517648238542"
+              Start="0,0"
+              End="0,47.017648238542">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.017648238542" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_Date.Paths[OLE DB Source Output]"
+          TopLeft="371.442859435811,136.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.811767194015"
+              Start="0,0"
+              End="0,33.311767194015">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.311767194015" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_Date.Paths[Lookup No Match Output]"
+          TopLeft="371.439565068044,315.929415432557">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80.659728474613"
+              Start="0,0"
+              End="0,73.159728474613">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.159728474613" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,30.7751767373065,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Dim_Date\OLE DB Source">
     <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Date]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

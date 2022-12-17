@@ -1,0 +1,7 @@
+SELECT [Measures].[Number Of Case] on columns,
+crossjoin([Dim Date].[DateH].[Calendar Year], [Dim Date].[Calendar Month].[Calendar Month]) on rows
+FROM [BI06 DDS Case];
+
+SELECT [Measures].[Number Of Case] on columns,
+[Dim Age Group].[Age Group Name].[Age Group Name] on rows
+FROM [BI06 DDS Case];

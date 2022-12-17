@@ -5,11 +5,17 @@ select * from Data_Flow;
 update Data_Flow
 set LSET = '1-1-1990';
 
+update DDS_Vaccine
+set LSET = '1-1-1990';
+
 use BI06_STAGE;
 EXEC sp_MSForEachTable 'truncate table ?';
 
 use BI06_STAGE;
 EXEC sp_MSForEachTable 'select * from ?';
+
+use BI06_DDS_VaccinatedCase;
+EXEC sp_MSForEachTable 'truncate table ?';
 
 use BI06_STAGE;
 select * from Cases_Report
