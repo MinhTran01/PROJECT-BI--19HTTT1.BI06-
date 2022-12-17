@@ -18,8 +18,6 @@ create table Dim_AgeGroup (
 create table Fact_VaccinatedCase
 (
     case_id int identity(1,1) primary key,
-    number_of_case bigint not null,
-
     date_id int not null,
     age_group_id int not null,
     atleast_one_dose_cumulative int not null,

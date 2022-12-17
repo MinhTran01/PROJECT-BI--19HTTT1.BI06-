@@ -1,0 +1,2818 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/6/2022 4:56:48 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-NKULHIL"
+  DTS:CreatorName="DESKTOP-NKULHIL\MiDu"
+  DTS:DTSID="{AA45693E-1998-4D75-A087-D2B16271782D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="NDSToDDS_VaccinatedCase"
+  DTS:PackageType="5"
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{E4FE0FDA-F489-4EE4-BF33-ABF85D38FEAC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BI06_DDS_Case]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{61D3A9B7-0E47-4009-840D-60190A8E6D70}"
+      DTS:ObjectName="BI06_DDS_Case">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_DDS_Case;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{61D3A9B7-0E47-4009-840D-60190A8E6D70}DESKTOP-NKULHIL\SQLEXPRESS.BI06_DDS_Case;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{28441E3F-0AAF-47A9-BC26-2E784CA8EA15}"
+      DTS:ObjectName="BI06_DDS_VaccinatedCase">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_DDS_VaccinatedCase;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-NDSToDDS_VaccinatedCase-{28441E3F-0AAF-47A9-BC26-2E784CA8EA15}DESKTOP-HMO4FSU.BI06_DDS_VaccinatedCase;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BI06_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B3758E0A-A285-42EE-B995-27FAF7EF4A75}"
+      DTS:ObjectName="BI06_METADATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{B3758E0A-A285-42EE-B995-27FAF7EF4A75}DESKTOP-JU4SLVC\MSSQLSERVER03.BI06_METADATA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C9AA33BA-AFA9-4444-98C4-A14E2606CE63}"
+      DTS:ObjectName="NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{C9AA33BA-AFA9-4444-98C4-A14E2606CE63}DESKTOP-NKULHIL\SQLEXPRESS.BI06_NDS;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{88F6DEFF-EF45-44BA-AAC4-F7D9215D1241}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_Result_AgeGroup_VBA">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1990</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C0AED24B-3055-4CE6-AF5D-EB5C199701E1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_Result_Vaccine_By_Age">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1990</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5C7D890C-C797-491B-B338-081375817368}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_Result_AgeGroup_VBA">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1990</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F6A810B2-9DF7-42D6-84A6-DAE04D586DA7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_Result_Vaccine_By_Age">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1990</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Fact_VaccinatedCase"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3FB7EF23-68E2-4CC1-B03D-F2EDDEBB3EB8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fact_VaccinatedCase"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Lay ngay, thang, nam"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Inputs[Derived Column Input].Columns[report_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="report_date"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[report_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Output].Columns[month]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Output].Columns[month]"
+                      name="month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[MONTH](#{Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[report_date]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">MONTH(report_date)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Output].Columns[year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[YEAR](#{Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[report_date]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">YEAR(report_date)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fact_VaccinatedCase\Lay so luong nguoi"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Lay so luong nguoi"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select ag.age_group_name, vba.report_date,
+ISNULL(sum(atleast_one_dose_cumulative), 0) as atleast_one_dose_cumulative, 
+ISNULL(sum(second_dose_cumulative), 0) as second_dose_cumulative,
+ISNULL(sum(third_dose_cumulative), 0) as third_dose_cumulative,
+ISNULL(sum(fully_vaccinated_cumulative), 0) as fully_vaccinated_cumulative from [BI06_NDS].[dbo].VACCINE_BY_AGE vba
+join [BI06_NDS].[dbo].AGE_GROUP ag
+on vba.age_group_id = ag.age_group_id
+group by ag.age_group_name ,vba.report_date</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[atleast_one_dose_cumulative]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[atleast_one_dose_cumulative]"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[atleast_one_dose_cumulative]"
+                      name="atleast_one_dose_cumulative"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[second_dose_cumulative]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[second_dose_cumulative]"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[second_dose_cumulative]"
+                      name="second_dose_cumulative"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[third_dose_cumulative]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[third_dose_cumulative]"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[third_dose_cumulative]"
+                      name="third_dose_cumulative"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[fully_vaccinated_cumulative]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[fully_vaccinated_cumulative]"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[fully_vaccinated_cumulative]"
+                      name="fully_vaccinated_cumulative"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[age_group_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[age_group_name]"
+                      length="50"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[age_group_name]"
+                      name="age_group_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[report_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[report_date]"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[report_date]"
+                      name="report_date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[atleast_one_dose_cumulative]"
+                      dataType="i4"
+                      name="atleast_one_dose_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[second_dose_cumulative]"
+                      dataType="i4"
+                      name="second_dose_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[third_dose_cumulative]"
+                      dataType="i4"
+                      name="third_dose_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[fully_vaccinated_cumulative]"
+                      dataType="i4"
+                      name="fully_vaccinated_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[age_group_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="age_group_name" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].ExternalColumns[report_date]"
+                      dataType="dbTimeStamp"
+                      name="report_date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[age_group_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[age_group_name]"
+                      name="age_group_name" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[atleast_one_dose_cumulative]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[atleast_one_dose_cumulative]"
+                      name="atleast_one_dose_cumulative" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[second_dose_cumulative]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[second_dose_cumulative]"
+                      name="second_dose_cumulative" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[third_dose_cumulative]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[third_dose_cumulative]"
+                      name="third_dose_cumulative" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[fully_vaccinated_cumulative]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[fully_vaccinated_cumulative]"
+                      name="fully_vaccinated_cumulative" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[report_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Error Output].Columns[report_date]"
+                      name="report_date" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fact_VaccinatedCase\Lookup age_group_id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup age_group_id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Dim_AgeGroup]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Dim_AgeGroup]) [refTable]
+where [refTable].[age_group_name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="age_group_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="age_group_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[age_group_name]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact_VaccinatedCase\Lookup age_group_id.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                  connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fact_VaccinatedCase\Lookup age_group_id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact_VaccinatedCase\Lookup age_group_id.Inputs[Lookup Input].Columns[age_group_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="age_group_name"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[age_group_name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">age_group_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact_VaccinatedCase\Lookup age_group_id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Fact_VaccinatedCase\Lookup age_group_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lookup age_group_id.Outputs[Lookup Match Output].Columns[age_group_id_dds]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Fact_VaccinatedCase\Lookup age_group_id.Outputs[Lookup Match Output].Columns[age_group_id_dds]"
+                      name="age_group_id_dds"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">age_group_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact_VaccinatedCase\Lookup age_group_id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Fact_VaccinatedCase\Lookup age_group_id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact_VaccinatedCase\Lookup age_group_id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Fact_VaccinatedCase\Lookup age_group_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lookup age_group_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lookup age_group_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lookup age_group_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lookup age_group_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fact_VaccinatedCase\Lookup date_id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup date_id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Dim_Date]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Dim_Date]) [refTable]
+where [refTable].[calendar_month] = ? and [refTable].[calendar_year] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="date_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="calendar_year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="calendar_month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Output].Columns[month]};#{Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Output].Columns[year]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact_VaccinatedCase\Lookup date_id.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                  connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fact_VaccinatedCase\Lookup date_id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact_VaccinatedCase\Lookup date_id.Inputs[Lookup Input].Columns[month]"
+                      cachedDataType="i4"
+                      cachedName="month"
+                      lineageId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Output].Columns[month]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">calendar_month</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact_VaccinatedCase\Lookup date_id.Inputs[Lookup Input].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      lineageId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Output].Columns[year]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">calendar_year</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact_VaccinatedCase\Lookup date_id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Fact_VaccinatedCase\Lookup date_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lookup date_id.Outputs[Lookup Match Output].Columns[date_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Fact_VaccinatedCase\Lookup date_id.Outputs[Lookup Match Output].Columns[date_id]"
+                      name="date_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">date_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact_VaccinatedCase\Lookup date_id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Fact_VaccinatedCase\Lookup date_id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact_VaccinatedCase\Lookup date_id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Fact_VaccinatedCase\Lookup date_id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lookup date_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lookup date_id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Lookup date_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Lookup date_id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Them du lieu vao Fact_case"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_VaccinatedCase]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                  connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[date_id]"
+                      cachedDataType="i4"
+                      cachedName="date_id"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
+                      lineageId="Package\Fact_VaccinatedCase\Lookup date_id.Outputs[Lookup Match Output].Columns[date_id]" />
+                    <inputColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[age_group_id_dds]"
+                      cachedDataType="i4"
+                      cachedName="age_group_id_dds"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
+                      lineageId="Package\Fact_VaccinatedCase\Lookup age_group_id.Outputs[Lookup Match Output].Columns[age_group_id_dds]" />
+                    <inputColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[atleast_one_dose_cumulative]"
+                      cachedDataType="i4"
+                      cachedName="atleast_one_dose_cumulative"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[atleast_one_dose_cumulative]"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[atleast_one_dose_cumulative]" />
+                    <inputColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[second_dose_cumulative]"
+                      cachedDataType="i4"
+                      cachedName="second_dose_cumulative"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[second_dose_cumulative]"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[second_dose_cumulative]" />
+                    <inputColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[third_dose_cumulative]"
+                      cachedDataType="i4"
+                      cachedName="third_dose_cumulative"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[fully_vaccinated_cumulative]"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[third_dose_cumulative]" />
+                    <inputColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].Columns[fully_vaccinated_cumulative]"
+                      cachedDataType="i4"
+                      cachedName="fully_vaccinated_cumulative"
+                      externalMetadataColumnId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[third_dose_cumulative]"
+                      lineageId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output].Columns[fully_vaccinated_cumulative]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[case_id]"
+                      dataType="i4"
+                      name="case_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
+                      dataType="i4"
+                      name="date_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
+                      dataType="i4"
+                      name="age_group_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[atleast_one_dose_cumulative]"
+                      dataType="i4"
+                      name="atleast_one_dose_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[second_dose_cumulative]"
+                      dataType="i4"
+                      name="second_dose_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[fully_vaccinated_cumulative]"
+                      dataType="i4"
+                      name="fully_vaccinated_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input].ExternalColumns[third_dose_cumulative]"
+                      dataType="i4"
+                      name="third_dose_cumulative" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Fact_VaccinatedCase.Paths[Derived Column Output]"
+              endId="Package\Fact_VaccinatedCase\Lookup date_id.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Fact_VaccinatedCase.Paths[Lookup Match Output]"
+              endId="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_VaccinatedCase\Lookup date_id.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact_VaccinatedCase.Paths[Lookup Match Output1]"
+              endId="Package\Fact_VaccinatedCase\Lay ngay, thang, nam.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_VaccinatedCase\Lookup age_group_id.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact_VaccinatedCase.Paths[OLE DB Source Output]"
+              endId="Package\Fact_VaccinatedCase\Lookup age_group_id.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Fact_VaccinatedCase\Lay so luong nguoi.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Dim_AgeGroup LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1CC40B5B-F250-4DD1-A6D2-D1F1DA158273}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Dim_AgeGroup LSET"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B3758E0A-A285-42EE-B995-27FAF7EF4A75}"
+          SQLTask:SqlStatementSource="SELECT LSET FROM DDS_Vaccine WHERE table_name='Dim_AgeGroup';"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_Result_AgeGroup_VBA" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{DBEA83C0-DD4A-49A4-BBBE-A74DA3924334}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Dim_AgeGroup"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{943E7FF0-38EB-4C69-B451-FA6460E43B0B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim_AgeGroup"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Get data age_group from NDS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select * 
+FROM AGE_GROUP
+WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and create_date &lt; ?)</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"Parameter0:Input",{5C7D890C-C797-491B-B338-081375817368};"Parameter1:Input",{88F6DEFF-EF45-44BA-AAC4-F7D9215D1241};"Parameter2:Input",{5C7D890C-C797-491B-B338-081375817368};"Parameter3:Input",{88F6DEFF-EF45-44BA-AAC4-F7D9215D1241};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].Columns[create_date]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].ExternalColumns[create_date]"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].Columns[create_date]"
+                          name="create_date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].Columns[update_date]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].ExternalColumns[update_date]"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].Columns[update_date]"
+                          name="update_date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].Columns[age_group_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].ExternalColumns[age_group_id]"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].Columns[age_group_id]"
+                          name="age_group_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].Columns[age_group_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].ExternalColumns[age_group_name]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].Columns[age_group_name]"
+                          name="age_group_name"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].ExternalColumns[create_date]"
+                          dataType="dbTimeStamp"
+                          name="create_date" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].ExternalColumns[update_date]"
+                          dataType="dbTimeStamp"
+                          name="update_date" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].ExternalColumns[age_group_id]"
+                          dataType="i4"
+                          name="age_group_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].ExternalColumns[age_group_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="age_group_name" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[age_group_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[age_group_id]"
+                          name="age_group_id" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[age_group_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[age_group_name]"
+                          name="age_group_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[create_date]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[create_date]"
+                          name="create_date" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[update_date]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[update_date]"
+                          name="update_date" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Insert new row into Dim_AgeGroup"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Dim_AgeGroup]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Inputs[OLE DB Destination Input].Columns[age_group_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="age_group_name"
+                          externalMetadataColumnId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Inputs[OLE DB Destination Input].ExternalColumns[age_group_name]"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].Columns[age_group_name]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Inputs[OLE DB Destination Input].ExternalColumns[age_group_id]"
+                          dataType="i4"
+                          name="age_group_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Inputs[OLE DB Destination Input].ExternalColumns[age_group_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="age_group_name" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup age_group_name in Dim_AgeGroup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Dim_AgeGroup]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Dim_AgeGroup]) [refTable]
+where [refTable].[age_group_name] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="age_group_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="age_group_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].Columns[age_group_name]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Inputs[Lookup Input].Columns[age_group_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="age_group_name"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output].Columns[age_group_name]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">age_group_name</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Dim_AgeGroup.Paths[Lookup No Match Output]"
+                  endId="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup.Inputs[OLE DB Destination Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Sequence Container\Dim_AgeGroup.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup.Inputs[Lookup Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Dim_Date"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{1E5119B4-B06A-4411-B5F4-B159065FCA08}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim_Date"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Kiem tra ngay ton tai hay chua"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Dim_Date]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Dim_Date]) [refTable]
+where [refTable].[calendar_month] = ? and [refTable].[calendar_year] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="date_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="calendar_year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="calendar_month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output].Columns[month]};#{Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output].Columns[year]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Inputs[Lookup Input].Columns[month]"
+                          cachedDataType="i4"
+                          cachedName="month"
+                          lineageId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output].Columns[month]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">calendar_month</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Inputs[Lookup Input].Columns[year]"
+                          cachedDataType="i4"
+                          cachedName="year"
+                          lineageId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output].Columns[year]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">calendar_year</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Outputs[Lookup Match Output].Columns[date_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Outputs[Lookup Match Output].Columns[date_id]"
+                          name="date_id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">date_id</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Dim_Date\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select DISTINCT(report_date)
+FROM VACCINE_BY_AGE
+WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and create_date &lt; ?)</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"Parameter0:Input",{F6A810B2-9DF7-42D6-84A6-DAE04D586DA7};"Parameter1:Input",{C0AED24B-3055-4CE6-AF5D-EB5C199701E1};"Parameter2:Input",{F6A810B2-9DF7-42D6-84A6-DAE04D586DA7};"Parameter3:Input",{C0AED24B-3055-4CE6-AF5D-EB5C199701E1};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Dim_Date\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[NDS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[report_date]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[report_date]"
+                          lineageId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[report_date]"
+                          name="report_date"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[report_date]"
+                          dataType="dbTimeStamp"
+                          name="report_date" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[report_date]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[report_date]"
+                          name="report_date" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Them ngay moi vao Dim_Date"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Dim_Date]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Inputs[OLE DB Destination Input].Columns[year]"
+                          cachedDataType="i4"
+                          cachedName="year"
+                          externalMetadataColumnId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Inputs[OLE DB Destination Input].ExternalColumns[calendar_year]"
+                          lineageId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output].Columns[year]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Inputs[OLE DB Destination Input].Columns[month]"
+                          cachedDataType="i4"
+                          cachedName="month"
+                          externalMetadataColumnId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Inputs[OLE DB Destination Input].ExternalColumns[calendar_month]"
+                          lineageId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output].Columns[month]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
+                          dataType="i4"
+                          name="date_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Inputs[OLE DB Destination Input].ExternalColumns[calendar_year]"
+                          dataType="i4"
+                          name="calendar_year" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Inputs[OLE DB Destination Input].ExternalColumns[calendar_month]"
+                          dataType="i4"
+                          name="calendar_month" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Them Ngay, Thang, Nam"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Inputs[Derived Column Input].Columns[report_date]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="report_date"
+                          lineageId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[report_date]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output].Columns[month]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output].Columns[month]"
+                          name="month"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[MONTH](#{Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[report_date]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">MONTH(report_date)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output].Columns[year]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output].Columns[year]"
+                          name="year"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[YEAR](#{Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[report_date]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">YEAR(report_date)</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Dim_Date.Paths[Derived Column Output]"
+                  endId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Sequence Container\Dim_Date.Paths[Lookup No Match Output]"
+                  endId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Inputs[OLE DB Destination Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Sequence Container\Dim_Date.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Dim_Date\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set Dim_AgeGroup CET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9263F750-C469-4214-8C83-CFC863091846}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set Dim_AgeGroup CET"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B3758E0A-A285-42EE-B995-27FAF7EF4A75}"
+          SQLTask:SqlStatementSource="SELECT getdate();"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::CET_Result_AgeGroup_VBA" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET to METADATA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5132C7F3-D51E-4062-8A86-9DCD3A130719}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET to METADATA"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B3758E0A-A285-42EE-B995-27FAF7EF4A75}"
+          SQLTask:SqlStatementSource="UPDATE DDS_Vaccine SET LSET = ?  WHERE table_name='Dim_AgeGroup';&#xA;UPDATE DDS_Vaccine SET LSET = ?  WHERE table_name='Vaccine_By_Age';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::CET_Result_AgeGroup_VBA"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::CET_Result_Vaccine_By_Age"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set Vaccine_By_Age CET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{14FFEE1A-6AB5-4449-A9F5-EBBFCD77A84A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set Vaccine_By_Age CET"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B3758E0A-A285-42EE-B995-27FAF7EF4A75}"
+          SQLTask:SqlStatementSource="SELECT getdate();"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::CET_Result_Vaccine_By_Age" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set Vaccine_By_Age LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FCBC054E-031A-4060-B46A-C185AC663F4F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set Vaccine_By_Age LSET"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B3758E0A-A285-42EE-B995-27FAF7EF4A75}"
+          SQLTask:SqlStatementSource="SELECT LSET FROM DDS_Vaccine WHERE table_name='Vaccine_By_Age';"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_Result_Vaccine_By_Age" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{813881FE-0E1F-43B5-8744-4621FD61D378}"
+      DTS:From="Package\Set Vaccine_By_Age LSET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Sequence Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{FAC38872-40C2-4985-9EDB-B9D3EB075612}"
+      DTS:From="Package\Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fact_VaccinatedCase" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{D9E9BE32-C738-43EB-B718-B69C31B99080}"
+      DTS:From="Package\Fact_VaccinatedCase"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Set LSET to METADATA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{0CBE0CD2-AB13-44D4-99FA-B18444063DD9}"
+      DTS:From="Package\Set Dim_AgeGroup CET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Get Dim_AgeGroup LSET" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{3613D0CE-CFAC-455B-9179-ACF2DC329B9A}"
+      DTS:From="Package\Set Vaccine_By_Age CET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5 1"
+      DTS:To="Package\Set Vaccine_By_Age LSET" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{C6B39231-599D-415F-A87B-10E4BAF46B6F}"
+      DTS:From="Package\Get Dim_AgeGroup LSET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Sequence Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\Get Dim_AgeGroup LSET"
+          TopLeft="450.5089298494,378.509983832251" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Sequence Container\Dim_AgeGroup"
+          TopLeft="108.541665124662,57.108818825834" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Sequence Container\Dim_Date"
+          TopLeft="98.0937505531386,151.894354348584" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="356,367.2"
+          Size="356,409.6"
+          Id="Package\Sequence Container"
+          TopLeft="361.456855854902,467.124559837441" />
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Set Dim_AgeGroup CET"
+          TopLeft="450.415179791192,284.256692830646" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\Set LSET to METADATA"
+          TopLeft="451.468753363516,972.473586884747" />
+        <NodeLayout
+          Size="207.2,41.6"
+          Id="Package\Set Vaccine_By_Age CET"
+          TopLeft="190.456855854902,258.238292048544" />
+        <NodeLayout
+          Size="212.8,41.6"
+          Id="Package\Set Vaccine_By_Age LSET"
+          TopLeft="190.55060591311,352.491583050149" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="297.05060591311,394.491583050149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="184.406249941792,72.6329767872919"
+              Start="0,0"
+              End="184.406249941792,65.1329767872919">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.3847982152281" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.3847982152281"
+                    Point2="0,43.3847982152281"
+                    Point3="4,43.3847982152281" />
+                  <mssgle:LineSegment
+                    End="180.406249941792,43.3847982152281" />
+                  <mssgle:CubicBezierSegment
+                    Point1="180.406249941792,43.3847982152281"
+                    Point2="184.406249941792,43.3847982152281"
+                    Point3="184.406249941792,47.3847982152281" />
+                  <mssgle:LineSegment
+                    End="184.406249941792,65.1329767872919" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="547.212054820296,326.256692830646">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.253291001605"
+              Start="0,0"
+              End="0,44.753291001605">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.753291001605" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5 1]"
+          TopLeft="295.503730884006,300.238292048544">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.253291001605"
+              Start="0,0"
+              End="0,44.753291001605">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.753291001605" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="549.0089298494,420.509983832251">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.55207399449796,46.61457600519"
+              Start="0,0"
+              End="-9.55207399449796,39.11457600519">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.307288002595" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.307288002595"
+                    Point2="0,23.307288002595"
+                    Point3="-4,23.307288002595" />
+                  <mssgle:LineSegment
+                    End="-5.55207399449796,23.307288002595" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.55207399449796,23.307288002595"
+                    Point2="-9.55207399449796,23.307288002595"
+                    Point3="-9.55207399449796,27.307288002595" />
+                  <mssgle:LineSegment
+                    End="-9.55207399449796,39.11457600519" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Fact_VaccinatedCase"
+          TopLeft="431.707149228149,908.884974067297" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="539.456855854902,876.724559837441">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.1497066267525,32.1604142298556"
+              Start="0,0"
+              End="-14.1497066267525,24.6604142298556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.0802071149278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.0802071149278"
+                    Point2="0,16.0802071149278"
+                    Point3="-4,16.0802071149278" />
+                  <mssgle:LineSegment
+                    End="-10.1497066267525,16.0802071149278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.1497066267525,16.0802071149278"
+                    Point2="-14.1497066267525,16.0802071149278"
+                    Point3="-14.1497066267525,20.0802071149278" />
+                  <mssgle:LineSegment
+                    End="-14.1497066267525,24.6604142298556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="618.907149228149,929.684974067296">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.2383958646333,42.7886128174504"
+              Start="0,0"
+              End="-68.2383958646333,35.2886128174504">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-64.2383958646333,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.2383958646333,0"
+                    Point2="-68.2383958646333,0"
+                    Point3="-68.2383958646333,4" />
+                  <mssgle:LineSegment
+                    End="-68.2383958646333,35.2886128174504" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Dim_AgeGroup">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS"
+          TopLeft="293.685718020128,135.847060389337" />
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup"
+          TopLeft="275.057147674171,295.635297753324" />
+        <NodeLayout
+          Size="286.4,41.6"
+          Id="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup"
+          TopLeft="262,210.666666666667" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_AgeGroup.Paths[OLE DB Source Output]"
+          TopLeft="404.842859010064,178.247060389337">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.41960627733"
+              Start="0,0"
+              End="0,24.91960627733">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.91960627733" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,4.459803138665,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_AgeGroup.Paths[Lookup No Match Output]"
+          TopLeft="401.528573837086,253.066666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.568631086657"
+              Start="0,0"
+              End="0,35.068631086657">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.068631086657" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,11.7296280433285,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_AgeGroup\Get data age_group from NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_AgeGroup\Insert new row into Dim_AgeGroup">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_AgeGroup\Lookup age_group_name in Dim_AgeGroup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_AgeGroup]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Dim_Date">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="224,41.6"
+          Id="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua"
+          TopLeft="261.483520923455,273.929415432557" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam"
+          TopLeft="269.285718871623,177.411767194015" />
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date"
+          TopLeft="258.395609212633,396.58914390717" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_Date.Paths[Derived Column Output]"
+          TopLeft="371.884619897539,219.411767194015">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.517648238542"
+              Start="0,0"
+              End="0,47.017648238542">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.017648238542" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_Date.Paths[Lookup No Match Output]"
+          TopLeft="371.439565068044,315.929415432557">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80.659728474613"
+              Start="0,0"
+              End="0,73.159728474613">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.159728474613" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,30.7751767373065,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Sequence Container\Dim_Date\OLE DB Source"
+          TopLeft="298,95" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Dim_Date.Paths[OLE DB Source Output]"
+          TopLeft="371.442859435811,136.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.811767194015"
+              Start="0,0"
+              End="0,33.311767194015">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.311767194015" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Date]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Fact_VaccinatedCase">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case"
+          TopLeft="656.999999999999,283.307692307692" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Fact_VaccinatedCase\Lay so luong nguoi"
+          TopLeft="84.7692307692307,98.8205128205129" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Fact_VaccinatedCase\Lookup age_group_id"
+          TopLeft="372,101.461538461539" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Fact_VaccinatedCase\Lookup date_id"
+          TopLeft="376.846153846154,285.4" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Fact_VaccinatedCase\Lay ngay, thang, nam"
+          TopLeft="130.769230769231,292.929411786155" />
+        <EdgeLayout
+          Id="Package\Fact_VaccinatedCase.Paths[Lookup Match Output]"
+          TopLeft="530.846153846154,305.353846153846">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.153846153845,0"
+              Start="0,0"
+              End="118.653846153845,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="118.653846153845,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.1355363581725,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_VaccinatedCase.Paths[Derived Column Output]"
+          TopLeft="313.169230769231,309.964705893078">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.6769230769229,0"
+              Start="0,0"
+              End="56.1769230769229,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.1769230769229,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_VaccinatedCase.Paths[OLE DB Source Output]"
+          TopLeft="255.769230769231,121.141025641026">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.230769230769,0"
+              Start="0,0"
+              End="108.730769230769,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="108.730769230769,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_VaccinatedCase.Paths[Lookup Match Output1]"
+          TopLeft="464.4,143.061538461539">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-242.430769230769,149.867873324616"
+              Start="0,0"
+              End="-242.430769230769,142.367873324616">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.9339366623082" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,70.9339366623082"
+                    Point2="0,74.9339366623082"
+                    Point3="-4,74.9339366623082" />
+                  <mssgle:LineSegment
+                    End="-238.430769230769,74.9339366623082" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-238.430769230769,74.9339366623082"
+                    Point2="-242.430769230769,74.9339366623082"
+                    Point3="-242.430769230769,78.9339366623082" />
+                  <mssgle:LineSegment
+                    End="-242.430769230769,142.367873324616" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-169.406771334135,79.9339366623082,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_VaccinatedCase\Lookup age_group_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_AgeGroup]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_VaccinatedCase\Them du lieu vao Fact_case">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_VaccinatedCase\Lookup date_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Date]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_VaccinatedCase\Lay so luong nguoi">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Dim_Date\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
