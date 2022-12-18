@@ -1,0 +1,20 @@
+﻿-- Thống kê Số ca nhiễm, số ca tử vong, số ca phục hồi của dịch Covid-19 theo từng PHU trong từng năm. 
+select {[Dim Case Status].[Case Status Name], [Dim Case Status].[Case Status Name].&[Recovered]} on columns,
+crossjoin([Dim Geography].[Phu Name].[Phu Name], [Dim Date].[DateH].[Calendar Year]) on rows
+from [BI06 DDS Case]
+where [Measures].[Number Of Case];
+
+-- Thống kê tổng số người tử vong theo Giới Tính và Nhóm Tuổi theo các năm. 
+-- Chú thích: Có not reported
+select [Dim Case Status].[Case Status Name].&[Deceased] on columns,
+non empty crossjoin([Dim Gender].[Gender Name].[Gender Name],[Dim Age Group].[Age Group Name].[Age Group Name], [Dim Date].[DateH].[Calendar Year]) on rows
+from [BI06 DDS Case]
+where [Measures].[Number Of Case];
+
+-- Chú thích: Chỉ có Female và Male và các age group có reported ( loại bỏ not reported)
+select [Dim Case Status].[Case Status Name].&[Deceased] on columns,
+non empty 
+Except (crossjoin({[Dim Gender].[Gender Name].&[Female],[Dim Gender].[Gender Name].&[Male]},[Dim Age Group].[Age Group Name].[Age Group Name], [Dim Date].[DateH].[Calendar Year]),
+crossjoin({[Dim Gender].[Gender Name].&[Female],[Dim Gender].[Gender Name].&[Male]},[Dim Age Group].[Age Group Name].&[Not Reported], [Dim Date].[DateH].[Calendar Year])) on rows 
+from [BI06 DDS Case]
+where [Measures].[Number Of Case];
