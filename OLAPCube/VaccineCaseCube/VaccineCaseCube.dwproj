@@ -6,10 +6,59 @@
     <Name>VaccineCaseCube.database</Name>
     <FullPath>VaccineCaseCube.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>BI06 DDS Vaccinated Case.cube</Name>
+      <FullPath>BI06 DDS Vaccinated Case.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>BI06 DDS Vaccinated Case.partitions</Name>
+          <FullPath>BI06 DDS Vaccinated Case.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Dim Age Group.dim</Name>
+      <FullPath>Dim Age Group.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Date.dim</Name>
+      <FullPath>Dim Date.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>BI06 DDS Vaccinated Case.ds</Name>
+      <FullPath>BI06 DDS Vaccinated Case.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>BI06 DDS Vaccinated Case.dsv</Name>
+      <FullPath>BI06 DDS Vaccinated Case.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>BI06 DDS Vaccinated Case</Id>
+            <Name>BI06 DDS Vaccinated Case</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-58UDF09;Integrated Security=SSPI;Initial Catalog=BI06_DDS_VaccinatedCase</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>BI06 DDS Vaccinated Case</Id>
+            <Name>BI06 DDS Vaccinated Case</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>
