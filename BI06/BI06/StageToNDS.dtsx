@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="78"
-  DTS:VersionGUID="{955F135A-1AA9-4CA2-A0ED-479EEC678F7E}">
+  DTS:VersionBuild="80"
+  DTS:VersionGUID="{4C758037-3174-44D4-9BDA-156ECF97E83F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9E921EC2-840A-45D5-ACE1-E903B2A0E06F}DESKTOP-NKULHIL\SQLEXPRESS.BI06_NDS;" />
+          DTS:ConnectionString="Data Source=YENNHILE\ANALYSIS;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9E921EC2-840A-45D5-ACE1-E903B2A0E06F}DESKTOP-NKULHIL\SQLEXPRESS.BI06_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{4D352285-6BB8-480D-A658-FE002409A03E}DESKTOP-NKULHIL\SQLEXPRESS.BI06_STAGE;" />
+          DTS:ConnectionString="Data Source=YENNHILE\ANALYSIS;Initial Catalog=BI06_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{4D352285-6BB8-480D-A658-FE002409A03E}DESKTOP-NKULHIL\SQLEXPRESS.BI06_STAGE;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -10403,35 +10403,35 @@ where [refTable].[report_date] = ? and [refTable].[atleast_one_dose_cumulative] 
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,41.6"
+          Size="156,41.5"
           Id="Package\CASE_REPORT"
           TopLeft="188.554412538484,340.390478009567" />
         <NodeLayout
-          Size="172,41.6"
+          Size="172,41.5"
           Id="Package\CITY"
           TopLeft="287.321431748189,107.441178599578" />
         <NodeLayout
-          Size="208,42.4"
+          Size="208,42.5"
           Id="Package\COMPILED_CASE_DETAILS"
           TopLeft="385.795056586519,341.465541798071" />
         <NodeLayout
-          Size="252.8,41.6"
+          Size="253,41.5"
           Id="Package\Doi ten 2 city cho dong nhat voi PHU"
           TopLeft="240.204085723304,171.981514242859" />
         <NodeLayout
-          Size="217.6,42.4"
+          Size="217.5,42.5"
           Id="Package\ONGOING_OUTBREAKS_PHU"
           TopLeft="461.692167852728,245.251954800888" />
         <NodeLayout
-          Size="123.2,41.6"
+          Size="123,41.5"
           Id="Package\PHU"
           TopLeft="304.553574120474,242.730255260827" />
         <NodeLayout
-          Size="179.2,41.6"
+          Size="179,41.5"
           Id="Package\PHU_GROUP"
           TopLeft="282.500002495945,34.2970605281288" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,41.5"
           Id="Package\VACCINE_BY_AGE"
           TopLeft="106.369054913479,243.516809226112" />
         <EdgeLayout

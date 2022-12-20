@@ -281,3 +281,19 @@ insert into OUTBREAK_GROUP values
 --             PHU AS p ON com.PHU_id = p.PHU_id 
 --ORDER BY com.PHU_id ASC
 
+select c.city_name, og.outbreak_group_name, year(oop.reported_date), month(oop.reported_date), sum(oop.number_ongoing_outbreaks)
+from ONGOING_OUTBREAKS_PHU oop, OUTBREAK_GROUP og, PHU p, CITY c
+where oop.outbreak_group_id = og.outbreak_group_id and oop.PHU_id = p.PHU_id and 
+p.city_id = c.city_id
+group by c.city_name, og.outbreak_group_name, year(oop.reported_date), month(oop.reported_date)
+order by c.city_name, og.outbreak_group_name, year(oop.reported_date), month(oop.reported_date)
+
+select * from OUTBREAK_GROUP
+
+select * from DDS_OutbreakGroup
+
+update DDS_OutbreakGroup
+set LSET ='1990-01-01 00:00:00.000'
+
+select * from Dim_Date;
+select * from Dim_OutbreakGroup

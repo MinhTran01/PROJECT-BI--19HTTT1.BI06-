@@ -19,6 +19,14 @@ create table DDS
 )
 go
 
+create table DDS_OutbreakGroup
+(  
+	id int IDENTITY(1, 1) NOT NULL,
+	table_name varchar(50) NULL,
+	LSET datetime NULL
+)
+go
+
 insert into Data_Flow values
 ('Cases_Report', '10-10-2020'),
 ('Compile_COVID19_Case_Details', '10-10-2020'),
@@ -33,5 +41,12 @@ insert into DDS values
 ('Dim_Geography','1-1-1990'),
 ('Dim_Gender','1-1-1990'),
 ('Dim_AgeGroup','1-1-1990'),
-('Dim_CaseAcquisition','1-1-1990')
+('Dim_CaseAcquisition','1-1-1990'),
+('Dim_OutbreakGroup','1-1-1990')
+go
+
+insert into DDS_OutbreakGroup values 
+('ONGOING_OUTBREAKS_PHU','1-1-1990'),
+('Dim_Geography','1-1-1990'),
+('Dim_OutbreakGroup','1-1-1990')
 go

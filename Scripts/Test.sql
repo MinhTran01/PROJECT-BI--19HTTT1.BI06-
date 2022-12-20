@@ -66,3 +66,6 @@ From COMPILED_CASE_DETAILS c LEFT JOIN AGE_GROUP a on (c.age_group_id = a.age_gr
 		LEFT JOIN PHU p on (c.PHU_id = p.PHU_id)
 GROUP BY c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, c.gender_id, c.PHU_id, a.age_group_name, ac.case_acquisition_name
 Order by  c.age_group_id, c.case_acquisition_id, c.case_status, c.date_reported, c.gender_id, c.PHU_id
+
+
+select * from Fact_Outbreak
