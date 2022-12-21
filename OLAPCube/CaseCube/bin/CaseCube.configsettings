@@ -3,10 +3,10 @@
     <DataSources>
       <DataSource>
         <ID>BI06 DDS Case</ID>
-        <ConnectionString>Provider=SQLNCLI11.1;Data Source=DESKTOP-JU4SLVC\MINH_SERVER_04;Integrated Security=SSPI;Initial Catalog=BI06_DDS_Case</ConnectionString>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=BI06_DDS_Case</ConnectionString>
         <ImpersonationInfo>
           <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
-          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Minh</Account>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">midu</Account>
           <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>

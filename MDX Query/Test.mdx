@@ -1,0 +1,22 @@
+﻿-- Severity by PHU and Quarter
+WITH MEMBER [Measures].[Severity] AS
+CASE 
+WHEN [Measures].[Number Of Case] < 5000 THEN 'Low'
+WHEN [Measures].[Number Of Case] >= 5000 and [Measures].[Number Of Case] < 10000 THEN 'Medium'
+WHEN [Measures].[Number Of Case] >= 10000 THEN 'High'
+END
+SELECT crossjoin([Dim Date].[DateH].[Calendar Year],[Dim Date].[Calendar Quarter].[Calendar Quarter]) on 0,
+[Dim Geography].[Phu Name].[Phu Name] on 1
+FROM [BI06 DDS Case]
+WHERE  [Measures].[Severity];
+
+
+-- 5 PHU lowest
+SELECT crossjoin([Dim Date].[DateH].[Calendar Year],[Dim Date].[Calendar Quarter].[Calendar Quarter]) on 1,
+		TopCount(Order([Dim Geography].[Phu Name].[Phu Name], [Measures].[Number Of Case]), 5) on 0
+FROM [BI06 DDS Case];
+
+-- 5 PHU highest
+SELECT crossjoin([Dim Date].[DateH].[Calendar Year],[Dim Date].[Calendar Quarter].[Calendar Quarter]) on 1,
+		TopCount(Order([Dim Geography].[Phu Name].[Phu Name], [Measures].[Number Of Case], DESC), 5) on 0
+FROM [BI06 DDS Case];

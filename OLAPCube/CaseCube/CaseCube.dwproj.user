@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>DESKTOP-JU4SLVC\MINH_SERVER_04</TargetServer>
+        <TargetServer>DESKTOP-NKULHIL\ANALYSIS2</TargetServer>
         <TargetDatabase>CaseCube</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>
