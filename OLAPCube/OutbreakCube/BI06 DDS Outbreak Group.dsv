@@ -1,0 +1,146 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="bdfffe63-59af-4ad7-a58e-c5d0159b4ac1" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>BI06 DDS Outbreak Group</ID>
+  <Name>BI06 DDS Outbreak Group</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>BI06 DDS Outbreak Group</DataSourceID>
+  <Schema>
+    <xs:schema id="BI06_x0020_DDS_x0020_Outbreak_x0020_Group" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="BI06_x0020_DDS_x0020_Outbreak_x0020_Group" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="f258c22c-5798-466b-9285-8250156299c2">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Dim_Date" msprop:design-time-name="77fd9be9-366f-4987-9af7-3ed2d493ebc2" msprop:DbTableName="Dim_Date" msprop:FriendlyName="Dim_Date" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="date_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="c1623ac9-7de2-47d1-842e-ab8d8757c0b3" msprop:DbColumnName="date_id" msprop:FriendlyName="date_id" type="xs:int" />
+                  <xs:element name="calendar_year" msprop:design-time-name="647da012-3130-440e-b698-cb54afe5c190" msprop:DbColumnName="calendar_year" msprop:FriendlyName="calendar_year" type="xs:int" />
+                  <xs:element name="calendar_month" msprop:design-time-name="a69c7217-9722-4259-b9e3-42ffcf9f10ee" msprop:DbColumnName="calendar_month" msprop:FriendlyName="calendar_month" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Geography" msprop:design-time-name="b4159433-a47f-47e2-ab32-427b64a1d507" msprop:DbTableName="Dim_Geography" msprop:FriendlyName="Dim_Geography" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="geography_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="86f71277-2ba9-4939-a0cc-303be1211ac1" msprop:DbColumnName="geography_id" msprop:FriendlyName="geography_id" type="xs:int" />
+                  <xs:element name="phu_id_nds" msprop:design-time-name="09cbba33-96e3-4aa6-83e9-d5a50fb8b62f" msprop:DbColumnName="phu_id_nds" msprop:FriendlyName="phu_id_nds" type="xs:int" />
+                  <xs:element name="city_name" msprop:design-time-name="73d2186e-68da-4078-a5a7-e94a45d1c3be" msprop:DbColumnName="city_name" msprop:FriendlyName="city_name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="phu_group_name" msprop:design-time-name="317cbe08-dddb-4f8f-a23e-e22584211b69" msprop:DbColumnName="phu_group_name" msprop:FriendlyName="phu_group_name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="phu_name" msprop:design-time-name="45162ad3-d7cc-432b-9823-8bb6eb373191" msprop:DbColumnName="phu_name" msprop:FriendlyName="phu_name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="active" msprop:design-time-name="27f84ec8-3d28-4d9d-9c72-b81d80c41b29" msprop:DbColumnName="active" msprop:FriendlyName="active" type="xs:boolean" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_OutbreakGroup" msprop:design-time-name="f6b354ad-27f1-4415-b64e-9b393d9ac87b" msprop:DbTableName="Dim_OutbreakGroup" msprop:FriendlyName="Dim_OutbreakGroup" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="outbreak_group_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="8f971d8c-78e7-4665-8727-ba9e66267efc" msprop:DbColumnName="outbreak_group_id" msprop:FriendlyName="outbreak_group_id" type="xs:int" />
+                  <xs:element name="outbreak_group_name" msprop:design-time-name="5be1cd62-4a0d-4ddb-b4e6-1a08b6a65552" msprop:DbColumnName="outbreak_group_name" msprop:FriendlyName="outbreak_group_name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Fact_Outbreak" msprop:design-time-name="fa05c3c9-0fa0-4663-be7b-e9f9117b925d" msprop:DbTableName="Fact_Outbreak" msprop:FriendlyName="Fact_Outbreak" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="outbreak_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="0dacf1ec-5e22-4595-8da0-53ec3926159c" msprop:DbColumnName="outbreak_id" msprop:FriendlyName="outbreak_id" type="xs:int" />
+                  <xs:element name="date_id" msprop:design-time-name="19d836cf-9921-4dcf-bd24-dc31af12018b" msprop:DbColumnName="date_id" msprop:FriendlyName="date_id" type="xs:int" />
+                  <xs:element name="geography_id" msprop:design-time-name="baf82abf-9545-42d5-9a25-1923d13383eb" msprop:DbColumnName="geography_id" msprop:FriendlyName="geography_id" type="xs:int" />
+                  <xs:element name="outbreak_group_id" msprop:design-time-name="c2391b75-a34e-4aad-bcd8-76ad8eb560a6" msprop:DbColumnName="outbreak_group_id" msprop:FriendlyName="outbreak_group_id" type="xs:int" />
+                  <xs:element name="number_of_outbreak" msprop:design-time-name="26fa328f-6f6a-460e-8c6d-af90721142cb" msprop:DbColumnName="number_of_outbreak" msprop:FriendlyName="number_of_outbreak" type="xs:long" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Date" />
+          <xs:field xpath="date_id" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Geography_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Geography" />
+          <xs:field xpath="geography_id" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_OutbreakGroup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_OutbreakGroup" />
+          <xs:field xpath="outbreak_group_id" />
+        </xs:unique>
+        <xs:unique name="dbo_Fact_Outbreak_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Fact_Outbreak" />
+          <xs:field xpath="outbreak_id" />
+        </xs:unique>
+        <xs:keyref name="FK_Fact_Outbreak_Dim_Date" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Outbreak" />
+          <xs:field xpath="date_id" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Outbreak_Dim_OutbreakGroup" refer="dbo_Dim_OutbreakGroup_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Outbreak" />
+          <xs:field xpath="outbreak_group_id" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Outbreak_Dim_Geography" refer="dbo_Dim_Geography_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Outbreak" />
+          <xs:field xpath="geography_id" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <BI06_x0020_DDS_x0020_Outbreak_x0020_Group xmlns="" />
+  </Schema>
+</DataSourceView>

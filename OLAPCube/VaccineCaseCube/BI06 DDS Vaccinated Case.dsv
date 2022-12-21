@@ -1,0 +1,110 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="7b0d5d48-e827-4bdf-8063-34e62c09b9ba" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>BI06 DDS Vaccinated Case</ID>
+  <Name>BI06 DDS Vaccinated Case</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>BI06 DDS Vaccinated Case</DataSourceID>
+  <Schema>
+    <xs:schema id="BI06_x0020_DDS_x0020_Vaccinated_x0020_Case" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="BI06_x0020_DDS_x0020_Vaccinated_x0020_Case" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="3a734d34-ff5e-4b59-9643-032ef9910d1b">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Dim_AgeGroup" msprop:design-time-name="38aefd00-4c62-4c03-b422-f3a15cf430ee" msprop:DbTableName="Dim_AgeGroup" msprop:FriendlyName="Dim_AgeGroup" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="age_group_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="1611cfd0-3f0c-4768-a3cf-41c6d54022ba" msprop:DbColumnName="age_group_id" msprop:FriendlyName="age_group_id" type="xs:int" />
+                  <xs:element name="age_group_name" msprop:design-time-name="fbe185da-664a-4145-8d8b-de872dab1cb6" msprop:DbColumnName="age_group_name" msprop:FriendlyName="age_group_name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Date" msprop:design-time-name="cf9ab2e3-cc68-4bdc-849f-2901472ff8b0" msprop:DbTableName="Dim_Date" msprop:FriendlyName="Dim_Date" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="date_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="71e55b49-a7f8-44b5-aee5-b0f9c70d92d2" msprop:DbColumnName="date_id" msprop:FriendlyName="date_id" type="xs:int" />
+                  <xs:element name="calendar_year" msprop:design-time-name="4ae554b2-a93f-4fd5-b484-377d5d47bead" msprop:DbColumnName="calendar_year" msprop:FriendlyName="calendar_year" type="xs:int" />
+                  <xs:element name="calendar_month" msprop:design-time-name="0121a042-9452-45fc-adfb-1cb7e3e25a8e" msprop:DbColumnName="calendar_month" msprop:FriendlyName="calendar_month" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Fact_VaccinatedCase" msprop:design-time-name="d48c4fd8-4203-4aaa-9186-a113521e5131" msprop:DbTableName="Fact_VaccinatedCase" msprop:FriendlyName="Fact_VaccinatedCase" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="case_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="a592a5f4-0ac1-43da-ab73-0c161683340d" msprop:DbColumnName="case_id" msprop:FriendlyName="case_id" type="xs:int" />
+                  <xs:element name="date_id" msprop:design-time-name="f50c7bca-f698-4229-80a5-6fbeb3408dc4" msprop:DbColumnName="date_id" msprop:FriendlyName="date_id" type="xs:int" />
+                  <xs:element name="age_group_id" msprop:design-time-name="b63b0498-c49f-4d16-a2bc-097ae956f8d1" msprop:DbColumnName="age_group_id" msprop:FriendlyName="age_group_id" type="xs:int" />
+                  <xs:element name="atleast_one_dose_cumulative" msprop:design-time-name="35f4b861-772b-4171-afcd-106d4ed065f1" msprop:DbColumnName="atleast_one_dose_cumulative" msprop:FriendlyName="atleast_one_dose_cumulative" type="xs:int" />
+                  <xs:element name="second_dose_cumulative" msprop:design-time-name="488c0b4d-53a4-4ea3-88d4-1643affa819f" msprop:DbColumnName="second_dose_cumulative" msprop:FriendlyName="second_dose_cumulative" type="xs:int" />
+                  <xs:element name="fully_vaccinated_cumulative" msprop:design-time-name="fb58e42f-35cc-4785-b884-9bdaa208fe9e" msprop:DbColumnName="fully_vaccinated_cumulative" msprop:FriendlyName="fully_vaccinated_cumulative" type="xs:int" />
+                  <xs:element name="third_dose_cumulative" msprop:design-time-name="dc998cb4-e8ee-440f-89de-fcb8a72bc62e" msprop:DbColumnName="third_dose_cumulative" msprop:FriendlyName="third_dose_cumulative" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_AgeGroup" />
+          <xs:field xpath="age_group_id" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Date_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Date" />
+          <xs:field xpath="date_id" />
+        </xs:unique>
+        <xs:unique name="dbo_Fact_VaccinatedCase_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Fact_VaccinatedCase" />
+          <xs:field xpath="case_id" />
+        </xs:unique>
+        <xs:keyref name="FK_FACT_VACCINATEDCASE_DATE" refer="dbo_Dim_Date_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_VaccinatedCase" />
+          <xs:field xpath="date_id" />
+        </xs:keyref>
+        <xs:keyref name="FK_FACT_VACCINATEDCASE_AGE_GROUP" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Fact_VaccinatedCase" />
+          <xs:field xpath="age_group_id" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <BI06_x0020_DDS_x0020_Vaccinated_x0020_Case xmlns="" />
+  </Schema>
+</DataSourceView>

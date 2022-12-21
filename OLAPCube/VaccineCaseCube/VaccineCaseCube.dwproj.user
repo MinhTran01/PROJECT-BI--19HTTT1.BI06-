@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>localhost</TargetServer>
+        <TargetServer>DESKTOP-58UDF09</TargetServer>
         <TargetDatabase>VaccineCaseCube</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>
