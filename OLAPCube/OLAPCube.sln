@@ -7,6 +7,8 @@ Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "CaseCube", "CaseCube\CaseCu
 EndProject
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "VaccineCaseCube", "VaccineCaseCube\VaccineCaseCube.dwproj", "{B4A28BD5-2018-4420-B5A8-034B351377D8}"
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "OutbreakCube", "OutbreakCube\OutbreakCube.dwproj", "{4C3ED999-851B-4A0D-A1B0-6661B47D2031}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -18,6 +20,9 @@ Global
 		{B4A28BD5-2018-4420-B5A8-034B351377D8}.Development|Default.ActiveCfg = Development
 		{B4A28BD5-2018-4420-B5A8-034B351377D8}.Development|Default.Build.0 = Development
 		{B4A28BD5-2018-4420-B5A8-034B351377D8}.Development|Default.Deploy.0 = Development
+		{4C3ED999-851B-4A0D-A1B0-6661B47D2031}.Development|Default.ActiveCfg = Development
+		{4C3ED999-851B-4A0D-A1B0-6661B47D2031}.Development|Default.Build.0 = Development
+		{4C3ED999-851B-4A0D-A1B0-6661B47D2031}.Development|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>YENNHILE\ANALYSIS</TargetServer>
+        <TargetServer>DESKTOP-NKULHIL\ANALYSIS2</TargetServer>
         <TargetDatabase>OutbreakCube</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>

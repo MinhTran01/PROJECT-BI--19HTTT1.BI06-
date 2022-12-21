@@ -99,6 +99,31 @@
       <b>253</b>
     </Hash>
   </Item>
+  <Item name="Dim Geography.dim">
+    <Time>638071355156351872</Time>
+    <Hash length="20">
+      <b>18</b>
+      <b>240</b>
+      <b>79</b>
+      <b>186</b>
+      <b>77</b>
+      <b>126</b>
+      <b>80</b>
+      <b>3</b>
+      <b>82</b>
+      <b>70</b>
+      <b>31</b>
+      <b>110</b>
+      <b>123</b>
+      <b>40</b>
+      <b>110</b>
+      <b>174</b>
+      <b>254</b>
+      <b>246</b>
+      <b>111</b>
+      <b>101</b>
+    </Hash>
+  </Item>
   <Item name="Dim Case Acquisition.dim">
     <Time>638069105937015889</Time>
     <Hash length="20">
@@ -222,31 +247,6 @@
       <b>6</b>
       <b>13</b>
       <b>239</b>
-    </Hash>
-  </Item>
-  <Item name="Dim Geography.dim">
-    <Time>638071355156351872</Time>
-    <Hash length="20">
-      <b>18</b>
-      <b>240</b>
-      <b>79</b>
-      <b>186</b>
-      <b>77</b>
-      <b>126</b>
-      <b>80</b>
-      <b>3</b>
-      <b>82</b>
-      <b>70</b>
-      <b>31</b>
-      <b>110</b>
-      <b>123</b>
-      <b>40</b>
-      <b>110</b>
-      <b>174</b>
-      <b>254</b>
-      <b>246</b>
-      <b>111</b>
-      <b>101</b>
     </Hash>
   </Item>
   <Item name="BI06 DDS Case.ds">

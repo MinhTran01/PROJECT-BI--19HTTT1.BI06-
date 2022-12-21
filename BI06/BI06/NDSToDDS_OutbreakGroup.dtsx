@@ -11,21 +11,45 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="90"
-  DTS:VersionGUID="{39663C6E-2613-4A40-B91D-13EEB5BA8741}">
+  DTS:VersionBuild="92"
+  DTS:VersionGUID="{A40465E2-7CEE-4D2B-8F6B-3730A94B0C02}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[BI06_DDS_VaccinatedCase]"
+      DTS:refId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{28441E3F-0AAF-47A9-BC26-2E784CA8EA15}"
-      DTS:ObjectName="BI06_DDS_VaccinatedCase">
+      DTS:DTSID="{B1B0B2D7-3BDC-4314-A74F-F38BC05ED4E5}"
+      DTS:ObjectName="BI06_DDS_OutbreakGroup">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=YENNHILE\ANALYSIS;Initial Catalog=BI06_DDS_VaccinatedCase;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-NDSToDDS_VaccinatedCase-{28441E3F-0AAF-47A9-BC26-2E784CA8EA15}DESKTOP-HMO4FSU.BI06_DDS_VaccinatedCase;" />
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_DDS_OutbreakGroup;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{B1B0B2D7-3BDC-4314-A74F-F38BC05ED4E5}YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BI06_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{18FF93C6-6F8D-41DE-BF40-B195767C1642}"
+      DTS:ObjectName="BI06_METADATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{18FF93C6-6F8D-41DE-BF40-B195767C1642}YENNHILE\ANALYSIS.BI06_METADATA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BI06_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9D67178F-7F19-41BE-9E96-A4A74D60489B}"
+      DTS:ObjectName="BI06_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9D67178F-7F19-41BE-9E96-A4A74D60489B}YENNHILE\ANALYSIS.BI06_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,55 +61,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=YENNHILE\ANALYSIS;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{C9AA33BA-AFA9-4444-98C4-A14E2606CE63}DESKTOP-NKULHIL\SQLEXPRESS.BI06_NDS;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{B1B0B2D7-3BDC-4314-A74F-F38BC05ED4E5}"
-      DTS:ObjectName="YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=YENNHILE\ANALYSIS;Initial Catalog=BI06_DDS_OutbreakGroup;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{B1B0B2D7-3BDC-4314-A74F-F38BC05ED4E5}YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{DB0B8A14-2AD5-414A-ADCB-D867A8D7388B}"
-      DTS:ObjectName="YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=YENNHILE\ANALYSIS;Initial Catalog=BI06_DDS_OutbreakGroup;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{DB0B8A14-2AD5-414A-ADCB-D867A8D7388B}YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup 1;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_METADATA]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{18FF93C6-6F8D-41DE-BF40-B195767C1642}"
-      DTS:ObjectName="YENNHILE\ANALYSIS.BI06_METADATA">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=YENNHILE\ANALYSIS;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{18FF93C6-6F8D-41DE-BF40-B195767C1642}YENNHILE\ANALYSIS.BI06_METADATA;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_NDS]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{9D67178F-7F19-41BE-9E96-A4A74D60489B}"
-      DTS:ObjectName="YENNHILE\ANALYSIS.BI06_NDS">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=YENNHILE\ANALYSIS;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{9D67178F-7F19-41BE-9E96-A4A74D60489B}YENNHILE\ANALYSIS.BI06_NDS;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{C9AA33BA-AFA9-4444-98C4-A14E2606CE63}DESKTOP-NKULHIL\SQLEXPRESS.BI06_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -216,8 +192,8 @@ order by c.city_name, og.outbreak_group_name, year(oop.reported_date), month(oop
               <connections>
                 <connection
                   refId="Package\Fact_Outbreak\Lay so luong bung phat.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[BI06_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[BI06_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -529,8 +505,8 @@ where [refTable].[calendar_month] = ? and [refTable].[calendar_year] = ?</proper
               <connections>
                 <connection
                   refId="Package\Fact_Outbreak\Lookup date_id.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                  connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                  connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                  connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -702,8 +678,8 @@ where [refTable].[city_name] = ?</property>
               <connections>
                 <connection
                   refId="Package\Fact_Outbreak\Lookup geography_id.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                  connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                  connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                  connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -860,8 +836,8 @@ where [refTable].[outbreak_group_name] = ?</property>
               <connections>
                 <connection
                   refId="Package\Fact_Outbreak\Lookup outbreak_group_id.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                  connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                  connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                  connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1008,8 +984,8 @@ where [refTable].[outbreak_group_name] = ?</property>
               <connections>
                 <connection
                   refId="Package\Fact_Outbreak\Them du lieu vao Fact_Outbreak.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                  connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                  connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                  connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1135,7 +1111,7 @@ where [refTable].[outbreak_group_name] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Dim_Geography LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1156,7 +1132,7 @@ where [refTable].[outbreak_group_name] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Dim_OutbreakGroup LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1263,8 +1239,8 @@ where [refTable].[calendar_month] = ? and [refTable].[calendar_year] = ?</proper
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                      connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -1419,8 +1395,8 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Dim_Date\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_NDS]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1533,8 +1509,8 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                      connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1939,8 +1915,8 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Dim_Geography\Get PHU, City, PHU_group from NDS.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_NDS]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2116,8 +2092,8 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Dim_Geography\Insert Destination.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                      connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2247,8 +2223,8 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Dim_Geography\OLE DB Command.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                      connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2359,8 +2335,8 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Dim_Geography\OLE DB Command 1.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                      connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2534,8 +2510,8 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Dim_Geography\Slowly Changing Dimension.Connections[LookupConnection]"
-                      connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                      connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                       description="Defines the connection to use for lookups in the dimension table"
                       name="LookupConnection" />
                   </connections>
@@ -2966,8 +2942,8 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Dim_OutbreakGroup\Get data outbreak_group from NDS.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_NDS]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3140,8 +3116,8 @@ WHERE (update_date &gt;= ? and update_date&lt; ? ) or (create_date &gt;=  ? and 
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Dim_OutbreakGroup\Insert new row into Dim_OutbreakGroup.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                      connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3272,8 +3248,8 @@ where [refTable].[outbreak_group_name] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Dim_OutbreakGroup\Lookup outbreak_group_name in Dim_OutbreakGroup.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
-                      connectionManagerRefId="Package.ConnectionManagers[YENNHILE\ANALYSIS.BI06_DDS_OutbreakGroup]"
+                      connectionManagerID="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
+                      connectionManagerRefId="Package.ConnectionManagers[BI06_DDS_OutbreakGroup]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -3387,7 +3363,7 @@ where [refTable].[outbreak_group_name] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Dim_Geography CET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3408,7 +3384,7 @@ where [refTable].[outbreak_group_name] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Dim_OutbreakGroup CET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3464,7 +3440,7 @@ where [refTable].[outbreak_group_name] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set ONGOING_OUTBREAKS_PHU CET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3485,7 +3461,7 @@ where [refTable].[outbreak_group_name] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set ONGOING_OUTBREAKS_PHU LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3578,118 +3554,56 @@ where [refTable].[outbreak_group_name] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="200,41.5"
+          Size="148,41.6"
+          Id="Package\Fact_Outbreak"
+          TopLeft="364.1840405393,808.294516030433" />
+        <NodeLayout
+          Size="200,41.6"
           Id="Package\Get Dim_Geography LSET"
           TopLeft="109.000012346677,170.838319724443" />
         <NodeLayout
-          Size="125.5,42"
+          Size="222.4,41.6"
+          Id="Package\Get Dim_OutbreakGroup LSET"
+          TopLeft="359.500012346677,166.894212391875" />
+        <NodeLayout
+          Size="125.6,41.6"
           Id="Package\Sequence Container\Dim_Date"
           TopLeft="104,37.5" />
         <NodeLayout
-          Size="154.5,42"
+          Size="154.4,41.6"
           Id="Package\Sequence Container\Dim_Geography"
           TopLeft="94.276781267411,108.451701070146" />
         <NodeLayout
-          Size="175.5,42"
+          Size="175.2,41.6"
           Id="Package\Sequence Container\Dim_OutbreakGroup"
           TopLeft="88.5,175" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="365.5,474.5"
-          Size="365.5,517.5"
+          PanelSize="365.6,474.4"
+          Size="365.6,517.6"
           Id="Package\Sequence Container"
           TopLeft="252.166667821506,267.062490396574" />
         <NodeLayout
-          Size="195,42"
+          Size="195.2,41.6"
           Id="Package\Set Dim_Geography CET"
           TopLeft="107.406262288469,106.085028722839" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="206.953137317573,148.085028722839">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,22.753291001604"
-              Start="0,0"
-              End="0,15.253291001604">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.253291001604" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="209.000012346677,212.338319724443">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="166.333322141496,54.724170672131"
-              Start="0,0"
-              End="166.333322141496,47.224170672131">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.6913937030737" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.6913937030737"
-                    Point2="0,32.6913937030737"
-                    Point3="4,32.6913937030737" />
-                  <mssgle:LineSegment
-                    End="162.333322141496,32.6913937030737" />
-                  <mssgle:CubicBezierSegment
-                    Point1="162.333322141496,32.6913937030737"
-                    Point2="166.333322141496,32.6913937030737"
-                    Point3="166.333322141496,36.6913937030737" />
-                  <mssgle:LineSegment
-                    End="166.333322141496,47.224170672131" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="222,42"
-          Id="Package\Get Dim_OutbreakGroup LSET"
-          TopLeft="359.500012346677,166.894212391875" />
-        <NodeLayout
-          Size="216,42"
+          Size="216,41.6"
           Id="Package\Set Dim_OutbreakGroup CET"
           TopLeft="362.906262288469,98.140921390271" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8 1]"
-          TopLeft="470.703137317573,140.140921390271">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26.753291001604"
-              Start="0,0"
-              End="0,19.253291001604">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.253291001604" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Set LSET to METADATA"
+          TopLeft="346.096738924966,892.637653535578" />
+        <NodeLayout
+          Size="256.8,41.6"
+          Id="Package\Set ONGOING_OUTBREAKS_PHU CET"
+          TopLeft="635.406262288469,89.640921390271" />
+        <NodeLayout
+          Size="262.4,41.6"
+          Id="Package\Set ONGOING_OUTBREAKS_PHU LSET"
+          TopLeft="635.500012346677,183.894212391876" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="470.500012346677,208.894212391875">
@@ -3716,36 +3630,6 @@ where [refTable].[outbreak_group_name] = ?</property>
                     Point3="23.9999888081622,38.748851447645" />
                   <mssgle:LineSegment
                     End="23.9999888081622,50.668278004699" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="257,42"
-          Id="Package\Set ONGOING_OUTBREAKS_PHU CET"
-          TopLeft="635.406262288469,89.640921390271" />
-        <NodeLayout
-          Size="262,42"
-          Id="Package\Set ONGOING_OUTBREAKS_PHU LSET"
-          TopLeft="635.500012346677,183.894212391876" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5 1]"
-          TopLeft="765.203137317573,131.640921390271">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.2532910016049"
-              Start="0,0"
-              End="0,44.7532910016049">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.7532910016049" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3788,40 +3672,20 @@ where [refTable].[outbreak_group_name] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="148,42"
-          Id="Package\Fact_Outbreak"
-          TopLeft="336.406262288469,817.640921390271" />
-        <NodeLayout
-          Size="190,42"
-          Id="Package\Set LSET to METADATA"
-          TopLeft="319.906262288469,884.140921390271" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="434.916667821506,784.562490396574">
+          TopLeft="436.575354180403,784.662490396574">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-24.510405533037,33.078430993697"
+              EndConnector="0,23.6320256338589"
               Start="0,0"
-              End="-24.510405533037,25.578430993697">
+              End="0,16.1320256338589">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5392154968485" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.5392154968485"
-                    Point2="0,16.5392154968485"
-                    Point3="-4,16.5392154968485" />
-                  <mssgle:LineSegment
-                    End="-20.510405533037,16.5392154968485" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20.510405533037,16.5392154968485"
-                    Point2="-24.510405533037,16.5392154968485"
-                    Point3="-24.510405533037,20.5392154968485" />
-                  <mssgle:LineSegment
-                    End="-24.510405533037,25.578430993697" />
+                    End="0,16.1320256338589" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3832,18 +3696,118 @@ where [refTable].[outbreak_group_name] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="412.656262288469,859.640921390271">
+          TopLeft="439.740389732133,849.894516030433">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24.5"
+              EndConnector="0,42.7431375051455"
               Start="0,0"
-              End="0,17">
+              End="0,35.2431375051455">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17" />
+                    End="0,35.2431375051455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5 1]"
+          TopLeft="765.203137317573,131.640921390271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.2532910016049"
+              Start="0,0"
+              End="0,44.7532910016049">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.7532910016049" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="206.953137317573,148.085028722839">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.753291001604"
+              Start="0,0"
+              End="0,15.253291001604">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.253291001604" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8 1]"
+          TopLeft="470.703137317573,140.140921390271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.753291001604"
+              Start="0,0"
+              End="0,19.253291001604">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.253291001604" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="209.000012346677,212.338319724443">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="166.333322141496,54.724170672131"
+              Start="0,0"
+              End="166.333322141496,47.224170672131">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6913937030737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.6913937030737"
+                    Point2="0,32.6913937030737"
+                    Point3="4,32.6913937030737" />
+                  <mssgle:LineSegment
+                    End="162.333322141496,32.6913937030737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="162.333322141496,32.6913937030737"
+                    Point2="166.333322141496,32.6913937030737"
+                    Point3="166.333322141496,36.6913937030737" />
+                  <mssgle:LineSegment
+                    End="166.333322141496,47.224170672131" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3856,24 +3820,266 @@ where [refTable].[outbreak_group_name] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Fact_Outbreak">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152.5,42"
+          Id="Package\Fact_Outbreak\Lay thang, nam"
+          TopLeft="581.5,116.5" />
+        <NodeLayout
+          Size="205.5,42"
+          Id="Package\Fact_Outbreak\Lookup outbreak_group_id"
+          TopLeft="332.769230769231,39.3205128205129" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Fact_Outbreak\Lookup date_id"
+          TopLeft="374.269230769231,117.5" />
+        <NodeLayout
+          Size="180.5,42"
+          Id="Package\Fact_Outbreak\Lookup geography_id"
+          TopLeft="562.5,40" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\Fact_Outbreak\Them du lieu vao Fact_Outbreak"
+          TopLeft="105.769230769231,120" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fact_Outbreak\Lay so luong bung phat"
+          TopLeft="100.269230769231,40.8205128205129" />
+        <EdgeLayout
+          Id="Package\Fact_Outbreak.Paths[Lookup Match Output1]"
+          TopLeft="655.25,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.5"
+              Start="0,0"
+              End="0,27">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,7.6953125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_Outbreak.Paths[Lookup Match Output]"
+          TopLeft="538.269230769231,60.6602564102565">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.2307692307693,0"
+              Start="0,0"
+              End="16.7307692307693,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="16.7307692307693,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-39.8260021033654,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_Outbreak.Paths[Derived Column Output]"
+          TopLeft="581.5,138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-56.2307692307693,0"
+              Start="0,0"
+              End="-48.7307692307693,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-48.7307692307693,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_Outbreak.Paths[OLE DB Source Output]"
+          TopLeft="290.269230769231,61.0705128205129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.5,0"
+              Start="0,0"
+              End="35,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_Outbreak.Paths[Lookup Match Output2]"
+          TopLeft="374.269230769231,139.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.5,0"
+              Start="0,0"
+              End="-28,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-28,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-71.0600390625,5,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_Outbreak\Lookup outbreak_group_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_OutbreakGroup]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_Outbreak\Lookup date_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Date]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_Outbreak\Lookup geography_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Geography]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_Outbreak\Them du lieu vao Fact_Outbreak">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_Outbreak\Lay so luong bung phat">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Sequence Container\Dim_Date">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="222.5,41.5"
+          Size="222.4,41.6"
           Id="Package\Sequence Container\Dim_Date\Them ngay moi vao Dim_Date"
           TopLeft="261.252752069776,326.58914390717" />
         <NodeLayout
-          Size="201.5,41.5"
+          Size="201.6,41.6"
           Id="Package\Sequence Container\Dim_Date\Them Ngay, Thang, Nam"
           TopLeft="269.285718871623,177.411767194015" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Sequence Container\Dim_Date\OLE DB Source"
           TopLeft="298.714285714286,107.857142857143" />
         <NodeLayout
-          Size="224,42"
+          Size="224,41.6"
           Id="Package\Sequence Container\Dim_Date\Kiem tra ngay ton tai hay chua"
           TopLeft="263.626378066312,246.7865582897" />
         <EdgeLayout
@@ -3974,7 +4180,7 @@ where [refTable].[outbreak_group_name] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3984,7 +4190,7 @@ where [refTable].[outbreak_group_name] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4047,7 +4253,9 @@ where [refTable].[outbreak_group_name] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4069,7 +4277,9 @@ where [refTable].[outbreak_group_name] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4091,7 +4301,9 @@ where [refTable].[outbreak_group_name] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4125,7 +4337,9 @@ where [refTable].[outbreak_group_name] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4255,7 +4469,9 @@ where [refTable].[outbreak_group_name] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4351,6 +4567,10 @@ where [refTable].[outbreak_group_name] = ?</property>
           Id="Package\Sequence Container\Dim_OutbreakGroup\Get data outbreak_group from NDS"
           TopLeft="218.666666666667,122.5" />
         <NodeLayout
+          Size="271,42"
+          Id="Package\Sequence Container\Dim_OutbreakGroup\Insert new row into Dim_OutbreakGroup"
+          TopLeft="204.5,259" />
+        <NodeLayout
           Size="334.5,42"
           Id="Package\Sequence Container\Dim_OutbreakGroup\Lookup outbreak_group_name in Dim_OutbreakGroup"
           TopLeft="180,186" />
@@ -4379,13 +4599,11 @@ where [refTable].[outbreak_group_name] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="271,42"
-          Id="Package\Sequence Container\Dim_OutbreakGroup\Insert new row into Dim_OutbreakGroup"
-          TopLeft="204.5,259" />
         <EdgeLayout
           Id="Package\Sequence Container\Dim_OutbreakGroup.Paths[Lookup No Match Output]"
           TopLeft="343.625,228">
@@ -4422,29 +4640,6 @@ where [refTable].[outbreak_group_name] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Dim_OutbreakGroup\Lookup outbreak_group_name in Dim_OutbreakGroup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_OutbreakGroup]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Dim_OutbreakGroup\Insert new row into Dim_OutbreakGroup">
     <Properties>
       <Property>
@@ -4457,169 +4652,13 @@ where [refTable].[outbreak_group_name] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Fact_Outbreak">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="190,42"
-          Id="Package\Fact_Outbreak\Lay so luong bung phat"
-          TopLeft="100.269230769231,40.8205128205129" />
-        <NodeLayout
-          Size="205.5,42"
-          Id="Package\Fact_Outbreak\Lookup outbreak_group_id"
-          TopLeft="332.769230769231,39.3205128205129" />
-        <EdgeLayout
-          Id="Package\Fact_Outbreak.Paths[OLE DB Source Output]"
-          TopLeft="290.269230769231,61.0705128205129">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="42.5,0"
-              Start="0,0"
-              End="35,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="35,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="180.5,42"
-          Id="Package\Fact_Outbreak\Lookup geography_id"
-          TopLeft="562.5,40" />
-        <EdgeLayout
-          Id="Package\Fact_Outbreak.Paths[Lookup Match Output]"
-          TopLeft="538.269230769231,60.6602564102565">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="24.2307692307693,0"
-              Start="0,0"
-              End="16.7307692307693,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="16.7307692307693,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-39.8260021033654,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152.5,42"
-          Id="Package\Fact_Outbreak\Lay thang, nam"
-          TopLeft="581.5,116.5" />
-        <EdgeLayout
-          Id="Package\Fact_Outbreak.Paths[Lookup Match Output1]"
-          TopLeft="655.25,82">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.5"
-              Start="0,0"
-              End="0,27">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,7.6953125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Fact_Outbreak\Lookup date_id"
-          TopLeft="374.269230769231,117.5" />
-        <EdgeLayout
-          Id="Package\Fact_Outbreak.Paths[Derived Column Output]"
-          TopLeft="581.5,138">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-56.2307692307693,0"
-              Start="0,0"
-              End="-48.7307692307693,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-48.7307692307693,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="233,42"
-          Id="Package\Fact_Outbreak\Them du lieu vao Fact_Outbreak"
-          TopLeft="105.769230769231,120" />
-        <EdgeLayout
-          Id="Package\Fact_Outbreak.Paths[Lookup Match Output2]"
-          TopLeft="374.269230769231,139.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-35.5,0"
-              Start="0,0"
-              End="-28,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-28,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-71.0600390625,5,114.120078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Fact_Outbreak\Lay so luong bung phat">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact_Outbreak\Lookup outbreak_group_id">
+    design-time-name="Package\Sequence Container\Dim_OutbreakGroup\Lookup outbreak_group_name in Dim_OutbreakGroup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4629,69 +4668,10 @@ where [refTable].[outbreak_group_name] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact_Outbreak\Lookup geography_id">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Geography]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact_Outbreak\Lookup date_id">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Date]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact_Outbreak\Them du lieu vao Fact_Outbreak">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
