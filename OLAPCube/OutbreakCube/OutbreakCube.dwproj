@@ -52,7 +52,7 @@
           <ConfigurationSetting>
             <Id>BI06 DDS Outbreak Group</Id>
             <Name>BI06 DDS Outbreak Group</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=BI06_DDS_OutbreakGroup</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=YENNHILE\ANALYSIS;Integrated Security=SSPI;Initial Catalog=BI06_DDS_OutbreakGroup</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>

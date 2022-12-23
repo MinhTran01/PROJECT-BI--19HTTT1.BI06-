@@ -1,8 +1,8 @@
 ﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
   <Target>
     <Database>OutbreakCube</Database>
-    <Server>DESKTOP-NKULHIL\ANALYSIS2</Server>
-    <ConnectionString>Data Source=DESKTOP-NKULHIL\ANALYSIS2;Timeout=0</ConnectionString>
+    <Server>YENNHILE\ANALYSIS</Server>
+    <ConnectionString>Data Source=YENNHILE\ANALYSIS;Timeout=0</ConnectionString>
   </Target>
   <Options>
     <TransactionalDeployment>false</TransactionalDeployment>
@@ -19,42 +19,42 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>8UN0zU5tim8haQAupM5l6agy59c=21/12/2022 20:41:4121/12/2022 20:19:45</TimeStamp>
+        <TimeStamp>E1HR3kglrkcWCaPN6wlWrhrMbug=21/12/2022 9:14:25 CH21/12/2022 8:48:59 CH</TimeStamp>
         <ID>
           <String>BI06 DDS Outbreak Group</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>ZaC9HXQ7nFMFLVi4GxASUSsz2lQ=21/12/2022 20:19:4521/12/2022 20:19:45</TimeStamp>
+        <TimeStamp>ZaC9HXQ7nFMFLVi4GxASUSsz2lQ=21/12/2022 8:48:59 CH21/12/2022 8:48:59 CH</TimeStamp>
         <ID>
           <String>BI06 DDS Outbreak Group</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>j3wZeXPjSPYV8xVvKqQm2uxY1Zk=21/12/2022 20:19:4521/12/2022 20:19:45</TimeStamp>
+        <TimeStamp>j3wZeXPjSPYV8xVvKqQm2uxY1Zk=21/12/2022 8:48:59 CH21/12/2022 8:48:59 CH</TimeStamp>
         <ID>
           <String>Dim Date</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>hYuD7Nui00Vz7+2Vd3U1aQCWTQ8=21/12/2022 20:19:4521/12/2022 20:19:45</TimeStamp>
+        <TimeStamp>hYuD7Nui00Vz7+2Vd3U1aQCWTQ8=21/12/2022 8:48:59 CH21/12/2022 8:48:59 CH</TimeStamp>
         <ID>
           <String>Dim Outbreak Group</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>e5V9COG/3WBG82qipXQC/dGsXhA=21/12/2022 20:19:4521/12/2022 20:19:45</TimeStamp>
+        <TimeStamp>e5V9COG/3WBG82qipXQC/dGsXhA=21/12/2022 8:48:59 CH21/12/2022 8:48:59 CH</TimeStamp>
         <ID>
           <String>Dim Geography</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>l45VXeCk3xoK3VltX9ieB5YB8uw=21/12/2022 20:19:4521/12/2022 20:19:45zJqeD9zWsTmft8xa/nunTspTWZQ=21/12/2022 20:19:4521/12/2022 20:19:45</TimeStamp>
+        <TimeStamp>lMcdXo7Iu5V2E4xH1TQEzxj4FAk=21/12/2022 9:24:26 CH21/12/2022 8:48:59 CHzJqeD9zWsTmft8xa/nunTspTWZQ=21/12/2022 8:48:59 CH21/12/2022 8:48:59 CH</TimeStamp>
         <ID>
           <String>BI06 DDS Outbreak Group</String>
         </ID>
@@ -62,7 +62,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>vgc4cYNqiAdl+Vfk24+Fq0QIcQY=21/12/2022 20:19:4521/12/2022 20:27:28</TimeStamp>
+      <TimeStamp>vgc4cYNqiAdl+Vfk24+Fq0QIcQY=21/12/2022 8:48:59 CH21/12/2022 8:48:59 CH</TimeStamp>
       <ID>
         <String>OutbreakCube</String>
       </ID>
@@ -71,5 +71,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-12-21T13:41:46.95Z</LastDeployed>
+  <LastDeployed>2022-12-21T14:25:59.413333Z</LastDeployed>
 </DeploymentSnapshot>

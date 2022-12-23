@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>DESKTOP-NKULHIL\ANALYSIS2</TargetServer>
+        <TargetServer>YENNHILE\ANALYSIS</TargetServer>
         <TargetDatabase>CaseCube</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>

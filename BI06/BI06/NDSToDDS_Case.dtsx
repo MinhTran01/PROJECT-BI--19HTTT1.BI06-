@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{FECA6584-9FBC-4515-BEBC-4677F6045D80}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{6EA0DDD4-337D-493E-8715-005D707D7BE2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_DDS_Case;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{553076B7-7335-4699-BA2C-40FF7ECF2665}DESKTOP-NKULHIL\SQLEXPRESS.BI06_DDS_Case;" />
+          DTS:ConnectionString="Data Source=YENNHILE\ANALYSIS;Initial Catalog=BI06_DDS_Case;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{553076B7-7335-4699-BA2C-40FF7ECF2665}DESKTOP-NKULHIL\SQLEXPRESS.BI06_DDS_Case;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}DESKTOP-JU4SLVC\MSSQLSERVER03.BI06_METADATA;" />
+          DTS:ConnectionString="Data Source=YENNHILE\ANALYSIS;Initial Catalog=BI06_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{7A5C82B2-4AC7-43E7-85FF-F373B301CA34}DESKTOP-JU4SLVC\MSSQLSERVER03.BI06_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -49,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-NKULHIL\SQLEXPRESS;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{132B8890-A614-4676-B220-34F7060BC61B}DESKTOP-NKULHIL\SQLEXPRESS.BI06_NDS;" />
+          DTS:ConnectionString="Data Source=YENNHILE\ANALYSIS;Initial Catalog=BI06_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{132B8890-A614-4676-B220-34F7060BC61B}DESKTOP-NKULHIL\SQLEXPRESS.BI06_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1773,7 +1773,7 @@ where [refTable].[phu_id_nds] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Compile_case_details LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1794,7 +1794,7 @@ where [refTable].[phu_id_nds] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Dim_AgeGroup LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1815,7 +1815,7 @@ where [refTable].[phu_id_nds] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Dim_Dim_CaseAcquisition  LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1836,7 +1836,7 @@ where [refTable].[phu_id_nds] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Dim_Gender LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5547,7 +5547,7 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Compile_case_details CET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5568,7 +5568,7 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Dim_AgeGroup CET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5589,7 +5589,7 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Dim_CaseAcquisition CET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5610,7 +5610,7 @@ FROM  PHU P JOIN CITY C on (P.city_id = C.city_id)
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Dim_Gender CET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
